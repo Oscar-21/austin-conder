@@ -15,13 +15,22 @@ export default function createRoutes() {
 
   return [
     {
-      path: '/', /* root directory */
-      name: 'home',
-      getComponent(nextState, cb) {
-        import('containers/Home')
+        path: '/about',
+        name: 'About',
+        getComponent(nextState, cb) {
+        import('containers/About')
           .then(loadModule(cb))
           .catch(errorLoading);
       },
+    },
+    {
+        path: '/', /* root directory */
+        name: 'Home',
+        getComponent(nextState, cb) {
+            import('containers/Home')
+            .then(loadModule(cb))
+            .catch(errorLoading);
+        },
     },
     {
       path: '*',
