@@ -14,7 +14,7 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 export default class App extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
 
-  static propTypes = { children: React.PropTypes.node };
+  static propTypes = { children: React.PropTypes.node, };
   static childContextTypes = { muiTheme: React.PropTypes.object };
 
   getChildContext()

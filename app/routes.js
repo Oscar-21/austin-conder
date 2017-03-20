@@ -14,7 +14,16 @@ const loadModule = (cb) => (componentModule) => {
 export default function createRoutes() {
 
   return [
-     {
+    {
+      path: '/', /* root directory */
+      name: 'home',
+      getComponent(nextState, cb) {
+        import('containers/Home')
+          .then(loadModule(cb))
+          .catch(errorLoading);
+      },
+    },
+    {
       path: '*',
       name: 'notfound',
       getComponent(nextState, cb) {
