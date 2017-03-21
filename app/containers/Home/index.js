@@ -30,7 +30,7 @@ export default class Home extends React.PureComponent {
         textTransform: "uppercase",
         letterSpacing: "6px",
         textAlign: "center",
-        marginTop: "160px",
+        /*marginBottom: "160px"*/
 
     }
 
@@ -68,12 +68,19 @@ export default class Home extends React.PureComponent {
         }
 
         const placeHoldertext = {
-            textDecoration: "none",
             display: "flex",
             textAlign: "center",
             justifyContent: "center",
             fontFamily: "Merriweather",
-            color:"000000"
+            color:"#000000"
+        }
+
+        const footStyle = {
+            display: "flex",
+            flexDirection: "column",
+            background: "#9E9E9E",
+            height: "100vh",
+            width: "100%"
         }
 
     /*
@@ -95,20 +102,18 @@ export default class Home extends React.PureComponent {
     <div>
         <Helmet title="Home" meta={[ { name: 'description', content: 'Description of Home' }]}/>
         <header>
-            <nav>
-                <Link to= "/">Home</Link>
-                <Link to= "/About">About</Link>
-            </nav>
+
         </header>
 
         <main>
-
             <div style = {titleStyle}>
+                <div style = {titlePage}>
+                    Cinema, so blue...
+                </div>
 
             </div>
 
             <div style = {screenshotStyle}>
-
 
                 <div style={picBox}>
                     <div>
@@ -117,7 +122,13 @@ export default class Home extends React.PureComponent {
                     </div>
 
                     <div style = {placeHoldertext}>
-                        <h1><Link to= "/">Home</Link></h1>
+                        <h1>
+                            <Link to= "/" style={{
+                            textDecoration:'none',
+                            fontFamily: 'Merriweather',
+                            color:'black'
+                            }}>Home</Link>
+                        </h1>
                     </div>
                 </div>
 
@@ -127,7 +138,13 @@ export default class Home extends React.PureComponent {
                         <img style = {thumbNails} src="https://68.media.tumblr.com/618291bc87361d807acd04604f0966d7/tumblr_n3uidp4lD71ty9ma3o3_1280.jpg" alt=""/>
                     </div>
                     <div style = {placeHoldertext}>
-                        <h1>Dos</h1>
+                        <h1>
+                            <Link to= "/About" style={{
+                            textDecoration:'none',
+                            fontFamily: 'Merriweather',
+                            color:'black'
+                            }}>About</Link>
+                        </h1>
                     </div>
                 </div>
 
@@ -145,9 +162,9 @@ export default class Home extends React.PureComponent {
                     <div>
                         <img style = {thumbNails} src="https://68.media.tumblr.com/cbc5d0a14637c62e9a7c36bbf166286d/tumblr_n3uidp4lD71ty9ma3o4_1280.jpg" alt=""/>
                     </div>
-                <div style = {placeHoldertext}>
-                    <h1>Quatro</h1>
-                </div>
+                    <div style = {placeHoldertext}>
+                        <h1>Quatro</h1>
+                    </div>
 
 
                 </div>
@@ -155,6 +172,8 @@ export default class Home extends React.PureComponent {
 
             </div>
 
+            <div style = {footStyle}>
+            </div>
         </main>
 
         <footer>
