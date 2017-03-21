@@ -21,6 +21,19 @@ export default class Home extends React.PureComponent {
         height:"300px",
     }
 
+    const titlePage = {
+        color: "#eeeeee",
+        fontSize: "5em",
+        fontFamily: "Source Sans Pro",
+        fontStyle: "light",
+        fontWeight: "400",
+        textTransform: "uppercase",
+        letterSpacing: "6px",
+        textAlign: "center",
+        marginTop: "160px",
+
+    }
+
 
     const screenshotStyle = {
         display: "flex",
