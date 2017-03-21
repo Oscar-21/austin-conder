@@ -55,10 +55,12 @@ export default class Home extends React.PureComponent {
         }
 
         const placeHoldertext = {
+            textDecoration: "none",
             display: "flex",
             textAlign: "center",
             justifyContent: "center",
-            fontFamily: "Merriweather"
+            fontFamily: "Merriweather",
+            color:"000000"
         }
 
     /*
