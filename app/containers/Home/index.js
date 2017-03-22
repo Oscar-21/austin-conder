@@ -14,15 +14,24 @@ export default class Home extends React.PureComponent {
     const titleStyle = {
         display: "flex",
         flexDirection: "column",
-        padding: "13.5%",
+        /*padding: "13.5%",*/
         background:"url(https://68.media.tumblr.com/8ba6be52a6cb41fe964cd7fbb94a3e02/tumblr_on2pafGDUw1vieawno1_1280.jpg)",
         backgroundSize:"cover",
         width:"100%",
-        height:"300px",
+        height:"475px",
+    }
+
+    const PageNamestyle = {
+        display: "flex",
+        flexDirection: "column",
+
+
     }
 
     const titlePage = {
+        display: "flex",
         color: "#eeeeee",
+        justifyContent: "center",
         fontSize: "5em",
         fontFamily: "Source Sans Pro",
         fontStyle: "light",
@@ -30,16 +39,19 @@ export default class Home extends React.PureComponent {
         textTransform: "uppercase",
         letterSpacing: "6px",
         textAlign: "center",
+        marginTop: "200px"
         /*marginBottom: "160px"*/
 
     }
 
 
     const screenshotStyle = {
+
         display: "flex",
         justifyContent: "center",
-        background: " #BED9F6",
-        height: "30vh"
+        background: " #F5FEEF",
+        height: "30vh",
+        paddingTop: "10%"
         /* #B4CFEC*/
 
     }
@@ -58,13 +70,15 @@ export default class Home extends React.PureComponent {
         flexDirection: "column",
         width: "13%",
         height: "150px",
-        margin: "5px",
+        margin: "4px",
+        paddingBottom: "2200px"
     }
 
        const thumbNails = {
 
             width: "100%",
-            height: "128px"
+            height: "128px",
+            marginBottom: "255px"
         }
 
         const placeHoldertext = {
@@ -72,14 +86,14 @@ export default class Home extends React.PureComponent {
             textAlign: "center",
             justifyContent: "center",
             fontFamily: "Merriweather",
-            color:"#000000"
+            color:"#000000",
         }
 
         const footStyle = {
             display: "flex",
             flexDirection: "column",
-            background: "#9E9E9E",
-            height: "100vh",
+            background: "#0C090A",
+            height: "20vh",
             width: "100%"
         }
 
@@ -107,6 +121,24 @@ export default class Home extends React.PureComponent {
 
         <main>
             <div style = {titleStyle}>
+
+                <div style = {PageNamestyle}>
+                    <div style = {{    color: "#eeeeee",
+                        fontFamily: "Trebuchet MS",
+                        fontStyle: "light",
+                        fontWeight: "400",
+                        fontSize: "2em",
+                        textTransform: "uppercase",
+                        textAlign: "center"}}>word on reel weekly</div>
+                    <div style =     {{color: "#eeeeee",
+                        fontSize: "1em",
+                        fontFamily: "consolas",
+                        fontStyle: "light",
+                        fontWeight: "400",
+                        textTransform: "uppercase",
+                        textAlign: "center"}}>your daily source for cinematic celebrations</div>
+                </div>
+
                 <div style = {titlePage}>
                     Cinema, so blue...
                 </div>
@@ -117,17 +149,15 @@ export default class Home extends React.PureComponent {
 
                 <div style={picBox}>
                     <div>
-                        <img style = {thumbNails} src="
-                            https://68.media.tumblr.com/630ee7e6247d5f16efe7f315bff42707/tumblr_n3uidp4lD71ty9ma3o1_1280.jpg" alt=""/>
+                        <img style = {thumbNails} src="https://68.media.tumblr.com/630ee7e6247d5f16efe7f315bff42707/tumblr_n3uidp4lD71ty9ma3o1_1280.jpg" alt=""/>
                     </div>
-
                     <div style = {placeHoldertext}>
                         <h1>
                             <Link to= "/" style={{
                             textDecoration:'none',
                             fontFamily: 'Merriweather',
                             color:'black'
-                            }}>Home</Link>
+                        }}>Home</Link>
                         </h1>
                     </div>
                 </div>
