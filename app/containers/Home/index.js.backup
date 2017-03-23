@@ -372,10 +372,12 @@ export default class Home extends React.PureComponent {
 
                     <div style = {articleTitleMobile}>
                             Lorem ipsum dolor sit
+                        </div>
+                        <div style = {authorStyleMobile}>
+                            - - - Lorem Ipsum
+                        </div>
                     </div>
-                    <div style = {authorStyleMobile}>
-                        - - - Lorem Ipsum
-                    </div>
+                </div>
 
                 <div style={picBoxMobile}>
                     <div style = {articleStyleMobile}>
