@@ -6,7 +6,9 @@
 
 import React from 'react';
 import Helmet from 'react-helmet';
-import {Link} from "react-router"; /* allow us to link to different pages in project folder*/
+import {Link} from "react-router";
+import Responsive from 'react-responsive';
+/* allow us to link to different pages in project folder*/
 
 export default class Home extends React.PureComponent {
   render() {
@@ -50,7 +52,7 @@ export default class Home extends React.PureComponent {
         display: "flex",
         justifyContent: "center",
         background: " #F5FEEF",
-        height: "30vh",
+        height: "27vh",
         paddingTop: "10%",
 
         /* #B4CFEC*/
@@ -63,8 +65,8 @@ export default class Home extends React.PureComponent {
         flexDirection: "column",
         width: "13%",
         height: "150px",
-        margin: "4px",
-        paddingBottom: "2200px"
+        margin: "4px"
+
     }
 
        const articleStyle = {
@@ -98,7 +100,7 @@ export default class Home extends React.PureComponent {
             display: "flex",
             flexDirection: "column",
             background: "#0C090A",
-            height: "22vh",
+            height: "20vh",
             width: "100%",
             /*marginLeft: "50px",
             marginRight: "50px"*/
@@ -111,6 +113,7 @@ export default class Home extends React.PureComponent {
         <header>
 
         </header>
+
 
         <main>
             <div style = {mainStyle}>
@@ -219,12 +222,15 @@ export default class Home extends React.PureComponent {
 
             <div style = {footStyle}>
 
-                <div>
-                    
+                <div style = {{
+                        color: "white"
+                    }}>
+                    top
                 </div>
+                <div style = {{
 
-                <div>
-
+                    }}>
+                    box
                 </div>
 
             </div>
