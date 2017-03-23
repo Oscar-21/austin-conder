@@ -91,6 +91,7 @@ export default class Home extends React.PureComponent {
         paddingTop: "6.5%"
 
 
+
         /* #B4CFEC*/
 
     }
@@ -253,50 +254,47 @@ export default class Home extends React.PureComponent {
 
                     </div>
 
-                <div style = {currentIssue}>
-                    A tribute to the Blue
+                    <div style = {currentIssue}>
+                        A tribute to the Blue
+                    </div>
+
                 </div>
+            </Responsive>
 
-            </div>
-        </Responsive>
+            <Responsive maxDeviceWidth = {1023}>
+                <div style = {mainStyleMobile}>
 
-        <Responsive maxDeviceWidth = {1023}>
-            <div style = {mainStyleMobile}>
+                    <div style = {navStyleMobile}>
+                        <div style = {{
+                            color: "#eeeeee",
+                            fontFamily: "Trebuchet MS",
+                            fontStyle: "light",
+                            fontWeight: "400",
+                            fontSize: "1.5em",
+                            textTransform: "uppercase",
+                            textAlign: "center",
+                            }}>
+                            word on reel weekly
+                        </div>
 
-                <div style = {navStyleMobile}>
-                    <div style = {{
-                        color: "#eeeeee",
-                        fontFamily: "Trebuchet MS",
-                        fontStyle: "light",
-                        fontWeight: "400",
-                        fontSize: "1.5em",
-                        textTransform: "uppercase",
-                        textAlign: "center",
-                        }}>
-                        word on reel weekly
+
+                        <nav style = {{
+                            marginTop: "6px",
+                            color: "#eeeeee",
+                            fontSize: ".7em",
+                            fontFamily: "courier",
+                            fontStyle: "light",
+                            textTransform: "uppercase",
+                            textAlign: "center"
+                            }}>
+                            / current issue / about us / browse by topic / archive /
+                        </nav>
+
                     </div>
 
 
-                    <nav style = {{
-                        marginTop: "6px",
-                        color: "#eeeeee",
-                        fontSize: ".7em",
-                        fontFamily: "courier",
-                        fontStyle: "light",
-                        textTransform: "uppercase",
-                        textAlign: "center"
-                        }}>
-                        / current issue / about us / browse by topic / archive /
-                    </nav>
-
                 </div>
-
-            <div style = {currentIssueMobile}>
-                When Cinema's got the blues:
-            </div>
-
-        </div>
-    </Responsive>
+            </Responsive>
 
             <Responsive minDeviceWidth = {1024}>
                 <div style = {backgroundStyle}>
@@ -344,42 +342,46 @@ export default class Home extends React.PureComponent {
                                 - - - Lorem Ipsum
                             </div>
                         </div>
-                </div>
+                    </div>
 
-                <div style={picBox}>
-                    <div style = {articleStyle}>
-                        <img style = {articleImg}            src="https://68.media.tumblr.com/cbc5d0a14637c62e9a7c36bbf166286d/tumblr_n3uidp4lD71ty9ma3o4_1280.jpg" alt=""/>
+                    <div style={picBox}>
+                        <div style = {articleStyle}>
+                            <img style = {articleImg}            src="https://68.media.tumblr.com/cbc5d0a14637c62e9a7c36bbf166286d/tumblr_n3uidp4lD71ty9ma3o4_1280.jpg" alt=""/>
 
-                        <div style = {articleTitle}>
-                            Lorem Ipsum dolor sit
-                        </div>
+                            <div style = {articleTitle}>
+                                Lorem Ipsum dolor sit
+                            </div>
 
-                        <div style = {authorStyle}>
-                            - - - Lorem Ipsum
+                            <div style = {authorStyle}>
+                                - - - Lorem Ipsum
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </Responsive>
+            </Responsive>
 
-        <Responsive maxDeviceWidth = {1023}>
-            <div style = {backgroundStyleMobile}>
+            <Responsive maxDeviceWidth = {1023}>
+                <div style = {backgroundStyleMobile}>
+                    <div style={picBoxMobile}>
+                        <div style = {articleStyleMobile}>
+                            <img style = {articleImgMobile} src="
+                            https://68.media.tumblr.com/630ee7e6247d5f16efe7f315bff42707/tumblr_n3uidp4lD71ty9ma3o1_1280.jpg" alt=""/>
+
+                            <div style = {articleTitleMobile}>
+                                Lorem ipsum dolor sit
+                            </div>
+
+                            <div style = {authorStyleMobile}>
+                                - - - Lorem Ipsum
+                            </div>
+                        </div>
+                    </div>
 
                 <div style={picBoxMobile}>
-                    <div style = {articleStyleMobile}>
-                        <img style = {articleImgMobile} src="
-                        https://68.media.tumblr.com/630ee7e6247d5f16efe7f315bff42707/tumblr_n3uidp4lD71ty9ma3o1_1280.jpg" alt=""/>
 
-                    <div style = {articleTitleMobile}>
-                            Lorem ipsum dolor sit
-                    </div>
-                    <div style = {authorStyleMobile}>
-                        - - - Lorem Ipsum
-                    </div>
-
-                <div style={picBoxMobile}>
                     <div style = {articleStyleMobile}>
-                        <img style = {articleImgMobile} src="https://68.media.tumblr.com/618291bc87361d807acd04604f0966d7/tumblr_n3uidp4lD71ty9ma3o3_1280.jpg" alt=""/>
+
+                        <img style = {articleImgMobile}         src="https://68.media.tumblr.com/618291bc87361d807acd04604f0966d7/tumblr_n3uidp4lD71ty9ma3o3_1280.jpg" alt=""/>
 
                         <div style = {articleTitleMobile}>
                             Lorem Ipsum dolor sit
@@ -393,67 +395,67 @@ export default class Home extends React.PureComponent {
                 </div>
 
 
+                    <div style={picBoxMobile}>
+                        <div style = {articleStyleMobile}>
+                            <img style = {articleImgMobile} src="https://68.media.tumblr.com/9ee7cb189d0abfe5a3168cf8b07ac066/tumblr_n3uidp4lD71ty9ma3o2_1280.jpg" alt=""/>
+
+
+                            <div style = { articleTitleMobile }>
+                                <Link to= "/About">Lorem Ipsum dolor sit</Link>
+                            </div>
+
+                            <div style = {authorStyleMobile}>
+                                - - - Lorem Ipsum
+                            </div>
+                        </div>
+                    </div>
+
                 <div style={picBoxMobile}>
-                    <div style = {articleStyleMobile}>
-                        <img style = {articleImgMobile} src="https://68.media.tumblr.com/9ee7cb189d0abfe5a3168cf8b07ac066/tumblr_n3uidp4lD71ty9ma3o2_1280.jpg" alt=""/>
+                        <div style = {articleStyleMobile}>
+                            <img style = {articleImgMobile}            src="https://68.media.tumblr.com/cbc5d0a14637c62e9a7c36bbf166286d/tumblr_n3uidp4lD71ty9ma3o4_1280.jpg" alt=""/>
 
+                            <div style = {articleTitleMobile}>
+                                Lorem Ipsum dolor sit
+                            </div>
 
-                        <div style = { articleTitleMobile }>
-                            <Link to= "/About">Lorem Ipsum dolor sit</Link>
+                            <div style = {authorStyleMobile}>
+                                - - - Lorem Ipsum
+                            </div>
                         </div>
-
-                        <div style = {authorStyleMobile}>
-                            - - - Lorem Ipsum
-                        </div>
-                    </div>
-            </div>
-
-            <div style={picBoxMobile}>
-                <div style = {articleStyleMobile}>
-                    <img style = {articleImgMobile}            src="https://68.media.tumblr.com/cbc5d0a14637c62e9a7c36bbf166286d/tumblr_n3uidp4lD71ty9ma3o4_1280.jpg" alt=""/>
-
-                    <div style = {articleTitleMobile}>
-                        Lorem Ipsum dolor sit
-                    </div>
-
-                    <div style = {authorStyleMobile}>
-                        - - - Lorem Ipsum
                     </div>
                 </div>
-            </div>
-        </div>
-    </Responsive>
+            </Responsive>
 
 
-        <Responsive minDeviceWidth = {1024}>
-            <div style = {footStyle}>
+            <Responsive minDeviceWidth = {1024}>
+                <div style = {footStyle}>
 
-                <div style = {{
+                    <div style = {{
                         fontSize: "1.3em",
                         fontFamily: "Source Sans Pro",
                         textAlign: "center",
                         color: " #E1EADB"
-                    }}>
-                    Lorem Ipsum
+                        }}>
+                        Lorem Ipsum
+                    </div>
+
                 </div>
+            </Responsive>
 
-            </div>
-        </Responsive>
+            <Responsive maxDeviceWidth = {1023}>
+                <div style = {footStyleMobile}>
 
-        <Responsive maxDeviceWidth = {1023}>
-            <div style = {footStyleMobile}>
-
-                <div style = {{
+                    <div style = {{
                         fontSize: "1.3em",
                         fontFamily: "Source Sans Pro",
                         textAlign: "center",
                         color: " #E1EADB"
-                    }}>
-                    Lorem Ipsum
-                </div>
+                        }}>
+                        Lorem Ipsum
+                    </div>
 
-            </div>
-        </Responsive>
+                </div>
+            </Responsive>
 
 
         </main>
