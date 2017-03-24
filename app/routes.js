@@ -15,6 +15,15 @@ export default function createRoutes() {
 
   return [
     {
+        path: '/Blue',
+        name: 'Blue',
+        getComponent(nextState, cb) {
+        import('containers/Blue')
+          .then(loadModule(cb))
+          .catch(errorLoading);
+      },
+    },
+    {
         path: '/about',
         name: 'About',
         getComponent(nextState, cb) {

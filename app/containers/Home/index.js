@@ -8,6 +8,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import {Link} from "react-router";
 import Responsive from 'react-responsive';
+import NavBar from 'components/NavBar';
 /* allow us to link to different pages in project folder*/
 
 export default class Home extends React.PureComponent {
@@ -35,18 +36,12 @@ export default class Home extends React.PureComponent {
         /*height:"auto",*/
     }
 
-    const navStyle = {
-        display: "flex",
-        flexDirection: "column",
-
-    }
 
     const navStyleMobile = {
         display: "flex",
         flexDirection: "column",
 
     }
-
     const currentIssue = {
         display: "flex",
         color: "#FFFFFF",
@@ -226,36 +221,10 @@ export default class Home extends React.PureComponent {
             <Responsive minDeviceWidth = {1024}>
                 <div style = {mainStyle}>
 
-                    <div style = {navStyle}>
-                        <div style = {{
-                            color: "#eeeeee",
-                            fontFamily: "Trebuchet MS",
-                            fontStyle: "light",
-                            fontWeight: "400",
-                            fontSize: "2em",
-                            textTransform: "uppercase",
-                            textAlign: "center",
-                            }}>
-                            word on reel weekly
-                        </div>
-
-
-                        <nav style = {{
-                            marginTop: "10px",
-                            color: "#eeeeee",
-                            fontSize: ".8em",
-                            fontFamily: "courier",
-                            fontStyle: "light",
-                            textTransform: "uppercase",
-                            textAlign: "center"
-                            }}>
-                            / current issue / about us / browse by topic / archive /
-                        </nav>
-
-                    </div>
+                    <NavBar/>
 
                     <div style = {currentIssue}>
-                        A tribute to the Blue
+                        When your Cinmema gets the blues...
                     </div>
 
                 </div>
@@ -305,8 +274,9 @@ export default class Home extends React.PureComponent {
                             https://68.media.tumblr.com/630ee7e6247d5f16efe7f315bff42707/tumblr_n3uidp4lD71ty9ma3o1_1280.jpg" alt=""/>
 
                             <div style = {articleTitle}>
-                                Lorem ipsum dolor sit
+                                <Link to= "/Blue">Blue</Link>
                             </div>
+
                             <div style = {authorStyle}>
                                 - - - Lorem Ipsum
                             </div>
@@ -436,7 +406,8 @@ export default class Home extends React.PureComponent {
                         textAlign: "center",
                         color: " #E1EADB"
                         }}>
-                        Lorem Ipsum
+
+                        &copy; Lorem Ipsum
                     </div>
 
                 </div>
@@ -451,8 +422,9 @@ export default class Home extends React.PureComponent {
                         textAlign: "center",
                         color: " #E1EADB"
                         }}>
-                        Lorem Ipsum
+                        &copy; Lorem Ipsum
                     </div>
+
 
                 </div>
             </Responsive>
