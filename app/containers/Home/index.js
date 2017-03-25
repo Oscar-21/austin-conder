@@ -288,7 +288,7 @@ export default class Home extends React.PureComponent {
                             <img style = {articleImg} src="https://68.media.tumblr.com/618291bc87361d807acd04604f0966d7/tumblr_n3uidp4lD71ty9ma3o3_1280.jpg" alt=""/>
 
                             <div style = {articleTitle}>
-                                Lorem Ipsum dolor sit
+                                <Link to= "/About">About</Link>
                             </div>
 
                             <div style = {authorStyle}>

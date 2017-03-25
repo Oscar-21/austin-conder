@@ -16,7 +16,7 @@ export default class About extends React.PureComponent {
     return (
     <div>
         <Helmet title="About" meta={[ { name: 'description', content: 'Description of Home' }]}/>
-        
+
         <header>
         </header>
 

@@ -8,9 +8,9 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import {Link} from "react-router";
 import Responsive from 'react-responsive';
-import NavBar from 'components/NavBar';
+/*import NavBar from 'components/NavBar';*/
+import ArticleStyle from 'components/ArticleStyle';
 import MainStyle from 'components/MainStyle';
-
 export default class Blue extends React.PureComponent {
     render() {
         return (
@@ -22,8 +22,10 @@ export default class Blue extends React.PureComponent {
                 </header>
 
                 <main>
-                    <NavBar/>
-                    <MainStyle/>
+                    <div>
+                        <MainStyle/>
+                        <ArticleStyle/>
+                    </div>
 
                 </main>
 
