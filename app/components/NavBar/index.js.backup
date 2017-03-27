@@ -11,7 +11,7 @@ import AppBar from 'material-ui/AppBar';
 class NavBar extends React.PureComponent {
     render() {
 
-        const titleStyle = {
+        const navStyle = {
             display: "flex",
             flexDirection: "column",
             background:"url(https://68.media.tumblr.com/8ba6be52a6cb41fe964cd7fbb94a3e02/tumblr_on2pafGDUw1vieawno1_1280.jpg)",
@@ -27,8 +27,22 @@ class NavBar extends React.PureComponent {
 
         }
 
+        const navStyleMobile = {
+            display: "flex",
+            flexDirection: "column",
+            background:"url(https://68.media.tumblr.com/8ba6be52a6cb41fe964cd7fbb94a3e02/tumblr_on2pafGDUw1vieawno1_1280.jpg)",
+            backgroundSize:"cover",
+            Width:"100%",
+            color: "#eeeeee",
+            fontFamily: "Trebuchet MS",
+            fontStyle: "light",
+            fontWeight: "400",
+            fontSize: "0.5em",
+            textTransform: "uppercase",
 
-        const navStyle = {
+
+        }
+        const navStyle2 = {
 
             marginTop: "6px",
             color: "#eeeeee",
@@ -50,43 +64,36 @@ class NavBar extends React.PureComponent {
             textTransform: "uppercase"
 
         }*/
-        const navStyleMobile = {
-        /*    display: "flex",
-            flexDirection: "column",*/
-            /*backgroundSize:"cover",
-            Width:"100%",
-            color: "#eeeeee",*/
-            fontFamily: "Trebuchet MS",
-            fontStyle: "light",
-            fontWeight: "400",
-            fontSize: "1.1em",
-            textTransform: "uppercase",
-            background:"url(https://68.media.tumblr.com/8ba6be52a6cb41fe964cd7fbb94a3e02/tumblr_on2pafGDUw1vieawno1_1280.jpg)"
-        }
 
-        const colorStyle = {
-            background:"url(https://68.media.tumblr.com/8ba6be52a6cb41fe964cd7fbb94a3e02/tumblr_on2pafGDUw1vieawno1_1280.jpg)"
-        }
 
     return (
     <div>
         <div>
-            <Responsive minDeviceWidth = {1024}>
-                <div style = {titleStyle}>
-                    word on reel weekly
-                </div>
-
-                <nav style = {navStyle}>
-                    <Link to="/Blue">/Current issue</Link> / about us / browse by topic / archive /
-                </nav>
-            </Responsive>
-
-            <Responsive maxDeviceWidth = {1023}>
-            <div>
-                <AppBar title="Word on Reel Weekly" style ={colorStyle} titleStyle= {navStyleMobile} iconClassNameRight="muidocs-icon-navigation-expand-more"/>
+        <Responsive minDeviceWidth = {1024}>
+            <div style = {navStyle}>
+                word on reel weekly
             </div>
-            </Responsive>
 
+
+            <nav style = {navStyle2}>
+                <Link to="/Blue">/Current issue</Link> / about us / browse by topic / archive /
+            </nav>
+        </Responsive>
+
+        <Responsive maxDeviceWidth = {1023}>
+            
+            <AppBar title="Title"iconClassNameRight="muidocs-icon-navigation-expand-more"/>
+
+            <div style = {navStyleMobile}>
+                <span>word on reel weekly</span>
+
+            </div>
+
+
+            <nav style = {navStyle2Mobile}>
+                <Link to="/Blue">/Current issue</Link> / about us / browse by topic / archive /
+            </nav>
+        </Responsive>
         </div>
     </div>
     );

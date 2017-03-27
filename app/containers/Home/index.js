@@ -9,10 +9,16 @@ import Helmet from 'react-helmet';
 import {Link} from "react-router";
 import Responsive from 'react-responsive';
 import NavBar from 'components/NavBar';
+import NavigateBefore from 'material-ui/svg-icons/image/navigate-before'
+import NavigateNext from 'material-ui/svg-icons/image/navigate-next'
 /* allow us to link to different pages in project folder*/
 
 export default class Home extends React.PureComponent {
   render() {
+
+    const everything = {
+
+    }
 
     const mainStyle = {
         display: "flex",
@@ -21,7 +27,7 @@ export default class Home extends React.PureComponent {
         /*padding: "13.5%",*/
         background:"url(https://68.media.tumblr.com/8ba6be52a6cb41fe964cd7fbb94a3e02/tumblr_on2pafGDUw1vieawno1_1280.jpg)",
         backgroundSize:"cover",
-        Width:"100%",
+        Width:"100vw",
         /*height:"auto",*/
     }
 
@@ -35,6 +41,8 @@ export default class Home extends React.PureComponent {
         Width:"100%",
         /*height:"auto",*/
     }
+
+
 
 
     const navStyleMobile = {
@@ -53,8 +61,11 @@ export default class Home extends React.PureComponent {
         textTransform: "uppercase",
         letterSpacing: "6px",
         textAlign: "center",
-        marginTop: "15%",
-        marginBottom: "160px"
+        /*marginTop: "15%",*/
+        paddingTop: "12%",
+        paddingBottom: "10%",
+        marginBottom: "3%"
+        /*marginBottom: "160px"*/
 
     }
 
@@ -76,6 +87,14 @@ export default class Home extends React.PureComponent {
 
     }
 
+    const scrollStyle = {
+        background: "#E9FFFF"
+    }
+
+    const scrollStyle2 = {
+        width: "25%",
+        marginLeft: "21vw"
+    }
 
     const backgroundStyle = {
 
@@ -83,11 +102,7 @@ export default class Home extends React.PureComponent {
         justifyContent: "center",
         background: "  #E9FFFF",
         height: "20%",
-        paddingTop: "6.5%"
-
-
-
-        /* #B4CFEC*/
+        paddingTop: "6.5%",
 
     }
 
@@ -96,7 +111,7 @@ export default class Home extends React.PureComponent {
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
-        background: "  #E9FFFF",
+        background: "  #E9FFFF"
         /*height: "10%",*/
         /*paddingTop: "6.5%"*/
 
@@ -111,8 +126,8 @@ export default class Home extends React.PureComponent {
         width: "13%",
         height: "8vh",
         /*height: "175px",*/
-        marginRight: "6px",
-        marginTop: "75px"
+        marginRight: "1vw",
+        marginTop: "8vh"
 
     }
 
@@ -132,10 +147,10 @@ export default class Home extends React.PureComponent {
 
         const articleStyleMobile = {
 
-         }
+        }
 
         const articleImg = {
-            width: "100%",
+            width: "225px",
             height: "120px",
 
         }
@@ -144,6 +159,11 @@ export default class Home extends React.PureComponent {
             width: "100%",
             height: "auto",
 
+        }
+
+        const contentStyle = {
+            fontFamily: "serif",
+            textAlign: "center"
         }
 
         const articleTitle = {
@@ -213,7 +233,9 @@ export default class Home extends React.PureComponent {
     <div>
         <Helmet title="Home" meta={[ { name: 'description', content: 'Description of Home' }]}/>
         <header>
-
+            <Responsive maxDeviceWidth = {1023}>
+                <NavBar/>
+            </Responsive>
         </header>
 
 
@@ -224,57 +246,31 @@ export default class Home extends React.PureComponent {
                     <NavBar/>
 
                     <div style = {currentIssue}>
-                        When your Cinmema gets the blues...
+                        When your Cinema gets the blues...
                     </div>
-
-                </div>
-            </Responsive>
-
-            <Responsive maxDeviceWidth = {1023}>
-                <div style = {mainStyleMobile}>
-
-                    <div style = {navStyleMobile}>
-                        <div style = {{
-                            color: "#eeeeee",
-                            fontFamily: "Trebuchet MS",
-                            fontStyle: "light",
-                            fontWeight: "400",
-                            fontSize: "1.5em",
-                            textTransform: "uppercase",
-                            textAlign: "center",
-                            }}>
-                            word on reel weekly
-                        </div>
-
-
-                        <nav style = {{
-                            marginTop: "6px",
-                            color: "#eeeeee",
-                            fontSize: ".7em",
-                            fontFamily: "courier",
-                            fontStyle: "light",
-                            textTransform: "uppercase",
-                            textAlign: "center"
-                            }}>
-                            / current issue / about us / browse by topic / archive /
-                        </nav>
-
-                    </div>
-
 
                 </div>
             </Responsive>
 
             <Responsive minDeviceWidth = {1024}>
-                <div style = {backgroundStyle}>
 
+                <div style = {scrollStyle}>
+                    <div style = {scrollStyle2}>
+                    <NavigateBefore/><NavigateNext/> Editor's Picks
+                    </div>
+                </div>
+
+                <div style = {backgroundStyle}>
                     <div style={picBox}>
                         <div style = {articleStyle}>
                             <img style = {articleImg} src="
                             https://68.media.tumblr.com/630ee7e6247d5f16efe7f315bff42707/tumblr_n3uidp4lD71ty9ma3o1_1280.jpg" alt=""/>
 
+                        <div style = {contentStyle}>
+                            Cinematograpy
+                            </div>
                             <div style = {articleTitle}>
-                                <Link to= "/Blue">Blue</Link>
+                                Blue
                             </div>
 
                             <div style = {authorStyle}>
@@ -285,9 +281,11 @@ export default class Home extends React.PureComponent {
 
                     <div style={picBox}>
                         <div style = {articleStyle}>
-                            <img style = {articleImg} src="https://68.media.tumblr.com/618291bc87361d807acd04604f0966d7/tumblr_n3uidp4lD71ty9ma3o3_1280.jpg" alt=""/>
-
-                            <div style = {articleTitle}>
+                                <img style = {articleImg} src="https://68.media.tumblr.com/618291bc87361d807acd04604f0966d7/tumblr_n3uidp4lD71ty9ma3o3_1280.jpg" alt=""/>
+                            <div style = {contentStyle}>
+                                Set Design
+                            </div>
+                                <div style = {articleTitle}>
                                 <Link to= "/About">About</Link>
                             </div>
 
@@ -303,7 +301,9 @@ export default class Home extends React.PureComponent {
                         <div style = {articleStyle}>
                             <img style = {articleImg} src="https://68.media.tumblr.com/9ee7cb189d0abfe5a3168cf8b07ac066/tumblr_n3uidp4lD71ty9ma3o2_1280.jpg" alt=""/>
 
-
+<div style = {contentStyle}>
+                            Directors
+                            </div>
                             <div style = { articleTitle }>
                                 <Link to= "/About">Lorem Ipsum dolor sit</Link>
                             </div>
@@ -317,7 +317,9 @@ export default class Home extends React.PureComponent {
                     <div style={picBox}>
                         <div style = {articleStyle}>
                             <img style = {articleImg}            src="https://68.media.tumblr.com/cbc5d0a14637c62e9a7c36bbf166286d/tumblr_n3uidp4lD71ty9ma3o4_1280.jpg" alt=""/>
-
+<div style = {contentStyle}>
+                            Directors
+                            </div>
                             <div style = {articleTitle}>
                                 Lorem Ipsum dolor sit
                             </div>
