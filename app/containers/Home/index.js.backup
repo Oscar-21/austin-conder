@@ -9,8 +9,8 @@ import Helmet from 'react-helmet';
 import {Link} from "react-router";
 import Responsive from 'react-responsive';
 import NavBar from 'components/NavBar';
-
-
+import NavigateBefore from 'material-ui/svg-icons/image/navigate-before'
+import NavigateNext from 'material-ui/svg-icons/image/navigate-next'
 /* allow us to link to different pages in project folder*/
 
 export default class Home extends React.PureComponent {
@@ -93,7 +93,7 @@ export default class Home extends React.PureComponent {
 
     const scrollStyle2 = {
         width: "25%",
-        marginLeft: "22vw"
+        marginLeft: "21vw"
     }
 
     const backgroundStyle = {
@@ -162,7 +162,8 @@ export default class Home extends React.PureComponent {
         }
 
         const contentStyle = {
-            fontFamily: "serif",
+            fontFamily: "tahoma",
+            fontSize: ".70em",
             textAlign: "center"
         }
 
@@ -252,33 +253,11 @@ export default class Home extends React.PureComponent {
                 </div>
             </Responsive>
 
-            <Responsive maxDeviceWidth = {1023}>
-                <div style = {mainStyleMobile}>
-
-                    <div style = {navStyleMobile}>
-                        <div style = {{
-                            color: "#eeeeee",
-                            fontFamily: "Trebuchet MS",
-                            fontStyle: "light",
-                            fontWeight: "400",
-                            fontSize: "1.5em",
-                            textTransform: "uppercase",
-                            textAlign: "center",
-                            }}>
-                            word on reel weekly
-                        </div>
-
-                    </div>
-
-
-                </div>
-            </Responsive>
-
             <Responsive minDeviceWidth = {1024}>
 
                 <div style = {scrollStyle}>
                     <div style = {scrollStyle2}>
-                        [-- --] Editor's Picks
+                    <NavigateBefore/><NavigateNext/> Editor's Picks
                     </div>
                 </div>
 

@@ -16,35 +16,6 @@ import NavigateNext from 'material-ui/svg-icons/image/navigate-next'
 export default class Home extends React.PureComponent {
   render() {
 
-    const everything = {
-
-    }
-
-    const mainStyle = {
-        display: "flex",
-        flexDirection: "column",
-        /*flexWrap: "no-wrap",*/
-        /*padding: "13.5%",*/
-        background:"url(https://68.media.tumblr.com/8ba6be52a6cb41fe964cd7fbb94a3e02/tumblr_on2pafGDUw1vieawno1_1280.jpg)",
-        backgroundSize:"cover",
-        Width:"100vw",
-        /*height:"auto",*/
-    }
-
-    const mainStyleMobile = {
-        display: "flex",
-        flexDirection: "column",
-        /*flexWrap: "no-wrap",*/
-        /*padding: "13.5%",*/
-        background:"url(https://68.media.tumblr.com/8ba6be52a6cb41fe964cd7fbb94a3e02/tumblr_on2pafGDUw1vieawno1_1280.jpg)",
-        backgroundSize:"cover",
-        Width:"100%",
-        /*height:"auto",*/
-    }
-
-
-
-
     const navStyleMobile = {
         display: "flex",
         flexDirection: "column",
@@ -162,7 +133,8 @@ export default class Home extends React.PureComponent {
         }
 
         const contentStyle = {
-            fontFamily: "serif",
+            fontFamily: "tahoma",
+            fontSize: ".70em",
             textAlign: "center"
         }
 
@@ -236,21 +208,16 @@ export default class Home extends React.PureComponent {
             <Responsive maxDeviceWidth = {1023}>
                 <NavBar/>
             </Responsive>
+
+            <Responsive minDeviceWidth = {1024}>
+                <NavBar/>
+            </Responsive>
+
         </header>
 
 
         <main>
-            <Responsive minDeviceWidth = {1024}>
-                <div style = {mainStyle}>
 
-                    <NavBar/>
-
-                    <div style = {currentIssue}>
-                        When your Cinema gets the blues...
-                    </div>
-
-                </div>
-            </Responsive>
 
             <Responsive minDeviceWidth = {1024}>
 
