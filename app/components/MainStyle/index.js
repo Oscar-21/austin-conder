@@ -51,6 +51,7 @@ class MainStyle extends React.PureComponent {
 
     return (
     <div>
+
         <div style = {mainStyle}>
 </div>
 

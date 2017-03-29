@@ -10,7 +10,6 @@ import {Link} from "react-router";
 import AppBar from 'material-ui/AppBar';
 import Menu from 'material-ui/svg-icons/navigation/menu';
 import RaisedButton from 'material-ui/RaisedButton';
-import FontAwesome from 'react-fontawesome';
 
 class NavBar extends React.PureComponent {
 
@@ -208,7 +207,6 @@ class NavBar extends React.PureComponent {
 
                     <RaisedButton label="Secondary" fullWidth={false} backgroundColor="black"  labelColor="white" style={buttonStyle} labelStyle={buttonStyle} />
 
-                    <FontAwesome name='facebook-official' />
 
                     <div style = {titleStyleLap}>
                         word on reel weekly
@@ -228,14 +226,6 @@ class NavBar extends React.PureComponent {
             <div>
 
             <AppBar onLeftIconButtonTouchTap={this.handleMenu} title="Word on Reel Weekly" disabledLabelColor="black" disabledBackgroundColor="black" titleStyle = {navStyleMobile} style = {colorStyle}/>
-                <FontAwesome
-                      className='super-crazy-colors'
-                      name='rocket'
-                      size='2x'
-                      spin
-                      style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
-                    />
-
             </div>
 
             {this.showMenu()}

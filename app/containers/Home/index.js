@@ -134,14 +134,16 @@ export default class Home extends React.PureComponent {
 
         const contentStyle = {
             fontFamily: "tahoma",
-            fontSize: ".70em",
-            textAlign: "center"
+            fontSize: ".65em",
+            textAlign: "center",
+            fontWeight: "Bold",
+            color: "#a633cc"
         }
 
         const articleTitle = {
-            fontFamily: "Romantic",
-            fontSize: ".84em",
-            fontWeight: "bold",
+            fontFamily: "serif",
+            fontSize: ".75em",
+            fontWeight: "600",
             textAlign: "center",
             color: " #black",
             marginTop: "5px"
@@ -159,13 +161,11 @@ export default class Home extends React.PureComponent {
         }
 
         const authorStyle = {
-            display: "flex",
-            flexDirection: "column",
             fontFamily: "Romantic",
             fontSize: ".63em",
             fontWeight: "bold",
             marginLeft: "130px",
-            color: "  ##0C090A"
+            color: "#0C090A"
 
         }
 
@@ -237,13 +237,12 @@ export default class Home extends React.PureComponent {
                             Cinematograpy
                             </div>
                             <div style = {articleTitle}>
-                                Blue
+                                On camera filters in Three colors: Blue
                             </div>
-
                             <div style = {authorStyle}>
-                                - - - Lorem Ipsum
+                                ---Author
                             </div>
-                        </div>
+</div>
                     </div>
 
                     <div style={picBox}>
@@ -253,11 +252,11 @@ export default class Home extends React.PureComponent {
                                 Set Design
                             </div>
                                 <div style = {articleTitle}>
-                                <Link to= "/About">About</Link>
+                                Ophuls First Color Film.
                             </div>
 
                             <div style = {authorStyle}>
-                                - - - Lorem Ipsum
+                                ---Author
                             </div>
 
                         </div>
@@ -276,7 +275,7 @@ export default class Home extends React.PureComponent {
                             </div>
 
                             <div style = {authorStyle}>
-                                - - - Lorem Ipsum
+                                ---Author
                             </div>
                         </div>
                     </div>
@@ -292,7 +291,7 @@ export default class Home extends React.PureComponent {
                             </div>
 
                             <div style = {authorStyle}>
-                                - - - Lorem Ipsum
+                                --Author
                             </div>
                         </div>
                     </div>
