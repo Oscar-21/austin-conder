@@ -9,7 +9,6 @@ import Responsive from 'react-responsive';
 import {Link} from "react-router";
 import AppBar from 'material-ui/AppBar';
 import Menu from 'material-ui/svg-icons/navigation/menu';
-import RaisedButton from 'material-ui/RaisedButton';
 
 class NavBar extends React.PureComponent {
 
@@ -204,8 +203,6 @@ class NavBar extends React.PureComponent {
             <Responsive minDeviceWidth = {1024}>
 
                 <div style = {mainStyle}>
-
-                    <RaisedButton label="Secondary" fullWidth={false} backgroundColor="black"  labelColor="white" style={buttonStyle} labelStyle={buttonStyle} />
 
 
                     <div style = {titleStyleLap}>

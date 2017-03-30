@@ -116,10 +116,8 @@ export default class Home extends React.PureComponent {
             marginBottom: "255px"
         }
 
-        const articleStyleMobile = {
-
+ const articleStyleMobile = {
         }
-
         const articleImg = {
             width: "225px",
             height: "120px",
