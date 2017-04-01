@@ -15,6 +15,25 @@ export default function createRoutes() {
 
   return [
     {
+      path: '/Test',
+      name: 'Test',
+      getComponent(nextState, cb) {
+      import('containers/Test')
+      .then(loadModule(cb))
+      .catch(errorLoading);
+      },
+    },
+
+    {
+        path: '/Dashboard',
+        name: 'Dashboard',
+        getComponent(nextState, cb) {
+        import('containers/Dashboard')
+          .then(loadModule(cb))
+          .catch(errorLoading);
+      },
+    },
+    {
         path: '/Blue',
         name: 'Blue',
         getComponent(nextState, cb) {

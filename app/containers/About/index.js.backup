@@ -3,12 +3,12 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import {Link} from "react-router";
 import Responsive from 'react-responsive';
-import NavBar from 'components/NavBar';
+import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn} from 'material-ui/Table';
 
 /*import Share from 'material-ui/svg-icons/social/share'
 import Whatshot from 'material-ui/svg-icons/social/whatshot'*/
-
 /* allow us to link to different pages in project folder*/
+
 export default class About extends React.PureComponent {
 
   render() {
@@ -274,7 +274,7 @@ export default class About extends React.PureComponent {
     }
 
 
-
+    
 
     return (
       <div>
@@ -293,10 +293,16 @@ export default class About extends React.PureComponent {
             </div>
           </Responsive>
 
-
+          
           <Responsive maxDeviceWidth = {1023}>
-          <NavBar/>
             <div style = {mainStyleMobile }>
+              <div style = {titleStyleLapMobile }>
+                the word on reel weekly
+              </div>
+
+              <nav style = {navStyleMobile }>
+                <Link to="/Blue"> / Home /</Link> about us / browse by topic / archive /
+              </nav>
             </div>
           </Responsive>
         </header>
@@ -381,7 +387,6 @@ export default class About extends React.PureComponent {
 
                   <div style = {contentStyleMobile }>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
                   </div>
 
                   <div style = {contentStyleMobile }>
