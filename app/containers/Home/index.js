@@ -16,19 +16,78 @@ import NavigateNext from 'material-ui/svg-icons/image/navigate-next'
 export default class Home extends React.PureComponent {
   render() {
 
+    const mainStyle = {
+      display: "flex",
+      flexDirection: "column",
+      background:"url(https://68.media.tumblr.com/8ba6be52a6cb41fe964cd7fbb94a3e02/tumblr_on2pafGDUw1vieawno1_1280.jpg)",
+      backgroundSize:"cover",
+      Width:"100vw",
+
+    }
+
+    const titleStyle = {
+      color: "#eeeeee",
+      fontFamily: "Trebuchet MS",
+      fontStyle: "light",
+      fontWeight: "400",
+      fontSize: "2.1em",
+      textTransform: "uppercase",
+      textAlign: "center"
+
+
+    }
+
+
+    const currentIssue = {
+      display: "flex",
+      color: "#FFFFFF",
+      justifyContent: "center",
+      fontSize: "2.1em",
+      fontFamily: "Source Sans Pro",
+      fontStyle: "light",
+      fontWeight: "400",
+      textTransform: "uppercase",
+      letterSpacing: "6px",
+      textAlign: "center",
+      paddingTop: "12%",
+      paddingBottom: "10%",
+    /*  marginBottom: "3%"*/
+
+    }
+
+    const navStyle = {
+      marginTop: "6px",
+      textTransform: "uppercase",
+      textAlign: "center",
+
+      verticalAlign: "middle",
+      textTransform: "uppercase",
+      letterSpacing: "2.5px",
+      fontSize: "13px",
+      fonFamily: "Montserrat",
+      color: "#fff",
+      textDecoration:"None"
+
+    }
+
+
     const scrollStyle = {
       background: "#E9FFFF"
     }
     const scrollStyle2 = {
+     /* width: "25%",
+      marginLeft: "21vw"*/
+
       width: "25%",
-      marginLeft: "21vw"
+      marginLeft: "10vw"
+
     }
     const backgroundStyle = {
       display: "flex",
       justifyContent: "center",
       background: "  #E9FFFF",
-      height: "20%",
-      paddingTop: "6.5%",
+   /*   height: "20%",
+      paddingTop: "6.5%",*/
 
     }
     const backgroundStyleMobile = {
@@ -41,11 +100,15 @@ export default class Home extends React.PureComponent {
       display: "flex",
       justifyContent: "center",
       flexDirection: "column",
-      width: "13%",
+     /* width: "13%",
       height: "8vh",
       marginRight: "1vw",
-      marginTop: "8vh"
+      marginTop: "8vh"*/
 
+      width: "13%",
+      height: "auto",
+      marginRight: "7%",
+      marginTop: "1vh"
     }
     const picBoxMobile = {
       display: "flex",
@@ -54,9 +117,10 @@ export default class Home extends React.PureComponent {
       marginTop: "7px"
 
     }
-    const articleStyle = {
-      marginBottom: "255px"
-    }
+   /* const articleStyle = {
+     /* marginBottom: "255px"
+
+    }*/
     const articleImg = {
       width: "225px",
       height: "120px",
@@ -130,7 +194,22 @@ export default class Home extends React.PureComponent {
 
           {/* laptop navbar and title*/}
           <Responsive minDeviceWidth = {1024}>
+
+            <div style = {mainStyle}>
+
             <NavBar/>
+              <div style = {titleStyle}>
+                word on reel weekly
+              </div>
+
+      {/*   <nav style = {navStyle}>
+                <Link to="/Blue"> / Home /</Link> about us / browse by topic / archive /
+              </nav>*/}
+
+              <div style = {currentIssue}>
+                When your Cinema gets the blues...
+              </div>
+            </div>
           </Responsive>
         </header>
 
@@ -148,13 +227,13 @@ export default class Home extends React.PureComponent {
 
             <div style = {backgroundStyle}>
               <div style={picBox}>
-              <div style = {articleStyle}>
-                <img style = {articleImg} src="https://68.media.tumblr.com/630ee7e6247d5f16efe7f315bff42707/tumblr_n3uidp4lD71ty9ma3o1_1280.jpg"  alt=""/>
-                <div style = {contentStyle}>
-                  Cinematograpy
-                  </div>
+                <div>
+                  <img style = {articleImg} src="https://68.media.tumblr.com/630ee7e6247d5f16efe7f315bff42707/tumblr_n3uidp4lD71ty9ma3o1_1280.jpg"  alt=""/>
+                    <div style = {contentStyle}>
+                    Cinematograpy
+                    </div>
                   <div style = {articleTitle}>
-                    On camera filters in Three colors: Blue
+                    <Link to= "/Article">Lorem Ipsum dolor sit</Link>
                   </div>
                   <div style = {authorStyle}>
                     ---Author
@@ -163,13 +242,13 @@ export default class Home extends React.PureComponent {
               </div>
 
               <div style={picBox}>
-                <div style = {articleStyle}>
+                <div>
                   <img style = {articleImg} src="https://68.media.tumblr.com/618291bc87361d807acd04604f0966d7/tumblr_n3uidp4lD71ty9ma3o3_1280.jpg" alt=""/>
                   <div style = {contentStyle}>
                     Set Design
                   </div>
                   <div style = {articleTitle}>
-                    Ophuls First Color Film.
+                    <Link to= "/ArticleTwo">Lorem Ipsum dolor sit</Link>
                   </div>
                   <div style = {authorStyle}>
                     ---Author
@@ -177,13 +256,13 @@ export default class Home extends React.PureComponent {
                 </div>
               </div>
               <div style={picBox}>
-                <div style = {articleStyle}>
+                <div>
                   <img style = {articleImg} src="https://68.media.tumblr.com/9ee7cb189d0abfe5a3168cf8b07ac066/tumblr_n3uidp4lD71ty9ma3o2_1280.jpg" alt=""/>
                   <div style = {contentStyle}>
                     Directors
                   </div>
                   <div style = { articleTitle }>
-                    <Link to= "/About">Lorem Ipsum dolor sit</Link>
+                    <Link to= "/ArticleThree">Lorem Ipsum dolor sit</Link>
                   </div>
                   <div style = {authorStyle}>
                     ---Author
@@ -192,7 +271,7 @@ export default class Home extends React.PureComponent {
               </div>
 
                 <div style={picBox}>
-                  <div style = {articleStyle}>
+                  <div>
                     <img style = {articleImg} src="https://68.media.tumblr.com/cbc5d0a14637c62e9a7c36bbf166286d/tumblr_n3uidp4lD71ty9ma3o4_1280.jpg" alt=""/>
 
                     <div style = {contentStyle}>
@@ -200,7 +279,7 @@ export default class Home extends React.PureComponent {
                     </div>
 
                     <div style = {articleTitle}>
-                      Lorem Ipsum dolor sit
+                    <Link to= "/ArticleFour">Lorem Ipsum dolor sit</Link>
                     </div>
 
                     <div style = {authorStyle}>
@@ -216,12 +295,11 @@ export default class Home extends React.PureComponent {
       <Responsive maxDeviceWidth = {1023}>
           <div style = {backgroundStyleMobile}>
               <div style={picBoxMobile}>
-                  <div style = {articleStyle}>
-                      <img style = {articleImgMobile} src="
-                      https://68.media.tumblr.com/630ee7e6247d5f16efe7f315bff42707/tumblr_n3uidp4lD71ty9ma3o1_1280.jpg" alt=""/>
+                  <div>
+                      <img style = {articleImgMobile} src="https://68.media.tumblr.com/630ee7e6247d5f16efe7f315bff42707/tumblr_n3uidp4lD71ty9ma3o1_1280.jpg" alt=""/>
 
                       <div style = {articleTitleMobile}>
-                          Lorem ipsum dolor sit
+                        <Link to= "/Article">Lorem Ipsum dolor sit</Link>
                       </div>
 
                       <div style = {authorStyleMobile}>
@@ -232,12 +310,12 @@ export default class Home extends React.PureComponent {
 
           <div style={picBoxMobile}>
 
-              <div style = {articleStyle}>
+              <div>
 
                   <img style = {articleImgMobile}         src="https://68.media.tumblr.com/618291bc87361d807acd04604f0966d7/tumblr_n3uidp4lD71ty9ma3o3_1280.jpg" alt=""/>
 
                   <div style = {articleTitleMobile}>
-                      Lorem Ipsum dolor sit
+                    <Link to= "/ArticleTwo">Lorem Ipsum dolor sit</Link>
                   </div>
 
                   <div style = {authorStyleMobile}>
@@ -249,12 +327,12 @@ export default class Home extends React.PureComponent {
 
 
               <div style={picBoxMobile}>
-                  <div style = {articleStyle}>
+                  <div>
                       <img style = {articleImgMobile} src="https://68.media.tumblr.com/9ee7cb189d0abfe5a3168cf8b07ac066/tumblr_n3uidp4lD71ty9ma3o2_1280.jpg" alt=""/>
 
 
                       <div style = { articleTitleMobile }>
-                          <Link to= "/About">Lorem Ipsum dolor sit</Link>
+                          <Link to= "/ArticleThree">Lorem Ipsum dolor sit</Link>
                       </div>
 
                       <div style = {authorStyleMobile}>
@@ -264,11 +342,11 @@ export default class Home extends React.PureComponent {
               </div>
 
           <div style={picBoxMobile}>
-                  <div style = {articleStyle}>
+                  <div>
                       <img style = {articleImgMobile}            src="https://68.media.tumblr.com/cbc5d0a14637c62e9a7c36bbf166286d/tumblr_n3uidp4lD71ty9ma3o4_1280.jpg" alt=""/>
 
                       <div style = {articleTitleMobile}>
-                          Lorem Ipsum dolor sit
+                        <Link to= "/ArticleFour">Lorem Ipsum dolor sit</Link>
                       </div>
 
                       <div style = {authorStyleMobile}>

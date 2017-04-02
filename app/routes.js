@@ -15,6 +15,39 @@ export default function createRoutes() {
 
   return [
     {
+      path: '/ArticleTwo',
+      name: 'ArticleTwo',
+      getComponent(nextState, cb) {
+      import('containers/ArticleTwo')
+      .then(loadModule(cb))
+      .catch(errorLoading);
+      },
+    },
+
+    {
+      path: '/ArticleThree',
+      name: 'ArticleThree',
+      getComponent(nextState, cb) {
+      import('containers/ArticleThree')
+      .then(loadModule(cb))
+      .catch(errorLoading);
+      },
+    },
+
+
+    {
+      path: '/ArticleFour',
+      name: 'ArticleFour',
+      getComponent(nextState, cb) {
+      import('containers/ArticleFour')
+      .then(loadModule(cb))
+      .catch(errorLoading);
+      },
+    },
+
+
+
+    {
       path: '/Test',
       name: 'Test',
       getComponent(nextState, cb) {
@@ -43,10 +76,10 @@ export default function createRoutes() {
       },
     },
     {
-        path: '/about',
-        name: 'About',
+        path: '/Article',
+        name: 'Article',
         getComponent(nextState, cb) {
-        import('containers/About')
+        import('containers/Article')
           .then(loadModule(cb))
           .catch(errorLoading);
       },

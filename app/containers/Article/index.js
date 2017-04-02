@@ -3,56 +3,18 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import {Link} from "react-router";
 import Responsive from 'react-responsive';
-import NavBar from 'components/NavBar';
+import ArticleStyle from 'components/ArticleStyle';
 
 /*import Share from 'material-ui/svg-icons/social/share'
 import Whatshot from 'material-ui/svg-icons/social/whatshot'*/
 
 /* allow us to link to different pages in project folder*/
-export default class About extends React.PureComponent {
+export default class Article extends React.PureComponent {
 
   render() {
 
 
-    // Navbar and Title begins hear
-
-    const mainStyle = {
-      display: "flex",
-      flexDirection: "column",
-      width:"100%",
-      position: "fixed",
-      top: "0",
-      border: "1px solid black",
-      background:"url(https://68.media.tumblr.com/8ba6be52a6cb41fe964cd7fbb94a3e02/tumblr_on2pafGDUw1vieawno1_1280.jpg)",
-      backgroundSize: "cover"
-    }
-
-    const titleStyleLap = {
-
-      fontFamily: "Trebuchet MS",
-      fontStyle: "light",
-      fontWeight: "400",
-      fontSize: "1.1em",
-      color: "#eeeeee",
-      paddingLeft: "5%",
-      marginTop: "1%"
-    }
-
-    const navStyle = {
-      textTransform: "uppercase",
-      textAlign: "center",
-      verticalAlign: "middle",
-      textTransform: "uppercase",
-      letterSpacing: "2.5px",
-      fontSize: "13px",
-      fonFamily: "Montserrat",
-      textDecoration:"None",
-      color: "#eeeeee"
-    }
-
-
-
-    // content Parent
+        // content Parent
     const backgroundStyle = {
      background: "  #F5F5F5",
       display: "flex",
@@ -138,25 +100,7 @@ export default class About extends React.PureComponent {
       /*marginLeft: "33.33%",
       marginBottom: "2%"*/
     }
-
-    // MOBILE STYLE
-    //
-    //
-    //
-
-    // Navbar and Title begins hear
-
-    const mainStyleMobile = {
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: 'center',
-      width:"100%",
-      border: "1px solid black",
-      background:"url(https://68.media.tumblr.com/8ba6be52a6cb41fe964cd7fbb94a3e02/tumblr_on2pafGDUw1vieawno1_1280.jpg)",
-      backgroundSize: "cover"
-    }
-
-    const titleStyleLapMobile= {
+        const titleStyleLapMobile= {
 
       fontFamily: "Trebuchet MS",
       fontStyle: "light",
@@ -278,27 +222,10 @@ export default class About extends React.PureComponent {
 
     return (
       <div>
-        <Helmet title="About" meta={[ { name: 'description', content: 'Description of Home' }]}/>
+        <Helmet title="Article" meta={[ { name: 'description', content: 'Description of Home' }]}/>
 
         <header>
-          <Responsive minDeviceWidth = {1025}>
-            <div style = {mainStyle}>
-              <div style = {titleStyleLap}>
-                the word on reel weekly
-              </div>
-
-              <nav style = {navStyle}>
-                <Link to="/Blue"> / Home /</Link> about us / browse by topic / archive /
-              </nav>
-            </div>
-          </Responsive>
-
-
-          <Responsive maxDeviceWidth = {1023}>
-          <NavBar/>
-            <div style = {mainStyleMobile }>
-            </div>
-          </Responsive>
+          <ArticleStyle/>
         </header>
 
         <main>
