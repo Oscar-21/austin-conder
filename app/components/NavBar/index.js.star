@@ -8,14 +8,13 @@ import React from 'react';
 import Responsive from 'react-responsive';
 import {Link} from "react-router";
 import AppBar from 'material-ui/AppBar';
-/*import Menu from 'material-ui/svg-icons/navigation/menu';*/
-/*import RaisedButton from 'material-ui/RaisedButton';*/
+import Menu from 'material-ui/svg-icons/navigation/menu';
+import RaisedButton from 'material-ui/RaisedButton';
 import Icon from 'components/Icon';
 import Android from 'material-ui/svg-icons/Action/android'
 
 import Paper from 'material-ui/Paper';
 import MenuItem from 'material-ui/MenuItem';
-import Menu from 'material-ui/Menu';
 
 class NavBar extends React.PureComponent {
 
@@ -57,23 +56,17 @@ class NavBar extends React.PureComponent {
       margin: "3px",
       border: "3px solid #408193",
       padding: "5px"
-    }
-
-    const style = {
-  display: 'inline-block',
-  margin: '16px 32px 16px 0',
-};
+    };
 
     if (this.state.menuOpen == true) {
       return (
-        <Paper style={style}>
-   <Menu>
-     <MenuItem primaryText="Refresh" />
-     <MenuItem primaryText="Help &amp; feedback" />
-     <MenuItem primaryText="Settings" />
-     <MenuItem primaryText="Sign out" />
-   </Menu>
- </Paper>
+        <nav style={nav}>
+          <Link to="/" style={navLink}>orem Ipsum dolor sit</Link>
+          <Link style={navLink}>Link Two</Link>
+          <Link style={navLink}>Link Three</Link>
+          <Link style={navLink}>Link Four</Link>
+          <Link style={navLink}>Link Five</Link>
+        </nav>
       )
     }
   }
@@ -172,7 +165,7 @@ class NavBar extends React.PureComponent {
               </div>
 
               <div>
-              <Android/>
+              </Android>
               </div>
 
               <div style={navButtonNew}>

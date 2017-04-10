@@ -12,15 +12,11 @@
 
 import React from 'react';
 import Helmet from 'react-helmet';
-/*import {cyan500} from 'material-ui/styles/colors';
+import {cyan500} from 'material-ui/styles/colors';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';*/
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
-
-import Paper from 'material-ui/Paper';
-import MenuItem from 'material-ui/MenuItem';
-import Menu from 'material-ui/Menu';
 export default class Dashboard extends React.PureComponent {
 
   constructor(props) {
@@ -32,49 +28,9 @@ export default class Dashboard extends React.PureComponent {
       title: '',
       body: '',
       image: '',
-      preview: '',
-      menuOpen: false
+      preview: ''
     };
   }
-
-  handleMenu = () => {
-    if (this.state.menuOpen == false) {
-      this.setState({menuOpen: true})
-    } else if (this.state.menuOpen == true) {
-      this.setState({menuOpen: false})
-    }
-  }
-
-  showMenu = () => {
-    const nav = {
-      display: "flex",
-      flexDirection: "column",
-      alignSelf: "center"
-    }
-    const navLink = {
-      textAlign: "center",
-      margin: "3px",
-      border: "3px solid #408193",
-      padding: "5px"
-    }
-
-    const style = {
-  display: 'inline-block',
-  margin: '16px 32px 16px 0',
-};
-if (this.state.menuOpen == true) {
-  return (
-    <Paper style={style}>
-<Menu>
- <MenuItem primaryText="Refresh" />
- <MenuItem primaryText="Help &amp; feedback" />
- <MenuItem primaryText="Settings" />
- <MenuItem primaryText="Sign out" />
-</Menu>
-</Paper>
-  )
-}
-}
   // function definition of handleTitle
   //  to pass it a parameter:
   //      parameter={this.handleTitle}
@@ -127,7 +83,7 @@ if (this.state.menuOpen == true) {
   }
 
   render() {
-    /*const muiTheme = getMuiTheme({
+    const muiTheme = getMuiTheme({
       palette: {
         textColor: cyan500
       },
@@ -135,23 +91,8 @@ if (this.state.menuOpen == true) {
         height: 50
       }
 
-    });*/
-//imports
-const navStyleMobile = {
-  fontFamily: "Trebuchet MS",
-  fontStyle: "light",
-  fontWeight: "400",
-  fontSize: "1.1em",
-  textTransform: "uppercase",
-  background: "url(https://68.media.tumblr.com/8 ba6be52a6cb41fe964cd7fbb94a3e02 / tumblr_on2pafGDUw1vieawno1_1280.jpg) "
+    });
 
-}
-const colorStyle = {
-  background: "url(https://68.media.tumblr.com/8ba6be52a6cb41fe964cd7fbb94a3e02/tumblr_on2pafGDUw1vieawno1_1280.jpg)"
-}
-
-
-//originals
     const mainStyle = {
       fontFamily: 'Lato',
       fontSize: '1.5em',
@@ -186,13 +127,9 @@ const colorStyle = {
         ]}/>
         <div style={mainStyle}>
           <div>
-            <div>
-              <AppBar onLeftIconButtonTouchTap={this.handleMenu} title="Word on Reel Weekly" disabledLabelColor="black" disabledBackgroundColor="black" titleStyle={navStyleMobile} style={colorStyle}/>
-            </div>
-
-            {this.showMenu()}
-
-
+            <MuiThemeProvider muiTheme={muiTheme}>
+              <AppBar title='Dashboard'/>
+            </MuiThemeProvider>
           </div>
           <div style={middleStyle}>
             Article Title
