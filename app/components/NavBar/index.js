@@ -9,6 +9,9 @@ import Responsive from 'react-responsive';
 import {Link} from "react-router";
 import AppBar from 'material-ui/AppBar';
 import Menu from 'material-ui/svg-icons/navigation/menu';
+import RaisedButton from 'material-ui/RaisedButton';
+import Icon from 'components/Icon';
+import Android from 'material-ui/svg-icons/Action/android'
 
 class NavBar extends React.PureComponent {
 
@@ -61,7 +64,7 @@ class NavBar extends React.PureComponent {
     {
       return(
         <nav style = {nav}>
-          <Link style = {navLink}>Link One</Link>
+          <Link to="/" style = {navLink}>orem Ipsum dolor sit</Link>
           <Link style = {navLink}>Link Two</Link>
           <Link style = {navLink}>Link Three</Link>
           <Link style = {navLink}>Link Four</Link>
@@ -75,7 +78,7 @@ class NavBar extends React.PureComponent {
 
    // desktop stylings
    const navStyleNew = {
-     background: "#0C090A",
+     background: " #003B4D ",
      marginBottom: "2%",
      display: "flex",
      flexDirection: "row",
@@ -83,6 +86,7 @@ class NavBar extends React.PureComponent {
      height: "5vh"
    }
    const navButtonNew = {
+     background: "#003B4D" ,
      color: "white",
      width: "5%",
      border: "1px solid #999999"
@@ -132,7 +136,7 @@ class NavBar extends React.PureComponent {
             <div style = {navStyleNew}>
 
               <div style = {navButtonNew}>
-                logo
+              <Icon/>
               </div>
 
               <div style = {navChildNew}>
@@ -165,8 +169,8 @@ class NavBar extends React.PureComponent {
                 </div>
               </div>
 
-              <div style = {navButtonNew}>
-                facebook
+              <div>
+              logo
               </div>
 
               <div style = {navButtonNew}>

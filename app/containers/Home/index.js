@@ -9,8 +9,10 @@ import Helmet from 'react-helmet';
 import {Link} from "react-router";
 import Responsive from 'react-responsive';
 import NavBar from 'components/NavBar';
+import Icon from 'components/Icon';
 import NavigateBefore from 'material-ui/svg-icons/image/navigate-before'
 import NavigateNext from 'material-ui/svg-icons/image/navigate-next'
+
 /* allow us to link to different pages in project folder*/
 
 export default class Home extends React.PureComponent {
@@ -19,10 +21,9 @@ export default class Home extends React.PureComponent {
     const mainStyle = {
       display: "flex",
       flexDirection: "column",
-      background:"url(https://68.media.tumblr.com/8ba6be52a6cb41fe964cd7fbb94a3e02/tumblr_on2pafGDUw1vieawno1_1280.jpg)",
-      backgroundSize:"cover",
-      Width:"100vw",
-
+      background: "url(https://68.media.tumblr.com/8ba6be52a6cb41fe964cd7fbb94a3e02/tumblr_on2pafGDUw1vieawno1_1280.jpg)",
+      backgroundSize: "cover",
+      Width: "100vw"
     }
 
     const titleStyle = {
@@ -34,9 +35,7 @@ export default class Home extends React.PureComponent {
       textTransform: "uppercase",
       textAlign: "center"
 
-
     }
-
 
     const currentIssue = {
       display: "flex",
@@ -51,7 +50,7 @@ export default class Home extends React.PureComponent {
       textAlign: "center",
       paddingTop: "12%",
       paddingBottom: "10%",
-    /*  marginBottom: "3%"*/
+      /*  marginBottom: "3%"*/
 
     }
 
@@ -66,16 +65,15 @@ export default class Home extends React.PureComponent {
       fontSize: "13px",
       fonFamily: "Montserrat",
       color: "#fff",
-      textDecoration:"None"
+      textDecoration: "None"
 
     }
-
 
     const scrollStyle = {
       background: "#E9FFFF"
     }
     const scrollStyle2 = {
-     /* width: "25%",
+      /* width: "25%",
       marginLeft: "21vw"*/
 
       width: "25%",
@@ -86,7 +84,7 @@ export default class Home extends React.PureComponent {
       display: "flex",
       justifyContent: "center",
       background: "  #E9FFFF",
-   /*   height: "20%",
+      /*   height: "20%",
       paddingTop: "6.5%",*/
 
     }
@@ -100,7 +98,7 @@ export default class Home extends React.PureComponent {
       display: "flex",
       justifyContent: "center",
       flexDirection: "column",
-     /* width: "13%",
+      /* width: "13%",
       height: "8vh",
       marginRight: "1vw",
       marginTop: "8vh"*/
@@ -117,19 +115,17 @@ export default class Home extends React.PureComponent {
       marginTop: "7px"
 
     }
-   /* const articleStyle = {
+    /* const articleStyle = {
      /* marginBottom: "255px"
 
     }*/
     const articleImg = {
       width: "225px",
-      height: "120px",
-
+      height: "120px"
     }
     const articleImgMobile = {
       width: "100%",
-      height: "auto",
-
+      height: "auto"
     }
     const contentStyle = {
       fontFamily: "tahoma",
@@ -177,36 +173,40 @@ export default class Home extends React.PureComponent {
     const footStyle = {
       display: "flex",
       flexDirection: "column",
-      background:  "#6C6C6C",
+      background: "#6C6C6C",
       height: "25vh",
-      width: "100%",
+      width: "100%"
     }
     return (
       <div>
-        <Helmet title="Home" meta={[ { name: 'description', content: 'Description of Home' }]}/>
+        <Helmet title="Home" meta={[{
+            name: 'description',
+            content: 'Description of Home'
+          }
+        ]}/>
 
         <header>
           {/*mobile navbar*/}
-          <Responsive maxDeviceWidth = {1023}>
+          <Responsive maxDeviceWidth={1023}>
             <NavBar/>
           </Responsive>
 
-
           {/* laptop navbar and title*/}
-          <Responsive minDeviceWidth = {1024}>
+          <Responsive minDeviceWidth={1024}>
 
-            <div style = {mainStyle}>
+            <div style={mainStyle}>
 
-            <NavBar/>
-              <div style = {titleStyle}>
+              <NavBar/>
+              <div style={titleStyle}>
                 word on reel weekly
+                <Icon/>
               </div>
 
-      {/*   <nav style = {navStyle}>
+              {/*   <nav style = {navStyle}>
                 <Link to="/Blue"> / Home /</Link> about us / browse by topic / archive /
               </nav>*/}
 
-              <div style = {currentIssue}>
+              <div style={currentIssue}>
                 When your Cinema gets the blues...
               </div>
             </div>
@@ -215,27 +215,27 @@ export default class Home extends React.PureComponent {
 
         <main>
 
-          <Responsive minDeviceWidth = {1024}>
+          <Responsive minDeviceWidth={1024}>
 
-            <div style = {scrollStyle}>
-              <div style = {scrollStyle2}>
+            <div style={scrollStyle}>
+              <div style={scrollStyle2}>
                 <NavigateBefore/>
                 <NavigateNext/>
                 Editor's Picks
               </div>
             </div>
 
-            <div style = {backgroundStyle}>
+            <div style={backgroundStyle}>
               <div style={picBox}>
                 <div>
-                  <img style = {articleImg} src="https://68.media.tumblr.com/630ee7e6247d5f16efe7f315bff42707/tumblr_n3uidp4lD71ty9ma3o1_1280.jpg"  alt=""/>
-                    <div style = {contentStyle}>
+                  <img style={articleImg} src="https://68.media.tumblr.com/630ee7e6247d5f16efe7f315bff42707/tumblr_n3uidp4lD71ty9ma3o1_1280.jpg" alt=""/>
+                  <div style={contentStyle}>
                     Cinematograpy
-                    </div>
-                  <div style = {articleTitle}>
-                    <Link to= "/Article">Lorem Ipsum dolor sit</Link>
                   </div>
-                  <div style = {authorStyle}>
+                  <div style={articleTitle}>
+                    <Link to="/Article">Lorem Ipsum dolor sit</Link>
+                  </div>
+                  <div style={authorStyle}>
                     ---Author
                   </div>
                 </div>
@@ -243,160 +243,154 @@ export default class Home extends React.PureComponent {
 
               <div style={picBox}>
                 <div>
-                  <img style = {articleImg} src="https://68.media.tumblr.com/618291bc87361d807acd04604f0966d7/tumblr_n3uidp4lD71ty9ma3o3_1280.jpg" alt=""/>
-                  <div style = {contentStyle}>
+                  <img style={articleImg} src="https://68.media.tumblr.com/618291bc87361d807acd04604f0966d7/tumblr_n3uidp4lD71ty9ma3o3_1280.jpg" alt=""/>
+                  <div style={contentStyle}>
                     Set Design
                   </div>
-                  <div style = {articleTitle}>
-                    <Link to= "/ArticleTwo">Lorem Ipsum dolor sit</Link>
+                  <div style={articleTitle}>
+                    <Link to="/ArticleTwo">Lorem Ipsum dolor sit</Link>
                   </div>
-                  <div style = {authorStyle}>
+                  <div style={authorStyle}>
                     ---Author
                   </div>
                 </div>
               </div>
               <div style={picBox}>
                 <div>
-                  <img style = {articleImg} src="https://68.media.tumblr.com/9ee7cb189d0abfe5a3168cf8b07ac066/tumblr_n3uidp4lD71ty9ma3o2_1280.jpg" alt=""/>
-                  <div style = {contentStyle}>
+                  <img style={articleImg} src="https://68.media.tumblr.com/9ee7cb189d0abfe5a3168cf8b07ac066/tumblr_n3uidp4lD71ty9ma3o2_1280.jpg" alt=""/>
+                  <div style={contentStyle}>
                     Directors
                   </div>
-                  <div style = { articleTitle }>
-                    <Link to= "/ArticleThree">Lorem Ipsum dolor sit</Link>
+                  <div style={articleTitle}>
+                    <Link to="/ArticleThree">Lorem Ipsum dolor sit</Link>
                   </div>
-                  <div style = {authorStyle}>
+                  <div style={authorStyle}>
                     ---Author
                   </div>
                 </div>
               </div>
 
-                <div style={picBox}>
-                  <div>
-                    <img style = {articleImg} src="https://68.media.tumblr.com/cbc5d0a14637c62e9a7c36bbf166286d/tumblr_n3uidp4lD71ty9ma3o4_1280.jpg" alt=""/>
+              <div style={picBox}>
+                <div>
+                  <img style={articleImg} src="https://68.media.tumblr.com/cbc5d0a14637c62e9a7c36bbf166286d/tumblr_n3uidp4lD71ty9ma3o4_1280.jpg" alt=""/>
 
-                    <div style = {contentStyle}>
-                      Directors
-                    </div>
-
-                    <div style = {articleTitle}>
-                    <Link to= "/ArticleFour">Lorem Ipsum dolor sit</Link>
-                    </div>
-
-                    <div style = {authorStyle}>
-                      --Author
-                    </div>
-
+                  <div style={contentStyle}>
+                    Directors
                   </div>
+
+                  <div style={articleTitle}>
+                    <Link to="/ArticleFour">Lorem Ipsum dolor sit</Link>
+                  </div>
+
+                  <div style={authorStyle}>
+                    --Author
+                  </div>
+
+                </div>
 
               </div>
             </div>
-      </Responsive>
+          </Responsive>
 
-      <Responsive maxDeviceWidth = {1023}>
-          <div style = {backgroundStyleMobile}>
+          <Responsive maxDeviceWidth={1023}>
+            <div style={backgroundStyleMobile}>
               <div style={picBoxMobile}>
-                  <div>
-                      <img style = {articleImgMobile} src="https://68.media.tumblr.com/630ee7e6247d5f16efe7f315bff42707/tumblr_n3uidp4lD71ty9ma3o1_1280.jpg" alt=""/>
+                <div>
+                  <img style={articleImgMobile} src="https://68.media.tumblr.com/630ee7e6247d5f16efe7f315bff42707/tumblr_n3uidp4lD71ty9ma3o1_1280.jpg" alt=""/>
 
-                      <div style = {articleTitleMobile}>
-                        <Link to= "/Article">Lorem Ipsum dolor sit</Link>
-                      </div>
-
-                      <div style = {authorStyleMobile}>
-                          - - - Lorem Ipsum
-                      </div>
+                  <div style={articleTitleMobile}>
+                    <Link to="/Article">Lorem Ipsum dolor sit</Link>
                   </div>
+
+                  <div style={authorStyleMobile}>
+                    - - - Lorem Ipsum
+                  </div>
+                </div>
               </div>
-
-          <div style={picBoxMobile}>
-
-              <div>
-
-                  <img style = {articleImgMobile}         src="https://68.media.tumblr.com/618291bc87361d807acd04604f0966d7/tumblr_n3uidp4lD71ty9ma3o3_1280.jpg" alt=""/>
-
-                  <div style = {articleTitleMobile}>
-                    <Link to= "/ArticleTwo">Lorem Ipsum dolor sit</Link>
-                  </div>
-
-                  <div style = {authorStyleMobile}>
-                      - - - Lorem Ipsum
-                  </div>
-
-              </div>
-          </div>
-
 
               <div style={picBoxMobile}>
-                  <div>
-                      <img style = {articleImgMobile} src="https://68.media.tumblr.com/9ee7cb189d0abfe5a3168cf8b07ac066/tumblr_n3uidp4lD71ty9ma3o2_1280.jpg" alt=""/>
 
+                <div>
 
-                      <div style = { articleTitleMobile }>
-                          <Link to= "/ArticleThree">Lorem Ipsum dolor sit</Link>
-                      </div>
+                  <img style={articleImgMobile} src="https://68.media.tumblr.com/618291bc87361d807acd04604f0966d7/tumblr_n3uidp4lD71ty9ma3o3_1280.jpg" alt=""/>
 
-                      <div style = {authorStyleMobile}>
-                          - - - Lorem Ipsum
-                      </div>
+                  <div style={articleTitleMobile}>
+                    <Link to="/ArticleTwo">Lorem Ipsum dolor sit</Link>
                   </div>
-              </div>
 
-          <div style={picBoxMobile}>
-                  <div>
-                      <img style = {articleImgMobile}            src="https://68.media.tumblr.com/cbc5d0a14637c62e9a7c36bbf166286d/tumblr_n3uidp4lD71ty9ma3o4_1280.jpg" alt=""/>
-
-                      <div style = {articleTitleMobile}>
-                        <Link to= "/ArticleFour">Lorem Ipsum dolor sit</Link>
-                      </div>
-
-                      <div style = {authorStyleMobile}>
-                          - - - Lorem Ipsum
-                      </div>
+                  <div style={authorStyleMobile}>
+                    - - - Lorem Ipsum
                   </div>
-              </div>
-          </div>
-      </Responsive>
 
-
-      <Responsive minDeviceWidth = {1024}>
-          <div style = {footStyle}>
-
-              <div style = {{
-                  fontSize: "1.3em",
-                  fontFamily: "Source Sans Pro",
-                  textAlign: "center",
-                  color: " #E1EADB"
-                  }}>
-
-                  &copy; Lorem Ipsum
+                </div>
               </div>
 
-          </div>
-      </Responsive>
+              <div style={picBoxMobile}>
+                <div>
+                  <img style={articleImgMobile} src="https://68.media.tumblr.com/9ee7cb189d0abfe5a3168cf8b07ac066/tumblr_n3uidp4lD71ty9ma3o2_1280.jpg" alt=""/>
 
-      <Responsive maxDeviceWidth = {1023}>
-          <div style = {footStyle}>
+                  <div style={articleTitleMobile}>
+                    <Link to="/ArticleThree">Lorem Ipsum dolor sit</Link>
+                  </div>
 
-              <div style = {{
-                  fontSize: "1.3em",
-                  fontFamily: "Source Sans Pro",
-                  textAlign: "center",
-                  color: " #E1EADB"
-                  }}>
-                  &copy; Lorem Ipsum
+                  <div style={authorStyleMobile}>
+                    - - - Lorem Ipsum
+                  </div>
+                </div>
               </div>
 
+              <div style={picBoxMobile}>
+                <div>
+                  <img style={articleImgMobile} src="https://68.media.tumblr.com/cbc5d0a14637c62e9a7c36bbf166286d/tumblr_n3uidp4lD71ty9ma3o4_1280.jpg" alt=""/>
 
-          </div>
-      </Responsive>
+                  <div style={articleTitleMobile}>
+                    <Link to="/ArticleFour">Lorem Ipsum dolor sit</Link>
+                  </div>
 
+                  <div style={authorStyleMobile}>
+                    - - - Lorem Ipsum
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Responsive>
 
-  </main>
+          <Responsive minDeviceWidth={1024}>
+            <div style={footStyle}>
 
-  <footer>
-  </footer>
+              <div style={{
+                fontSize: "1.3em",
+                fontFamily: "Source Sans Pro",
+                textAlign: "center",
+                color: " #E1EADB"
+              }}>
 
-</div>
-);
-}
+                &copy; Lorem Ipsum
+              </div>
+
+            </div>
+          </Responsive>
+
+          <Responsive maxDeviceWidth={1023}>
+            <div style={footStyle}>
+
+              <div style={{
+                fontSize: "1.3em",
+                fontFamily: "Source Sans Pro",
+                textAlign: "center",
+                color: " #E1EADB"
+              }}>
+                &copy; Lorem Ipsum
+              </div>
+
+            </div>
+          </Responsive>
+
+        </main>
+
+        <footer></footer>
+
+      </div>
+    );
+  }
 }
