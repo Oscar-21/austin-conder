@@ -60,7 +60,6 @@ export default class Dashboard extends React.PureComponent {
 
     const style = {
   display: 'inline-block',
-  position: "absolute",
   margin: '16px 32px 16px 0',
 };
 if (this.state.menuOpen == true) {
@@ -83,27 +82,27 @@ if (this.state.menuOpen == true) {
   //      {handleTitle()}
   // the {} are to tell the compiler to read
   // text as javascript
-  handleTitle = (event) => {
-    this.setState({title: event.target.value});
+  handleTitle = (e) => {
+    this.setState({title: e.target.value});
 
     console.log(this.state.title);
   }
 
-  handleBody = (event) => {
-    this.setState({body: event.target.value});
+  handleBody = (e) => {
+    this.setState({body: e.target.value});
   }
 
-  handleImage = (event) => {
-    event.preventDefault();
+  handleImage = (e) => {
+    e.PreventDefault();
 
     let reader = new FileReader();
-    let file = event.target.files[0];
+    let file = e.target.files[0];
 
     reader.onloadend = () => {
       this.setState({image: file, preview: reader.result})
     }
 
-    reader.readAsDataURL(file);
+    reader.readAsData(file);
   }
 
   storeArticle = () => {
@@ -188,7 +187,7 @@ const colorStyle = {
         <div style={mainStyle}>
           <div>
             <div>
-              <AppBar onLeftIconButtonTouchTap={this.handleMenu} title="Word on Reel Weekly"   titleStyle={navStyleMobile} style={colorStyle}/>
+              <AppBar onLeftIconButtonTouchTap={this.handleMenu} title="Word on Reel Weekly" disabledLabelColor="black" disabledBackgroundColor="black" titleStyle={navStyleMobile} style={colorStyle}/>
             </div>
 
             {this.showMenu()}
@@ -217,7 +216,7 @@ const colorStyle = {
             <input style={{
               marginBottom: '10%'
             }} onChange={this.handleImage} type='file'/>
-          <img src={this.state.preview}/>
+            <img src='this.state.preview'/>
           </div>
           <div>
             <RaisedButton label='Submit' primary={true} style={style,

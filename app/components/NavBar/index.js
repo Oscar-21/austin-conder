@@ -184,7 +184,7 @@ class NavBar extends React.PureComponent {
           <Responsive maxDeviceWidth={1023}>
 
             <div>
-              <AppBar onLeftIconButtonTouchTap={this.handleMenu} title="Word on Reel Weekly" disabledLabelColor="black" disabledBackgroundColor="black" titleStyle={navStyleMobile} style={colorStyle}/>
+              <AppBar onLeftIconButtonTouchTap={this.handleMenu} title="Word on Reel Weekly" titleStyle={navStyleMobile} style={colorStyle}/>
             </div>
 
             {this.showMenu()}

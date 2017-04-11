@@ -7,7 +7,6 @@ import ArticleStyle from 'components/ArticleStyle';
 
 /*import Share from 'material-ui/svg-icons/social/share'
 import Whatshot from 'material-ui/svg-icons/social/whatshot'*/
-
 /* allow us to link to different pages in project folder*/
 export default class Article extends React.PureComponent {
 
