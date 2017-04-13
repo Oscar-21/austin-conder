@@ -76,7 +76,7 @@ export default function createRoutes() {
       },
     },
     {
-        path: '/Article',
+        path: '/Article/:id',
         name: 'Article',
         getComponent(nextState, cb) {
         import('containers/Article')

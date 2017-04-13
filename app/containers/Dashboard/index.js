@@ -30,9 +30,13 @@ export default class Dashboard extends React.PureComponent {
     // state variables of an object class
     this.state = {
       title: '',
+      subheader:'',
+      firstCharacter: '',
       body: '',
       image: '',
       preview: '',
+      image2: '',
+      preview2:'',
       menuOpen: false
     };
   }
@@ -89,6 +93,18 @@ if (this.state.menuOpen == true) {
     console.log(this.state.title);
   }
 
+
+  handleFirstCharacter = (event) => {
+    this.setState({firstCharacter: event.target.value});
+
+    console.log(this.state.firstCharacter);
+  }
+  handleSubheader = (event) => {
+    this.setState({subheader: event.target.value});
+
+    console.log(this.state.subheader);
+  }
+
   handleBody = (event) => {
     this.setState({body: event.target.value});
   }
@@ -106,12 +122,29 @@ if (this.state.menuOpen == true) {
     reader.readAsDataURL(file);
   }
 
+    handleImage2 = (event) => {
+    event.preventDefault();
+
+    let reader = new FileReader();
+    let file = event.target.files[0];
+
+    reader.onloadend = () => {
+      this.setState({image2: file, preview2: reader.result})
+    }
+
+    reader.readAsDataURL(file);
+  }
+
   storeArticle = () => {
     var data = new FormData();
 
     data.append('title', this.state.title);
+    data.append('subheader', this.state.subheader);
     data.append('body', this.state.body);
     data.append('image', this.state.image);
+    data.append('image2', this.state.image2);
+    data.append('firstCharacter', this.state.firstCharacter);
+
 
     fetch('http://localhost:8000/api/storeArticle', {
       method: 'post',
@@ -195,29 +228,72 @@ const colorStyle = {
 
 
           </div>
+
           <div style={middleStyle}>
             Article Title
           </div>
+
           <div style={middleStyle3}>
             <input style={{
               marginBottom: '5%',
               border: '1px solid blue'
             }} onChange={this.handleTitle} type='text' placeholder='Title'/>
           </div>
+
+          <div style={middleStyle}>
+            Article Subheader
+          </div>
+
+          <div style={middleStyle3}>
+            <input style={{
+              marginBottom: '5%',
+              border: '1px solid blue'
+            }} onChange={this.handleSubheader} type='text' placeholder='Title'/>
+          </div>
+
+            <div style={middleStyle}>
+            First Character
+          </div>
+
+          <div style={middleStyle3}>
+            <input style={{
+              marginBottom: '5%',
+              border: '1px solid blue'
+            }} onChange={this.handleFirstCharacter} type='text'/>
+          </div>
+
           <div style={middleStyle}>
             Article Body
           </div>
+
           <textarea style={middleStyle2} onChange={this.handleBody} placeholder='Body'></textarea>
+
           <div style={middleStyle}>
             <div style={{
               marginBottom: '1%'
             }}>
               Article image
             </div>
+
             <input style={{
               marginBottom: '10%'
             }} onChange={this.handleImage} type='file'/>
           <img src={this.state.preview}/>
+
+          </div>
+
+            <div style={middleStyle}>
+            <div style={{
+              marginBottom: '1%'
+            }}>
+              Homepage image
+            </div>
+
+            <input style={{
+              marginBottom: '10%'
+            }} onChange={this.handleImage2} type='file'/>
+          <img src={this.state.preview2}/>
+
           </div>
           <div>
             <RaisedButton label='Submit' primary={true} style={style,

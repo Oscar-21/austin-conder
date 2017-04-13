@@ -18,23 +18,6 @@ import MapsPersonPin from 'material-ui/svg-icons/maps/person-pin';
 /* allow us to link to different pages in project folder*/
 
 export default class Home extends React.PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = {
-      articles: []
-    }
-  }
-  componentWillMount(){
-    fetch("http://localhost:8000/api/getArticles")
-    .then(function(response){
-      return response.json();
-    })
-    .then(function(json){
-      this.setState({
-        articles:json
-      })
-    }.bind(this))
-  }
   render() {
     const mainStyle = {
       display: "flex",
@@ -251,24 +234,69 @@ export default class Home extends React.PureComponent {
             </div>
 
             <div style={backgroundStyle}>
-              {this.state.articles.map((article, index) => (
-                <div style={picBox}>
-                  <Link style={linkStyle} to={`/Article/${article.id}`}>
-                    <img style={articleImg} src={article.image2} alt=""/>
-                    <div style={contentStyle}>
-                      {article.subheader}
-                    </div>
-                    <div style={articleTitle}>
-                      {article.title}
-                    </div>
-                    <div style={authorStyle}>
-                      ---Author
-                    </div>
-                  </Link>
-                </div>
+              <div style={picBox}>
+                <Link style={linkStyle} to="/Article">
+                  <img style={articleImg} src="https://68.media.tumblr.com/630ee7e6247d5f16efe7f315bff42707/tumblr_n3uidp4lD71ty9ma3o1_1280.jpg" alt=""/>
+                  <div style={contentStyle}>
+                    Cinematograpy
+                  </div>
+                  <div style={articleTitle}>
+                    Lorem Ipsum dolor sit
+                  </div>
+                  <div style={authorStyle}>
+                    ---Author
+                  </div>
+                </Link>
+              </div>
 
-              ))}
+              <div style={picBox}>
+                <Link style={linkStyle} to="/ArticleTwo">
+                  <img style={articleImg} src="https://68.media.tumblr.com/618291bc87361d807acd04604f0966d7/tumblr_n3uidp4lD71ty9ma3o3_1280.jpg" alt=""/>
+                  <div style={contentStyle}>
+                    Set Design
+                  </div>
+                  <div style={articleTitle}>
+                    Lorem Ipsum dolor sit
+                  </div>
+                  <div style={authorStyle}>
+                    ---Author
+                  </div>
+                </Link>
+              </div>
+              <div style={picBox}>
+                <Link style={linkStyle} to="/ArticleThree">
+                  <img style={articleImg} src="https://68.media.tumblr.com/9ee7cb189d0abfe5a3168cf8b07ac066/tumblr_n3uidp4lD71ty9ma3o2_1280.jpg" alt=""/>
+                  <div style={contentStyle}>
+                    Directors
+                  </div>
+                  <div style={articleTitle}>
+                    Lorem Ipsum dolor sit
+                  </div>
+                  <div style={authorStyle}>
+                    ---Author
+                  </div>
+                </Link>
+              </div>
 
+              <div style={picBox}>
+                <Link style={linkStyle} to="/ArticleFour">
+                  <img style={articleImg} src="https://68.media.tumblr.com/cbc5d0a14637c62e9a7c36bbf166286d/tumblr_n3uidp4lD71ty9ma3o4_1280.jpg" alt=""/>
+
+                  <div style={contentStyle}>
+                    Directors
+                  </div>
+
+                  <div style={articleTitle}>
+                    Lorem Ipsum dolor sit
+                  </div>
+
+                  <div style={authorStyle}>
+                    --Author
+                  </div>
+
+                </Link>
+
+              </div>
             </div>
           </Responsive>
 

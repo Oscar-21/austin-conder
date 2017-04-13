@@ -13,6 +13,25 @@ import Whatshot from 'material-ui/svg-icons/social/whatshot'*/
 /* allow us to link to different pages in project folder*/
 export default class Article extends React.PureComponent {
 
+  constructor(props){
+    super(props);
+    this.state = {
+      article:""
+    }
+  }
+
+  componentWillMount() {
+    fetch("http://localhost:8000/api/showArticle/"+this.props.params.id)
+    .then(function(response){
+      return response.json();
+
+    })
+    .then(function(json){
+      this.setState({
+        article:json
+      })
+    }.bind(this))
+  }
 
   render() {
 
@@ -290,23 +309,17 @@ const borderStyle = {
                 <div style = {contentHolder}>
 
                   <div style = {contentTitle}>
-                    Loss and freedom in Kieslowski's Blue:
+                    {this.state.article.title}
                   </div>
 
-                  <img style = {articleImage} src="https://s-media-cache-ak0.pinimg.com/originals/68/12/6d/68126d8250cb7972ee465ef8a71ede8e.jpg" alt=""/>
+                  <img style = {articleImage} src={this.state.article.image} alt=""/>
 
 
                   <div style = {contentStyle}>
-                    <span style = {{fontFamily: "Playfair Text", fontSize:"1.8em"}}>L</span>orem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  <span style = {{fontFamily: "Playfair Text", fontSize:"1.5em"}}>{this.state.article.firstCharacter}</span>
+                  {this.state.article.body}
                   </div>
 
-                  <div style = {contentStyle}>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                  </div>
-
-                  <div style = {contentStyle}>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                  </div>
                 </div>
 
                 <div style = {tableHolder}>
