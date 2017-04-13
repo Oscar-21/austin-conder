@@ -12,13 +12,13 @@ import NavBar from 'components/NavBar';
 import Icon from 'components/Icon';
 import NavigateBefore from 'material-ui/svg-icons/image/navigate-before'
 import NavigateNext from 'material-ui/svg-icons/image/navigate-next'
-import {Tabs, Tab} from 'material-ui/Tabs';
-import FontIcon from 'material-ui/FontIcon';
-import MapsPersonPin from 'material-ui/svg-icons/maps/person-pin';
+
+import Snackbar from 'material-ui/Snackbar';
 /* allow us to link to different pages in project folder*/
 
 export default class Home extends React.PureComponent {
   render() {
+
     const mainStyle = {
       display: "flex",
       flexDirection: "column",
@@ -363,11 +363,33 @@ export default class Home extends React.PureComponent {
             </div>
           </Responsive>
 
+          <Responsive minDeviceWidth={1024}>
+            <div style={footStyle}>
 
+              <div style={{
+                fontSize: "1.3em",
+                fontFamily: "Source Sans Pro",
+                textAlign: "center",
+                color: " #E1EADB"
+              }}>
+
+                &copy; Lorem Ipsum
+              </div>
+
+            </div>
+          </Responsive>
 
           <Responsive maxDeviceWidth={1023}>
-            <div>
+            <div style={footStyle}>
 
+              <div style={{
+                fontSize: "1.3em",
+                fontFamily: "Source Sans Pro",
+                textAlign: "center",
+                color: " #E1EADB"
+              }}>
+                &copy; Lorem Ipsum
+              </div>
 
             </div>
           </Responsive>
@@ -375,24 +397,11 @@ export default class Home extends React.PureComponent {
         </main>
 
         <footer>
-          <Responsive minDeviceWidth={1024}>
-  <Tabs>
-    <Tab
-      icon={<FontIcon className="material-icons">phone</FontIcon>}
-      label="RECENTS"
-    />
-    <Tab
-      icon={<FontIcon className="material-icons">favorite</FontIcon>}
-      label="FAVORITES"
-    />
-    <Tab
-      icon={<MapsPersonPin />}
-      label="NEARBY"
-    />
-  </Tabs>
+          <Snackbar
+        open={true}
+        action="undo"/>
 
-        </Responsive>}
-                  </footer>
+        </footer>
 
       </div>
     );

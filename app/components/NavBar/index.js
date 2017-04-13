@@ -17,6 +17,7 @@ import Paper from 'material-ui/Paper';
 import MenuItem from 'material-ui/MenuItem';
 import Menu from 'material-ui/Menu';
 
+import {Tabs, Tab} from 'material-ui/Tabs';
 class NavBar extends React.PureComponent {
 
   // Create boolean variable that we can use
@@ -86,10 +87,23 @@ class NavBar extends React.PureComponent {
       width: "100%",
       height: "5vh"
     }
+    const tabStyle = {
+      background: " #003B4D ",
+      marginBottom: "2%",
+      display: "flex",
+      flexDirection: "row",
+      width: "100%",
+      height: "5vh"
+    }
     const navButtonNew = {
       background: "#003B4D",
       color: "white",
       width: "5%",
+      border: "1px solid #999999"
+    }
+      const tabButton = {
+      background: "#003B4D",
+      color: "white",
       border: "1px solid #999999"
     }
     const navChildNew = {
@@ -109,6 +123,37 @@ class NavBar extends React.PureComponent {
       fontFamily: "montserratbold",
       color: "white"
 
+    }
+
+  const tabChildNewText = {
+    width: "17%",
+      display: "inline-block",
+      border: "1px solid #999999",
+      paddingTop: "1vh",
+      fontFamily: "Monteserrat",
+      fontWeight: "Bold",
+      verticalAlign: "middle",
+      textAlign: "center",
+      textTransform: "uppercase",
+      letterSpacing: "2.5px",
+      fontSize: "13px",
+      fontFamily: "montserratbold",
+      color: "white"
+    }
+    const tabChildNewTextz = {
+      width: "5%",
+      display: "inline-block",
+      border: "1px solid #999999",
+      paddingTop: "1vh",
+      fontFamily: "Monteserrat",
+      fontWeight: "Bold",
+      verticalAlign: "middle",
+      textAlign: "center",
+      textTransform: "uppercase",
+      letterSpacing: "2.5px",
+      fontSize: "13px",
+      fontFamily: "montserratbold",
+      color: "white"
     }
     const titleStyleNew = {
       width: "100%",
@@ -135,7 +180,7 @@ class NavBar extends React.PureComponent {
         <div>
 
           <Responsive minDeviceWidth={1024}>
-            <div style={navStyleNew}>
+          {/*  <div style={navStyleNew}>
 
               <div style={navButtonNew}>
                 <Icon/>
@@ -143,42 +188,79 @@ class NavBar extends React.PureComponent {
 
               <div style={navChildNew}>
                 <div style={navChildTextNew}>
-                  one
+                  home
                 </div>
               </div>
 
               <div style={navChildNew}>
                 <div style={navChildTextNew}>
-                  two
+                  about us
                 </div>
               </div>
 
               <div style={navChildNew}>
                 <div style={navChildTextNew}>
-                  three
+                  archive
                 </div>
               </div>
 
               <div style={navChildNew}>
                 <div style={navChildTextNew}>
-                  four
+                  contribute
                 </div>
               </div>
 
               <div style={navChildNew}>
                 <div style={navChildTextNew}>
-                  five
+                  Our friends
                 </div>
               </div>
 
-              <div>
+              <div style={navButtonNew}>
               <Android/>
               </div>
 
               <div style={navButtonNew}>
                 twitter
               </div>
-            </div>
+            </div>*/}
+              <Tabs>
+
+
+                <Tab style={tabChildNewTextz}
+        label="LOGO"
+      />
+
+
+
+    <Tab style={tabChildNewText}
+        label="home"
+      />
+
+
+
+  <Tab style={tabChildNewText}
+        label="about us"
+      />
+
+  <Tab style={tabChildNewText}
+        label="Browse"
+      />
+
+  <Tab style={tabChildNewText}
+        label="Archive"
+      />
+
+  <Tab style={tabChildNewText}
+        label="Our Friends"
+      />
+    <Tab style={tabChildNewTextz}
+        label="Social"
+      />
+    <Tab style={tabChildNewTextz}
+        label="Share"
+      />
+    </Tabs>
           </Responsive>
 
           <Responsive maxDeviceWidth={1023}>

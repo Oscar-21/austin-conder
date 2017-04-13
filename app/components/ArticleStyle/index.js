@@ -125,48 +125,48 @@ class ArticleStyle extends React.PureComponent {
 
 
     // content Parent
-    const backgroundStyle = {
+  /*  const backgroundStyle = {
      background: "  #F5F5F5",
       display: "flex",
       flexDirection: "row",
       width: "100%",
-    }
+    }*/
 
-    const backgroundContentBox = {
+    /*const backgroundContentBox = {
       marginTop: "3%",
       display: "flex",
       flexDirection: "row",
       borderLeft: "2.8vw solid  #408193",
       borderRight: "2.8vw solid #408193"
-    }
+    }*/
 
     // article styling
-    const contentHolder = {
+    /*const contentHolder = {
       marginTop: "2%",
       width: "33.33%"
-    }
+    }*/
 
 
     // article title
-    const contentTitle = {
+  /*  const contentTitle = {
       fontFamily: "Franklin Gothic",
       fontSize: "2.4em",
       marginLeft: "33.33%",
       marginBottom: "2%",
       fontWeight: "bold",
       textTransform: "uppercase"
-    }
+    }*/
 
     //article body
-    const contentStyle = {
+    /*const contentStyle = {
       fontFamily: "Cormorant",
       marginLeft: "33.33%",
       marginBottom: "2%",
       fontWeight: "bold"
-    }
+    }*/
 
     // table styling
-    const tableHolder = {
+    /*const tableHolder = {
       marginLeft: "5%",
       marginTop: '8%',
       width: "33.33%",
@@ -176,40 +176,40 @@ class ArticleStyle extends React.PureComponent {
       left:"900.414794921875",
       right:"1519.46875",
       top: "100",
-      /*top:"223.76419067382812",*/
+      /*top:"223.76419067382812",
       width:"473.053955078125",
-    }
+    }*/
 
-    const tableStyle = {
+  /*  const tableStyle = {
       fontFamily: "Work Sans",
       fontWeight: "medium",
       textTransform: "uppercase",
       fontSize: ".9em",
-      /*textAlign: "center",*/
+      /*textAlign: "center",
       marginLeft: "1%",
       marginRight: "10%",
       marginBottom: "2%",
       borderTop: "2px solid  #A9641E",
       borderBottom: "2px solid #A9641E",
-    }
+    }*/
 
 
     // article image styling
-    const articleImage = {
+  /*  const articleImage = {
       width:"90%",
       height: "30vh",
       marginLeft: "33.33%",
       marginBottom: "2%"
-    }
+    }*/
 
-    const tableImage = {
+    /*const tableImage = {
       width:"65px",
       height: "65px",
       marginTop: "2px",
       marginBottom:"2px"
       /*marginLeft: "33.33%",
-      marginBottom: "2%"*/
-    }
+      marginBottom: "2%"
+    }*/
 
     // MOBILE STYLE
     //
@@ -218,7 +218,7 @@ class ArticleStyle extends React.PureComponent {
 
     // Navbar and Title begins hear
 
-    const mainStyleMobile = {
+    /*const mainStyleMobile = {
       display: "flex",
       flexDirection: "column",
       justifyContent: 'center',
@@ -226,7 +226,7 @@ class ArticleStyle extends React.PureComponent {
       border: "1px solid black",
       background:"url(https://68.media.tumblr.com/8ba6be52a6cb41fe964cd7fbb94a3e02/tumblr_on2pafGDUw1vieawno1_1280.jpg)",
       backgroundSize: "cover"
-    }
+    }*/
 /*
    if this.state.open
      React.DOM.div {className: "NavBar"},
@@ -244,7 +244,7 @@ class ArticleStyle extends React.PureComponent {
             </div>
 
             <nav style = {navStyle}>
-              <Link to="/Blue"> / Home /</Link> about us / browse by topic / archive /
+              <Link to="/" style ={{textDecoration: "none", color: "#eeeeee"}}> / Home /</Link> about us / browse by topic / archive /
             </nav>
           </div>
         </Responsive>

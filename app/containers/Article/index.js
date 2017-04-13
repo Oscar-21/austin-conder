@@ -4,32 +4,58 @@ import Helmet from 'react-helmet';
 import {Link} from "react-router";
 import Responsive from 'react-responsive';
 import ArticleStyle from 'components/ArticleStyle';
-
+import Comments from 'components/Comments';
+import Share from 'material-ui/svg-icons/social/share';
+import Email from 'material-ui/svg-icons/communication/email';
+import Whatshot from 'material-ui/svg-icons/social/whatshot';
 /*import Share from 'material-ui/svg-icons/social/share'
 import Whatshot from 'material-ui/svg-icons/social/whatshot'*/
 /* allow us to link to different pages in project folder*/
 export default class Article extends React.PureComponent {
+
 
   render() {
 
 
         // content Parent
     const backgroundStyle = {
-     background: "  #F5F5F5",
+     /*background: "  #F5F5F5",*/
       display: "flex",
-      flexDirection: "row",
+      flexDirection: "column",
       width: "100%",
+      background: "#408193"
     }
-
-    const backgroundContentBox = {
+  const backgroundContentBox = {
+      margin: "0 auto",
       marginTop: "3%",
+      paddingBottom: "3%",
       display: "flex",
       flexDirection: "row",
-      borderLeft: "2.8vw solid  #408193",
-      borderRight: "2.8vw solid #408193"
+      background: "#F5F5F5",
+      width: "90%"
+
     }
 
-    // article styling
+    //share icon
+    const shareStyle = {
+      marginLeft: "4%",
+      paddingTop: "20%",
+      position: "fixed"
+    }
+// hot icon
+    const hotStyle = {
+      marginLeft: "4%",
+      paddingTop: "23%",
+      position: "fixed"    }
+
+      //git icon
+
+  const gitStyle = {
+      marginLeft: "4%",
+      paddingTop: "26%",
+      position: "fixed"    }
+
+  // article styling
     const contentHolder = {
       marginTop: "2%",
       width: "33.33%"
@@ -56,10 +82,10 @@ export default class Article extends React.PureComponent {
 
     // table styling
     const tableHolder = {
-      marginLeft: "5%",
-      marginTop: '8%',
+      marginLeft: "25%",
+      marginTop: '10%',
       width: "33.33%",
-      position: "fixed",
+      /*position: "fixed",*/
       bottom:"248.3096466064453",
       height:"24.545454025268555",
       left:"900.414794921875",
@@ -217,10 +243,35 @@ export default class Article extends React.PureComponent {
     }
 
 
+const footerStyle = {
+      margin: "0 auto",
+      /*paddingTop: "3%",*/
+      width: "90%",
+      background: "#F5F5F5",
 
+
+  }
+
+const borderStyle = {
+
+
+}
+
+
+
+    const contentStyleFoot = {
+      width: "75%",
+      margin: "0 auto",
+      borderTop: "1px solid  #A9641E",
+      paddingTop: "5%",
+      fontFamily: "Cormorant",
+      /*marginLeft: "33.33%",*/
+      marginBottom: "2%",
+      fontWeight: "bold"
+    }
 
     return (
-      <div>
+      <div style = {backgroundStyle}>
         <Helmet title="Article" meta={[ { name: 'description', content: 'Description of Home' }]}/>
 
         <header>
@@ -229,9 +280,13 @@ export default class Article extends React.PureComponent {
 
         <main>
           <Responsive minDeviceWidth = {1025}>
-            <div style = {backgroundStyle}>
 
               <div style = {backgroundContentBox}>
+                <div style={shareStyle}><Share/></div>
+                <div  style={hotStyle}><Whatshot/></div>
+                <div style={gitStyle}>
+                  <Email/>
+                </div>
                 <div style = {contentHolder}>
 
                   <div style = {contentTitle}>
@@ -252,7 +307,6 @@ export default class Article extends React.PureComponent {
                   <div style = {contentStyle}>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                   </div>
-
                 </div>
 
                 <div style = {tableHolder}>
@@ -280,11 +334,12 @@ export default class Article extends React.PureComponent {
                     <img style = {tableImage} src="https://s-media-cache-ak0.pinimg.com/564x/82/88/b5/8288b5b4c1ebbc253c01d84cdacc88da.jpg" alt=""/>
                     and stuff
                   </div>
-
-                </div>
+              </div>
 
               </div>
-            </div>
+
+
+
           </Responsive>
 
 
@@ -349,8 +404,14 @@ export default class Article extends React.PureComponent {
           </Responsive>
           </main>
 
-        <footer>
-        </footer>
+          <footer style = {footerStyle}>
+            <div style = {borderStyle}></div>
+            <div style = {contentStyleFoot}>
+              <Comments/>
+            </div>
+          </footer>
+
+
       </div>
     );
   }

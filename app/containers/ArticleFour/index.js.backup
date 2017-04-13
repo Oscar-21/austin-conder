@@ -10,105 +10,7 @@ import Whatshot from 'material-ui/svg-icons/social/whatshot'*/
 
 /* allow us to link to different pages in project folder*/
 export default class ArticleFour extends React.PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = {
-      tableBottom: false,
-      siteName: "Bootcamp"
-      /*tabby:     $0.getBoundingClientRect()*/
-    }
-  }
 
-  handleTable = () => {
-    if (this.state.tableBottom == false) {
-      $0.getBoundingClientRect();
-    } else if (this.state.tableBottom == true) {
-      this.setState({tableBottom: false})
-    }
-  }
-
-
-  whatTheTable = (tablee) => {
-      var a = (typeof tablee);
-      console.log(a+"hello")
-
-    }
-
-
-  showTable = () => {
-    const tableHolder = {
-      marginLeft: "5%",
-      marginTop: '8%',
-      width: "33.33%",
-      position: "fixed",
-      bottom:"248.3096466064453",
-      height:"24.545454025268555",
-      left:"900.414794921875",
-      right:"1519.46875",
-      top: "100",
-      /*top:"223.76419067382812",*/
-      width:"473.053955078125",
-    }
-
-const tableStyle = {
-      fontFamily: "Work Sans",
-      fontWeight: "medium",
-      textTransform: "uppercase",
-      fontSize: ".9em",
-      /*textAlign: "center",*/
-      marginLeft: "1%",
-      marginRight: "10%",
-      marginBottom: "2%",
-      borderTop: "2px solid  #A9641E",
-      borderBottom: "2px solid #A9641E",
-    }
-
-const tableImage = {
-      width:"65px",
-      height: "65px",
-      marginTop: "2px",
-      marginBottom:"2px"
-      /*marginLeft: "33.33%",
-      marginBottom: "2%"*/
-    };
-
-const tabsz = (<div style = {tableHolder}>
-
-                  <div style = {tableStyle}>
-
-                    <img style = {tableImage} src="https://68.media.tumblr.com/6592dd0c94e522cd649b37d34564354d/tumblr_onmo7oQX4i1ui53xxo1_1280.png" alt=""/>
-                    and stuff
-                  </div>
-
-                  <div style = {tableStyle}>
-
-                    <img style = {tableImage} src="http://68.media.tumblr.com/297b1524bf497b54287a391dddc041b7/tumblr_on8bvj5R991t15yufo1_1280.jpg" alt=""/>
-                    and stuff
-                  </div>
-
-                  <div style = {tableStyle}>
-
-                    <img style = {tableImage} src="https://68.media.tumblr.com/2963863333a53592395331c524e11957/tumblr_omo46c9cjs1utmnjno1_1280.jpg" alt=""/>
-                    and stuff
-                  </div>
-
-                  <div style = {tableStyle}>
-
-                    <img style = {tableImage} src="https://s-media-cache-ak0.pinimg.com/564x/82/88/b5/8288b5b4c1ebbc253c01d84cdacc88da.jpg" alt=""/>
-                    and stuff
-                  </div>
-
-                </div>);
-
-    if (this.state.tableBottom == false) {
-      return (
-          tabsz
-      )
-
-
-      }
-
-  }
   render() {
 
 
@@ -153,7 +55,33 @@ const tabsz = (<div style = {tableHolder}>
       fontWeight: "bold"
     }
 
+    // table styling
+    const tableHolder = {
+      marginLeft: "5%",
+      marginTop: '8%',
+      width: "33.33%",
+      position: "fixed",
+      bottom:"248.3096466064453",
+      height:"24.545454025268555",
+      left:"900.414794921875",
+      right:"1519.46875",
+      top: "100",
+      /*top:"223.76419067382812",*/
+      width:"473.053955078125",
+    }
 
+    const tableStyle = {
+      fontFamily: "Work Sans",
+      fontWeight: "medium",
+      textTransform: "uppercase",
+      fontSize: ".9em",
+      /*textAlign: "center",*/
+      marginLeft: "1%",
+      marginRight: "10%",
+      marginBottom: "2%",
+      borderTop: "2px solid  #A9641E",
+      borderBottom: "2px solid #A9641E",
+    }
 
 
     // article image styling
@@ -164,7 +92,14 @@ const tabsz = (<div style = {tableHolder}>
       marginBottom: "2%"
     }
 
-
+    const tableImage = {
+      width:"65px",
+      height: "65px",
+      marginTop: "2px",
+      marginBottom:"2px"
+      /*marginLeft: "33.33%",
+      marginBottom: "2%"*/
+    }
         const titleStyleLapMobile= {
 
       fontFamily: "Trebuchet MS",
@@ -321,10 +256,35 @@ const tabsz = (<div style = {tableHolder}>
 
                 </div>
 
-{this.showTable()}
+                <div style = {tableHolder}>
 
-{this.whatTheTable(ArticleFour.tabsz)}
+                  <div style = {tableStyle}>
+
+                    <img style = {tableImage} src="https://68.media.tumblr.com/6592dd0c94e522cd649b37d34564354d/tumblr_onmo7oQX4i1ui53xxo1_1280.png" alt=""/>
+                    and stuff
+                  </div>
+
+                  <div style = {tableStyle}>
+
+                    <img style = {tableImage} src="http://68.media.tumblr.com/297b1524bf497b54287a391dddc041b7/tumblr_on8bvj5R991t15yufo1_1280.jpg" alt=""/>
+                    and stuff
+                  </div>
+
+                  <div style = {tableStyle}>
+
+                    <img style = {tableImage} src="https://68.media.tumblr.com/2963863333a53592395331c524e11957/tumblr_omo46c9cjs1utmnjno1_1280.jpg" alt=""/>
+                    and stuff
+                  </div>
+
+                  <div style = {tableStyle}>
+
+                    <img style = {tableImage} src="https://s-media-cache-ak0.pinimg.com/564x/82/88/b5/8288b5b4c1ebbc253c01d84cdacc88da.jpg" alt=""/>
+                    and stuff
+                  </div>
+
                 </div>
+
+              </div>
             </div>
           </Responsive>
 

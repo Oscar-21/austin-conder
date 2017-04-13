@@ -4,6 +4,7 @@ import Helmet from 'react-helmet';
 import {Link} from "react-router";
 import Responsive from 'react-responsive';
 import ArticleStyle from 'components/ArticleStyle';
+import Snackbar from 'material-ui/Snackbar';
 
 /*import Share from 'material-ui/svg-icons/social/share'
 import Whatshot from 'material-ui/svg-icons/social/whatshot'*/
@@ -351,6 +352,10 @@ export default class ArticleThree extends React.PureComponent {
           </main>
 
         <footer>
+          <Snackbar
+        open={true}
+      />
+
         </footer>
       </div>
     );
