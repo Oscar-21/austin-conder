@@ -323,27 +323,19 @@ const borderStyle = {
                 </div>
 
                 <div style = {tableHolder}>
-
                   <div style = {tableStyle}>
-
                     <img style = {tableImage} src="https://68.media.tumblr.com/6592dd0c94e522cd649b37d34564354d/tumblr_onmo7oQX4i1ui53xxo1_1280.png" alt=""/>
                     and stuff
                   </div>
-
                   <div style = {tableStyle}>
-
                     <img style = {tableImage} src="http://68.media.tumblr.com/297b1524bf497b54287a391dddc041b7/tumblr_on8bvj5R991t15yufo1_1280.jpg" alt=""/>
                     and stuff
                   </div>
-
                   <div style = {tableStyle}>
-
                     <img style = {tableImage} src="https://68.media.tumblr.com/2963863333a53592395331c524e11957/tumblr_omo46c9cjs1utmnjno1_1280.jpg" alt=""/>
                     and stuff
                   </div>
-
                   <div style = {tableStyle}>
-
                     <img style = {tableImage} src="https://s-media-cache-ak0.pinimg.com/564x/82/88/b5/8288b5b4c1ebbc253c01d84cdacc88da.jpg" alt=""/>
                     and stuff
                   </div>

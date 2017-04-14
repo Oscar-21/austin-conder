@@ -31,12 +31,12 @@ export default class Dashboard extends React.PureComponent {
     this.state = {
       title: '',
       subheader:'',
-      firstCharacter: '',
       body: '',
       image: '',
       preview: '',
       image2: '',
       preview2:'',
+      firstCharacter:'',
       menuOpen: false
     };
   }
@@ -97,8 +97,9 @@ if (this.state.menuOpen == true) {
   handleFirstCharacter = (event) => {
     this.setState({firstCharacter: event.target.value});
 
-    console.log(this.state.firstCharacter);
+    console.log(this.state.title);
   }
+
   handleSubheader = (event) => {
     this.setState({subheader: event.target.value});
 
@@ -108,6 +109,8 @@ if (this.state.menuOpen == true) {
   handleBody = (event) => {
     this.setState({body: event.target.value});
   }
+
+
 
   handleImage = (event) => {
     event.preventDefault();
@@ -134,6 +137,8 @@ if (this.state.menuOpen == true) {
 
     reader.readAsDataURL(file);
   }
+
+
 
   storeArticle = () => {
     var data = new FormData();
@@ -259,8 +264,16 @@ const colorStyle = {
             <input style={{
               marginBottom: '5%',
               border: '1px solid blue'
-            }} onChange={this.handleFirstCharacter} type='text'/>
+            }} onChange={this.handleFirstCharacter} type='text' placeholder='Title'/>
+        </div>
+
+                <div style={middleStyle}>
+            About Content
           </div>
+
+            <textarea style={middleStyle2}
+              onChange={this.handleAbout}></textarea>
+
 
           <div style={middleStyle}>
             Article Body
@@ -293,13 +306,25 @@ const colorStyle = {
               marginBottom: '10%'
             }} onChange={this.handleImage2} type='file'/>
           <img src={this.state.preview2}/>
+</div>
 
+            <div style={middleStyle}>
+            <div style={{
+              marginBottom: '1%'
+            }}>
+              About image
+            </div>
+            <input style={{
+              marginBottom: '10%'
+            }} onChange={this.handleAboutImage} type='file'/>
+          <img src={this.state.preview3}/>
+          </div>
           </div>
           <div>
             <RaisedButton label='Submit' primary={true} style={style,
             middleStyle} onTouchTap={this.storeArticle}/>
           </div>
-        </div>
+
       </div>
     )
   }

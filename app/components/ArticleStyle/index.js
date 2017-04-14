@@ -244,7 +244,19 @@ class ArticleStyle extends React.PureComponent {
             </div>
 
             <nav style = {navStyle}>
-              <Link to="/" style ={{textDecoration: "none", color: "#eeeeee"}}> / Home /</Link> about us / browse by topic / archive /
+              <Link to="/" style ={{
+                  textDecoration: "none",
+                  color: "#eeeeee"
+                }}>
+                / Home /
+              </Link>
+              <Link to="/About" style = {{
+                textDecoration: "none",
+                color: "#eeeeee"
+              }}>
+              about us /
+            </Link>
+            browse by topic / archive /
             </nav>
           </div>
         </Responsive>

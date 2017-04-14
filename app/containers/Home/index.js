@@ -350,16 +350,14 @@ export default class Home extends React.PureComponent {
           <Responsive minDeviceWidth={1024}>
   <Tabs>
     <Tab
-      icon={<FontIcon className="material-icons">phone</FontIcon>}
-      label="RECENTS"
+      icon={<FontIcon className="material-icons"></FontIcon>}
     />
     <Tab
-      icon={<FontIcon className="material-icons">favorite</FontIcon>}
-      label="FAVORITES"
+      icon={<FontIcon className="material-icons"></FontIcon>}
+      label="It's the #1 SOURCE FOR PEDANTIC DRIVILING ON FILM --- 'some dude'"
     />
     <Tab
-      icon={<MapsPersonPin />}
-      label="NEARBY"
+
     />
   </Tabs>
 
