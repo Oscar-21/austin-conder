@@ -23,7 +23,15 @@ export default function createRoutes() {
       .catch(errorLoading);
       },
     },
-
+{
+      path: '/Browse',
+      name: 'Browse',
+      getComponent(nextState, cb) {
+      import('containers/Browse')
+      .then(loadModule(cb))
+      .catch(errorLoading);
+      },
+    },
     {
       path: '/About',
       name: 'About',
