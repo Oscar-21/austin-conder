@@ -40,6 +40,10 @@ class NavBar extends React.PureComponent {
     }
   }
 
+  handleNav = (location) => {
+    this.context.router.push(location);
+  }
+
   // function that will run continuously
   // and wait for menuOpen to evaluate to
   // true, at which point it will return
@@ -227,7 +231,7 @@ class NavBar extends React.PureComponent {
               <Tabs>
 
 
-                <Tab style={tabChildNewTextz}
+              <Tab style={tabChildNewTextz}
         label="LOGO"
       />
 
@@ -235,20 +239,24 @@ class NavBar extends React.PureComponent {
 
     <Tab style={tabChildNewText}
         label="home"
+        onActive={() => this.handleNav("/")}
       />
-
 
 
   <Tab style={tabChildNewText}
         label="about us"
+        onActive={() => this.handleNav("/About")}
       />
 
   <Tab style={tabChildNewText}
         label="Browse"
+        onActive={() => this.handleNav("/Browse")}
       />
 
   <Tab style={tabChildNewText}
-        label="Archive"
+        label="Contribute"
+
+        onActive={() => this.handleNav("/Dashboard")}
       />
 
   <Tab style={tabChildNewText}
@@ -276,5 +284,8 @@ class NavBar extends React.PureComponent {
       </div>
     );
   }
+}
+NavBar.contextTypes = {
+  router: React.PropTypes.object
 }
 export default NavBar;
