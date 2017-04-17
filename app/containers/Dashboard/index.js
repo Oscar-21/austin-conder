@@ -17,7 +17,6 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';*/
 import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
-
 import Paper from 'material-ui/Paper';
 import MenuItem from 'material-ui/MenuItem';
 import Menu from 'material-ui/Menu';
@@ -158,9 +157,9 @@ if (this.state.menuOpen == true) {
       return response.json();
     }).then(function(json) {
       if (json.success) {
-        alert('Success');
+        alert(json.success);
       } else if (json.error) {
-        alert('Error');
+        alert(json.error);
       }
     })
   }
