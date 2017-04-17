@@ -15,16 +15,18 @@ import Helmet from 'react-helmet';
 /*import {cyan500} from 'material-ui/styles/colors';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';*/
+
+import {Link} from "react-router";
 import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
 import Paper from 'material-ui/Paper';
 import MenuItem from 'material-ui/MenuItem';
 import Menu from 'material-ui/Menu';
-export default class Dashboard extends React.PureComponent {
 
+
+export default class Dashboard extends React.PureComponent {
   constructor(props) {
     super(props);
-
     // this.state allows us to access all
     // state variables of an object class
     this.state = {
@@ -38,6 +40,9 @@ export default class Dashboard extends React.PureComponent {
       firstCharacter:'',
       menuOpen: false
     };
+  }
+handleNav = (location) => {
+    push(location);
   }
 
   handleMenu = () => {
@@ -70,8 +75,12 @@ if (this.state.menuOpen == true) {
   return (
     <Paper style={style}>
 <Menu>
- <MenuItem primaryText="Refresh" />
- <MenuItem primaryText="Help &amp; feedback" />
+ <MenuItem primaryText="Home"
+          containerElement={<Link to="/"></Link>}/>
+
+        <MenuItem primaryText="About us"
+          containerElement={<Link to="/"></Link>}/>
+
  <MenuItem primaryText="Settings" />
  <MenuItem primaryText="Sign out" />
 </Menu>
@@ -327,4 +336,6 @@ const colorStyle = {
       </div>
     )
   }
+
+
 }
