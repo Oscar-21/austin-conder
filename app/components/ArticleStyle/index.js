@@ -115,8 +115,8 @@ class ArticleStyle extends React.PureComponent {
       textAlign: "center",
       verticalAlign: "middle",
       textTransform: "uppercase",
-      letterSpacing: "2.5px",
-      fontSize: "13px",
+      letterSpacing: "1.75px",
+      fontSize: "11px",
       fonFamily: "Montserrat",
       textDecoration:"None",
       color: "#eeeeee"
@@ -248,15 +248,24 @@ class ArticleStyle extends React.PureComponent {
                   textDecoration: "none",
                   color: "#eeeeee"
                 }}>
-                / Home /
+                /&nbsp; Home &nbsp;
               </Link>
               <Link to="/About" style = {{
                 textDecoration: "none",
                 color: "#eeeeee"
               }}>
-              about us /
+               /&nbsp; about us &nbsp;
             </Link>
-            browse by topic / archive /
+            <Link to="/Browse" style = {{
+                textDecoration: "none",
+                color: "#eeeeee"
+              }}>
+             /&nbsp; browse by topic &nbsp;</Link>/
+            <Link to="/Dashboard" style = {{
+                textDecoration: "none",
+                color: "#eeeeee"
+              }}>  &nbsp; contribute &nbsp;</Link>
+              /&nbsp; our friends &nbsp; /
             </nav>
           </div>
         </Responsive>
