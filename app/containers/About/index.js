@@ -19,7 +19,7 @@ constructor(props){
   }
 
   componentWillMount() {
-    fetch("http://jasparlamar.crab:8000/api/showArticle/"+this.props.params.id)
+    fetch("http://localhost:8000/api/showArticle/"+this.props.params.id)
     .then(function(response){
       return response.json();
 
@@ -34,7 +34,6 @@ constructor(props){
   render() {
 
     const backgroundStyle = {
-     /*background: "  #F5F5F5",*/
       display: "flex",
       flexDirection: "column",
       width: "100%",
@@ -45,9 +44,6 @@ constructor(props){
   const backgroundContentBox = {
       margin: "0 auto",
       marginTop: "3%",
-      /*paddingBottom: "13%",*/
-      /*display: "flex",
-      flexDirection: "column",*/
       background: "#F5F5F5",
     width: "90%"
 

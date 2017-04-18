@@ -25,7 +25,7 @@ export default class Home extends React.PureComponent {
     }
   }
   componentWillMount(){
-    fetch("http://jasparlamar.crab:8000/api/getArticles")
+    fetch("http://localhost:8000/api/getArticles")
     .then(function(response){
       return response.json();
     })
@@ -108,7 +108,8 @@ export default class Home extends React.PureComponent {
       display: "flex",
       flexDirection: "column",
       justifyContent: "center",
-      background: "  #E9FFFF",
+      /*background: "  #E9FFFF",*/
+      background: "  #F5F5F5",
       paddingTop: "10%",
     }
     const picBox = {
@@ -214,6 +215,28 @@ export default class Home extends React.PureComponent {
     textDecoration: "none",
     color: "black"
   }
+
+    const titleBoxz = {
+      marginRight: "20%",
+      marginLeft: "20%",
+      paddingTop: "1.5%",
+      paddingBottom: "1.5%",
+      borderTop: "2px solid gray",
+      borderBottom: "2px solid gray",
+      marginBottom: "5%"
+    }
+
+    const titleStyleMobilez = {
+      fontFamily: "Source Sans Pro",
+      textAlign: "center",
+      fontColor: "#0C090A",
+      fontSize: "2em",
+      fontStyle: "light",
+      fontWeight: "400",
+      textTransform: "uppercase",
+      letterSpacing: "4px",
+
+    }
     return (
       <div>
         <Helmet title="Home" meta={[{
@@ -282,17 +305,11 @@ export default class Home extends React.PureComponent {
           <Responsive maxDeviceWidth={1023}>
 
             <div style={backgroundStyleMobile}>
-              <div style={{
-                  fontFamily: "Droid Serif",
-                  fontSize: "1.5em",
-                  fontWeight: "bold",
-                  textTransform: "uppercase",
-                  margin: "0 auto",
-                  marginBottom: "5%",
-                  paddingBottom: "1%",
-                  borderBottom: "1px solid gray",
-                  textShadow:"2px 2px 3px rgba(0,0,0,0.6)",
-                }}>This week</div>
+              <div style={titleBoxz}>
+                <div style = {titleStyleMobilez}>
+                  This Week
+                </div>
+              </div>
               {this.state.articles.map((article, index) => (
                 <div style={picBoxMobile}>
 

@@ -85,7 +85,7 @@ if (this.state.menuOpen == true) {
             containerElement={<Link to="/About"></Link>}/>
 
   <MenuItem primaryText="Browse"
-            containerElement={<Link to="/"></Link>}/>
+            containerElement={<Link to="/Browse"></Link>}/>
 
  <MenuItem primaryText="Contribute"
            containerElement={<Link to="/"></Link>}/>
@@ -105,7 +105,7 @@ if (this.state.menuOpen == true) {
             containerElement={<Link to="/About"></Link>}/>
 
   <MenuItem primaryText="Browse"
-            containerElement={<Link to="/"></Link>}/>
+            containerElement={<Link to="/Browse"></Link>}/>
 
  <MenuItem primaryText="Contribute"
            containerElement={<Link to="/"></Link>}/>
@@ -190,7 +190,7 @@ if (this.state.menuOpen == true) {
     data.append('firstCharacter', this.state.firstCharacter);
 
 
-    fetch('http://jasparlamar.crab:8000/api/storeArticle', {
+    fetch('http://localhost:8000/api/storeArticle', {
       method: 'post',
       body: data
     }).then(function(response) {
@@ -420,7 +420,7 @@ const colorStyle = {
 
               <input style={{
                 marginBottom: '10%'
-                }} onChange={this.handleImage2}     type='file'/>
+                }} onChange={this.handleImage2} type='file'/>
                 <img src={this.state.preview2}/>
             </div>
           </Responsive>
