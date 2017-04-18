@@ -93,10 +93,8 @@ export default class Home extends React.PureComponent {
     const scrollStyle2 = {
       /* width: "25%",
       marginLeft: "21vw"*/
-
       width: "25%",
       marginLeft: "10vw"
-
     }
     const backgroundStyle = {
       display: "flex",
@@ -110,7 +108,8 @@ export default class Home extends React.PureComponent {
       display: "flex",
       flexDirection: "column",
       justifyContent: "center",
-      background: "  #E9FFFF"
+      background: "  #E9FFFF",
+      paddingTop: "10%"
     }
     const picBox = {
       display: "flex",
@@ -120,7 +119,6 @@ export default class Home extends React.PureComponent {
       height: "8vh",
       marginRight: "1vw",
       marginTop: "8vh"*/
-
       width: "13%",
       height: "auto",
       marginRight: "7%",
@@ -129,8 +127,10 @@ export default class Home extends React.PureComponent {
     const picBoxMobile = {
       display: "flex",
       flexDirection: "column",
-      width: "100%",
-      marginTop: "7px"
+      width: "80%",
+      marginLeft: "10%",
+      marginTop: "3%"
+      /*marginTop: "30%"*/
 
     }
     /* const articleStyle = {
@@ -160,11 +160,12 @@ export default class Home extends React.PureComponent {
       fontWeight: "600",
       textAlign: "center",
       color: " #black",
-      marginTop: "5px"
+      marginTop: "1%",
+      marginBottom: "5%"
 
     }
     const articleTitleMobile = {
-      fontFamily: "Romantic",
+      fontFamily: "Lato",
       fontSize: ".84em",
       fontWeight: "bold",
       textAlign: "center",
@@ -176,7 +177,8 @@ export default class Home extends React.PureComponent {
       fontFamily: "Romantic",
       fontSize: ".63em",
       fontWeight: "bold",
-      marginLeft: "130px",
+      /*marginLeft: "130px",*/
+      /*marginLeft: "30%",*/
       color: "#0C090A"
 
     }
@@ -261,90 +263,45 @@ export default class Home extends React.PureComponent {
                     <div style={articleTitle}>
                       {article.title}
                     </div>
-                    <div style={authorStyle}>
-                      ---Author
-                    </div>
                   </Link>
                 </div>
-
               ))}
-
             </div>
           </Responsive>
 
           <Responsive maxDeviceWidth={1023}>
+
             <div style={backgroundStyleMobile}>
-              <div style={picBoxMobile}>
-                <div>
-                  <img style={articleImgMobile} src="https://68.media.tumblr.com/630ee7e6247d5f16efe7f315bff42707/tumblr_n3uidp4lD71ty9ma3o1_1280.jpg" alt=""/>
+              <div style={{
+                  fontFamily: "Droid Serif",
+                  fontSize: "1.5em",
+                  fontWeight: "bold",
+                  textTransform: "uppercase",
+                  margin: "0 auto",
+                  marginBottom: "5%",
+                  paddingBottom: "1%",
+                  borderBottom: "1px solid gray"
+                }}>This week</div>
+              {this.state.articles.map((article, index) => (
+                <div style={picBoxMobile}>
 
-                  <div style={articleTitleMobile}>
-                    Lorem Ipsum dolor sit
-                  </div>
+                  <Link style={linkStyle} to={`/Article/${article.id}`}>
 
-                  <div style={authorStyleMobile}>
-                    - - - Lorem Ipsum
-                  </div>
-                </div>
+                    <img style={articleImgMobile}  src={article.image2} alt=""/>
+
+                    <div style={articleTitleMobile}>
+                      {article.title}
+                    </div>
+                  </Link>
               </div>
-
-              <div style={picBoxMobile}>
-
-                <div>
-
-                  <img style={articleImgMobile} src="https://68.media.tumblr.com/618291bc87361d807acd04604f0966d7/tumblr_n3uidp4lD71ty9ma3o3_1280.jpg" alt=""/>
-
-                  <div style={articleTitleMobile}>
-                    <Link to="/ArticleTwo">Lorem Ipsum dolor sit</Link>
-                  </div>
-
-                  <div style={authorStyleMobile}>
-                    - - - Lorem Ipsum
-                  </div>
-
-                </div>
-              </div>
-
-              <div style={picBoxMobile}>
-                <div>
-                  <img style={articleImgMobile} src="https://68.media.tumblr.com/9ee7cb189d0abfe5a3168cf8b07ac066/tumblr_n3uidp4lD71ty9ma3o2_1280.jpg" alt=""/>
-
-                  <div style={articleTitleMobile}>
-                    <Link to="/ArticleThree">Lorem Ipsum dolor sit</Link>
-                  </div>
-
-                  <div style={authorStyleMobile}>
-                    - - - Lorem Ipsum
-                  </div>
-                </div>
-              </div>
-
-              <div style={picBoxMobile}>
-                <div>
-                  <img style={articleImgMobile} src="https://68.media.tumblr.com/cbc5d0a14637c62e9a7c36bbf166286d/tumblr_n3uidp4lD71ty9ma3o4_1280.jpg" alt=""/>
-
-                  <div style={articleTitleMobile}>
-                    <Link to="/ArticleFour">Lorem Ipsum dolor sit</Link>
-                  </div>
-
-                  <div style={authorStyleMobile}>
-                    - - - Lorem Ipsum
-                  </div>
-                </div>
-              </div>
+            ))}
             </div>
+
           </Responsive>
 
 
 
-          <Responsive maxDeviceWidth={1023}>
-            <div>
-
-
-            </div>
-          </Responsive>
-
-        </main>
+                </main>
 
         <footer>
           <Responsive minDeviceWidth={1024}>
@@ -361,8 +318,8 @@ export default class Home extends React.PureComponent {
     />
   </Tabs>
 
-        </Responsive>}
-                  </footer>
+        </Responsive>
+</footer>
 
       </div>
     );

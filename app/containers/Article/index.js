@@ -355,25 +355,16 @@ const borderStyle = {
                 <div style = {contentHolderMobile }>
 
                   <div style = {contentTitleMobile }>
-                    Loss and freedom in Kieslowski's Blue:
+                    {this.state.article.title}
                   </div>
 
-                  <img style = {articleImageMobile } src="https://s-media-cache-ak0.pinimg.com/originals/68/12/6d/68126d8250cb7972ee465ef8a71ede8e.jpg" alt=""/>
+                  <img style = {articleImageMobile } src={this.state.article.image} alt=""/>
 
 
                   <div style = {contentStyleMobile }>
-                    <span style = {{fontFamily: "Playfair Text", fontSize:"1.8em"}}>L</span>orem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    <span style = {{fontFamily: "Playfair Text", fontSize:"1.5em"}}>{this.state.article.firstCharacter}</span>
+                  {this.state.article.body}
                   </div>
-
-                  <div style = {contentStyleMobile }>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-                  </div>
-
-                  <div style = {contentStyleMobile }>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                  </div>
-
                 </div>
 
                 <div style = {tableHolderMobile }>

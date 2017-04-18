@@ -15,7 +15,6 @@ import Helmet from 'react-helmet';
 /*import {cyan500} from 'material-ui/styles/colors';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';*/
-
 import {Link} from "react-router";
 import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
@@ -40,9 +39,6 @@ export default class Dashboard extends React.PureComponent {
       firstCharacter:'',
       menuOpen: false
     };
-  }
-handleNav = (location) => {
-    push(location);
   }
 
   handleMenu = () => {
@@ -75,14 +71,17 @@ if (this.state.menuOpen == true) {
   return (
     <Paper style={style}>
 <Menu>
- <MenuItem primaryText="Home"
-          containerElement={<Link to="/"></Link>}/>
+  <MenuItem primaryText="Home"
+    containerElement={<Link to="/"></Link>}/>
 
-        <MenuItem primaryText="About us"
-          containerElement={<Link to="/"></Link>}/>
+  <MenuItem primaryText="About us"
+            containerElement={<Link to="/About"></Link>}/>
 
- <MenuItem primaryText="Settings" />
- <MenuItem primaryText="Sign out" />
+  <MenuItem primaryText="Browse"
+            containerElement={<Link to="/"></Link>}/>
+
+ <MenuItem primaryText="Contribute"
+           containerElement={<Link to="/"></Link>}/>
 </Menu>
 </Paper>
   )
@@ -275,13 +274,6 @@ const colorStyle = {
             }} onChange={this.handleFirstCharacter} type='text' placeholder='Title'/>
         </div>
 
-                <div style={middleStyle}>
-            About Content
-          </div>
-
-            <textarea style={middleStyle2}
-              onChange={this.handleAbout}></textarea>
-
 
           <div style={middleStyle}>
             Article Body
@@ -316,17 +308,6 @@ const colorStyle = {
           <img src={this.state.preview2}/>
 </div>
 
-            <div style={middleStyle}>
-            <div style={{
-              marginBottom: '1%'
-            }}>
-              About image
-            </div>
-            <input style={{
-              marginBottom: '10%'
-            }} onChange={this.handleAboutImage} type='file'/>
-          <img src={this.state.preview3}/>
-          </div>
           </div>
           <div>
             <RaisedButton label='Submit' primary={true} style={style,
