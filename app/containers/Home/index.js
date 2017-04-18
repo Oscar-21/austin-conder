@@ -25,7 +25,7 @@ export default class Home extends React.PureComponent {
     }
   }
   componentWillMount(){
-    fetch("http://localhost:8000/api/getArticles")
+    fetch("http://jasparlamar.crab:8000/api/getArticles")
     .then(function(response){
       return response.json();
     })
@@ -109,7 +109,7 @@ export default class Home extends React.PureComponent {
       flexDirection: "column",
       justifyContent: "center",
       background: "  #E9FFFF",
-      paddingTop: "10%"
+      paddingTop: "10%",
     }
     const picBox = {
       display: "flex",
@@ -122,14 +122,17 @@ export default class Home extends React.PureComponent {
       width: "13%",
       height: "auto",
       marginRight: "7%",
-      marginTop: "1vh"
+      marginTop: "1vh",
     }
     const picBoxMobile = {
       display: "flex",
       flexDirection: "column",
-      width: "80%",
-      marginLeft: "10%",
-      marginTop: "3%"
+      width: "70%",
+      margin: "0 auto",
+      /*marginLeft: "15%",*/
+      marginTop: "3%",
+      paddingBottom: "3%",
+      /*borderBottom: "3px solid #A9641E"
       /*marginTop: "30%"*/
 
     }
@@ -145,6 +148,8 @@ export default class Home extends React.PureComponent {
     }
     const articleImgMobile = {
       width: "100%",
+      boxShadow:"10px 0px 10px 1px rgba(0,0,0,0.6)",
+      borderRadius: "2%",
       height: "auto"
     }
     const contentStyle = {
@@ -170,8 +175,13 @@ export default class Home extends React.PureComponent {
       fontWeight: "bold",
       textAlign: "center",
       color: " #black",
-      marginTop: "5px"
-
+      marginTop: "5px",
+      textShadow: "1px 0px 1px rgba(0,0,0,0.6)",
+      paddingTop: "4%",
+      paddingBottom:"3%",
+      marginBottom: "5%",
+      /*borderBottom: "3px solid #A9641E"*/
+      borderBottom: "2px solid #408193"
     }
     const authorStyle = {
       fontFamily: "Romantic",
@@ -280,7 +290,8 @@ export default class Home extends React.PureComponent {
                   margin: "0 auto",
                   marginBottom: "5%",
                   paddingBottom: "1%",
-                  borderBottom: "1px solid gray"
+                  borderBottom: "1px solid gray",
+                  textShadow:"2px 2px 3px rgba(0,0,0,0.6)",
                 }}>This week</div>
               {this.state.articles.map((article, index) => (
                 <div style={picBoxMobile}>

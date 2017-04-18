@@ -21,7 +21,7 @@ export default class Article extends React.PureComponent {
   }
 
   componentWillMount() {
-    fetch("http://localhost:8000/api/showArticle/"+this.props.params.id)
+    fetch("http://jasparlamar.crab:8000/api/showArticle/"+this.props.params.id)
     .then(function(response){
       return response.json();
 

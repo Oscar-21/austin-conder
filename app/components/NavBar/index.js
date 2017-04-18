@@ -12,10 +12,10 @@ import AppBar from 'material-ui/AppBar';
 /*import RaisedButton from 'material-ui/RaisedButton';*/
 import Icon from 'components/Icon';
 import Android from 'material-ui/svg-icons/Action/android'
-
-import Paper from 'material-ui/Paper';
+import RaisedButton from 'material-ui/RaisedButton';
+/*import Paper from 'material-ui/Paper';
 import MenuItem from 'material-ui/MenuItem';
-import Menu from 'material-ui/Menu';
+import Menu from 'material-ui/Menu';*/
 
 import {Tabs, Tab} from 'material-ui/Tabs';
 class NavBar extends React.PureComponent {
@@ -49,36 +49,37 @@ class NavBar extends React.PureComponent {
   // true, at which point it will return
   // its values/properties?
   showMenu = () => {
+
     const nav = {
       display: "flex",
       flexDirection: "column",
-      alignSelf: "center"
+      alignSelf: "center",
+      background: "#F5F5F5",
+      width: "75%",
+      position: "absolute"
     }
 
-
-
-    const navLink = {
+    const navLinkMob = {
       textAlign: "center",
-      margin: "3px",
-      border: "3px solid #408193",
-      padding: "5px"
-    }
+      padding: "3px"
+    };
 
-    const style = {
-  display: 'inline-block',
-  margin: '16px 32px 16px 0',
-};
 
     if (this.state.menuOpen == true) {
       return (
-        <Paper style={style}>
-   <Menu>
-     <MenuItem primaryText="Refresh" />
-     <MenuItem primaryText="Help &amp; feedback" />
-     <MenuItem primaryText="Settings" />
-     <MenuItem primaryText="Sign out" />
-   </Menu>
- </Paper>
+          <nav style = {nav}>
+          <RaisedButton containerElement={<Link to="/"></Link>} primary={true} label="Home"  style={navLinkMob} />
+
+          <RaisedButton containerElement={<Link to="/About"></Link>} primary={true} label="About us"  style={navLinkMob} />
+
+          <RaisedButton containerElement={<Link to="/Browse"></Link>} label="Browse" primary={true}  style={navLinkMob} />
+
+
+          <RaisedButton primary={true} containerElement={<Link to="/Dashboard"></Link>}label="Contribute" style={navLinkMob} />
+
+
+          <RaisedButton primary={true} containerElement={<Link to="/"></Link>}label="Our Friends" style={navLinkMob} />
+        </nav>
       )
     }
   }

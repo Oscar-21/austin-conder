@@ -22,6 +22,7 @@ import Paper from 'material-ui/Paper';
 import MenuItem from 'material-ui/MenuItem';
 import Menu from 'material-ui/Menu';
 
+import Responsive from 'react-responsive';
 
 export default class Dashboard extends React.PureComponent {
   constructor(props) {
@@ -62,6 +63,10 @@ export default class Dashboard extends React.PureComponent {
       padding: "5px"
     }
 
+    const styleMobile = {
+  display: 'inline-block',
+  margin: '16px 32px 16px 0',
+}
     const style = {
   display: 'inline-block',
   position: "absolute",
@@ -69,6 +74,8 @@ export default class Dashboard extends React.PureComponent {
 };
 if (this.state.menuOpen == true) {
   return (
+    <div>
+    <Responsive minDeviceWidth={1024}>
     <Paper style={style}>
 <Menu>
   <MenuItem primaryText="Home"
@@ -82,8 +89,33 @@ if (this.state.menuOpen == true) {
 
  <MenuItem primaryText="Contribute"
            containerElement={<Link to="/"></Link>}/>
+
+         <MenuItem primaryText="Our Friends"
+           containerElement={<Link to="/"></Link>}/>
 </Menu>
 </Paper>
+</Responsive>
+<Responsive maxDeviceWidth={1023}>
+    <Paper style={styleMobile}>
+<Menu>
+  <MenuItem primaryText="Home"
+    containerElement={<Link to="/"></Link>}/>
+
+  <MenuItem primaryText="About us"
+            containerElement={<Link to="/About"></Link>}/>
+
+  <MenuItem primaryText="Browse"
+            containerElement={<Link to="/"></Link>}/>
+
+ <MenuItem primaryText="Contribute"
+           containerElement={<Link to="/"></Link>}/>
+
+         <MenuItem primaryText="Our Friends"
+           containerElement={<Link to="/"></Link>}/>
+</Menu>
+</Paper>
+</Responsive>
+</div>
   )
 }
 }
@@ -158,7 +190,7 @@ if (this.state.menuOpen == true) {
     data.append('firstCharacter', this.state.firstCharacter);
 
 
-    fetch('http://localhost:8000/api/storeArticle', {
+    fetch('http://jasparlamar.crab:8000/api/storeArticle', {
       method: 'post',
       body: data
     }).then(function(response) {
@@ -223,6 +255,21 @@ const colorStyle = {
       border: '1px solid blue'
 
     }
+
+
+    const middleStyleMobile = {
+      marginLeft: "1px"
+    }
+    const middleStyle3Mobile = {
+      marginLeft: '1px'
+    }
+    const middleStyle2Mobile = {
+      width: '50%',
+      marginBottom: '5%',
+      paddingTop: '10%',
+      border: '1px solid blue'
+
+    }
     return (
       <div>
         <Helmet title='Dashboard' meta={[{
@@ -240,75 +287,146 @@ const colorStyle = {
 
 
           </div>
+          <Responsive minDeviceWidth={1024}>
+            <div style={middleStyle}>
+              Article Title
+            </div>
 
-          <div style={middleStyle}>
-            Article Title
-          </div>
-
-          <div style={middleStyle3}>
-            <input style={{
-              marginBottom: '5%',
-              border: '1px solid blue'
-            }} onChange={this.handleTitle} type='text' placeholder='Title'/>
-          </div>
-
-          <div style={middleStyle}>
-            Article Subheader
-          </div>
-
-          <div style={middleStyle3}>
-            <input style={{
-              marginBottom: '5%',
-              border: '1px solid blue'
-            }} onChange={this.handleSubheader} type='text' placeholder='Title'/>
-          </div>
+            <div style={middleStyle3}>
+              <input style={{
+                marginBottom: '5%',
+                border: '1px solid blue'
+              }} onChange={this.handleTitle} type='text' placeholder='Title'/>
+            </div>
 
             <div style={middleStyle}>
-            First Character
-          </div>
+              Article Subheader
+            </div>
 
-          <div style={middleStyle3}>
-            <input style={{
-              marginBottom: '5%',
-              border: '1px solid blue'
-            }} onChange={this.handleFirstCharacter} type='text' placeholder='Title'/>
+            <div style={middleStyle3}>
+              <input style={{
+                marginBottom: '5%',
+                border: '1px solid blue'
+              }} onChange={this.handleSubheader} type='text' placeholder='Title'/>
+            </div>
+
+              <div style={middleStyle}>
+              First Character
+            </div>
+
+            <div style={middleStyle3}>
+              <input style={{
+                marginBottom: '5%',
+                border: '1px solid blue'
+              }} onChange={this.handleFirstCharacter} type='text' placeholder='Title'/>
+            </div>
+
+
+            <div style={middleStyle}>
+              Article Body
+            </div>
+
+            <textarea style={middleStyle2} onChange={this.handleBody} placeholder='Body'></textarea>
+
+            <div style={middleStyle}>
+              <div style={{
+                marginBottom: '1%'
+              }}>
+                Article image
+              </div>
+
+              <input style={{
+                marginBottom: '10%'
+              }} onChange={this.handleImage} type='file'/>
+              <img src={this.state.preview}/>
+
+            </div>
+
+            <div style={middleStyle}>
+              <div style={{
+                marginBottom: '1%'
+              }}>
+                Homepage image
+              </div>
+
+              <input style={{
+                marginBottom: '10%'
+                }} onChange={this.handleImage2}     type='file'/>
+                <img src={this.state.preview2}/>
+            </div>
+          </Responsive>
+
+          <Responsive maxDeviceWidth={1023}>
+            <div style={middleStyleMobile}>
+              Article Title
+            </div>
+
+            <div style={middleStyle3Mobile}>
+              <input style={{
+                marginBottom: '5%',
+                border: '1px solid blue'
+              }} onChange={this.handleTitle} type='text' placeholder='Title'/>
+            </div>
+
+            <div style={middleStyleMobile}>
+              Article Subheader
+            </div>
+
+            <div style={middleStyle3Mobile}>
+              <input style={{
+                marginBottom: '5%',
+                border: '1px solid blue'
+              }} onChange={this.handleSubheader} type='text' placeholder='Title'/>
+            </div>
+
+              <div style={middleStyleMobile}>
+              First Character
+            </div>
+
+            <div style={middleStyle3Mobile}>
+              <input style={{
+                marginBottom: '5%',
+                border: '1px solid blue'
+              }} onChange={this.handleFirstCharacter} type='text' placeholder='Title'/>
+            </div>
+
+
+            <div style={middleStyleMobile}>
+              Article Body
+            </div>
+
+            <textarea style={middleStyle2Mobile} onChange={this.handleBody} placeholder='Body'></textarea>
+
+            <div style={middleStyleMobile}>
+              <div style={{
+                marginBottom: '1%'
+              }}>
+                Article image
+              </div>
+
+              <input style={{
+                marginBottom: '10%'
+              }} onChange={this.handleImage} type='file'/>
+              <img src={this.state.preview}/>
+
+            </div>
+
+            <div style={middleStyleMobile}>
+              <div style={{
+                marginBottom: '1%'
+              }}>
+                Homepage image
+              </div>
+
+              <input style={{
+                marginBottom: '10%'
+                }} onChange={this.handleImage2}     type='file'/>
+                <img src={this.state.preview2}/>
+            </div>
+          </Responsive>
+
         </div>
 
-
-          <div style={middleStyle}>
-            Article Body
-          </div>
-
-          <textarea style={middleStyle2} onChange={this.handleBody} placeholder='Body'></textarea>
-
-          <div style={middleStyle}>
-            <div style={{
-              marginBottom: '1%'
-            }}>
-              Article image
-            </div>
-
-            <input style={{
-              marginBottom: '10%'
-            }} onChange={this.handleImage} type='file'/>
-          <img src={this.state.preview}/>
-
-          </div>
-
-            <div style={middleStyle}>
-            <div style={{
-              marginBottom: '1%'
-            }}>
-              Homepage image
-            </div>
-
-            <input style={{
-              marginBottom: '10%'
-            }} onChange={this.handleImage2} type='file'/>
-          <img src={this.state.preview2}/>
-</div>
-
-          </div>
           <div>
             <RaisedButton label='Submit' primary={true} style={style,
             middleStyle} onTouchTap={this.storeArticle}/>

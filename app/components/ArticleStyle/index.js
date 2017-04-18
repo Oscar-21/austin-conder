@@ -8,6 +8,7 @@ import React from 'react';
 import Responsive from 'react-responsive';
 import {Link} from "react-router";
 import AppBar from 'material-ui/AppBar';
+import RaisedButton from 'material-ui/RaisedButton';
 
 class ArticleStyle extends React.PureComponent {
   // Create boolean variable that we can use
@@ -46,25 +47,32 @@ class ArticleStyle extends React.PureComponent {
     const nav = {
       display: "flex",
       flexDirection: "column",
-      alignSelf: "center"
+      alignSelf: "center",
+      background: "#F5F5F5",
+      width: "75%",
+      position: "absolute"
     }
 
     const navLink = {
       textAlign: "center",
-      margin : "3px",
-      border: "3px solid #408193",
-      padding: "5px"
+      padding: "3px"
     };
 
     if(this.state.menuOpen == true)
     {
       return(
         <nav style = {nav}>
-          <Link style = {navLink}>Link One</Link>
-          <Link style = {navLink}>Link Two</Link>
-          <Link style = {navLink}>Link Three</Link>
-          <Link style = {navLink}>Link Four</Link>
-          <Link style = {navLink}>Link Five</Link>
+          <RaisedButton containerElement={<Link to="/"></Link>} primary={true} label="Home"  style={navLink} />
+
+          <RaisedButton containerElement={<Link to="/About"></Link>} primary={true} label="About us"  style={navLink} />
+
+          <RaisedButton containerElement={<Link to="/Browse"></Link>} label="Browse" primary={true}  style={navLink} />
+
+
+          <RaisedButton primary={true} containerElement={<Link to="/Dashboard"></Link>}label="Contribute" style={navLink} />
+
+
+          <RaisedButton primary={true} containerElement={<Link to="/"></Link>}label="Our Friends" style={navLink} />
         </nav>
       )
     }

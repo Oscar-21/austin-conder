@@ -21,6 +21,7 @@ export default class App extends React.PureComponent { // eslint-disable-line re
   {
     var theme = getMuiTheme();
     theme.tabs.backgroundColor=" #003B4D";
+    theme.raisedButton.primaryColor="#003B4D";
 
     return { muiTheme: theme }
   };
