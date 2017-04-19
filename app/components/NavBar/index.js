@@ -233,41 +233,44 @@ class NavBar extends React.PureComponent {
 
 
               <Tab style={tabChildNewTextz}
-        label="LOGO"
+        label="WW"
       />
 
 
 
     <Tab style={tabChildNewText}
         label="home"
-        onActive={() => this.handleNav("/")}
+    containerElement={<Link to="/"></Link>}/>
       />
 
 
   <Tab style={tabChildNewText}
         label="about us"
-        onActive={() => this.handleNav("/About")}
+    containerElement={<Link to="/About"></Link>}/>
       />
 
   <Tab style={tabChildNewText}
         label="Browse"
-        onActive={() => this.handleNav("/Browse")}
+    containerElement={<Link to="/Browse"></Link>}/>
       />
 
   <Tab style={tabChildNewText}
         label="Contribute"
 
-        onActive={() => this.handleNav("/Dashboard")}
+    containerElement={<Link to="/Dashboard"></Link>}/>
       />
 
   <Tab style={tabChildNewText}
         label="Our Friends"
       />
     <Tab style={tabChildNewTextz}
-        label="Social"
+        label="Login"
+    containerElement={<Link to="/SignIn"></Link>}/>
       />
     <Tab style={tabChildNewTextz}
-        label="Share"
+        label="Sign up"
+    containerElement={<Link to="/SignUp"></Link>}/>
+
       />
     </Tabs>
           </Responsive>

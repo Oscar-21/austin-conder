@@ -15,81 +15,57 @@ export default function createRoutes() {
 
   return [
     {
-      path: '/ArticleTwo',
-      name: 'ArticleTwo',
+      path: '/SignIn',
+      name: 'SignIn',
       getComponent(nextState, cb) {
-      import('containers/ArticleTwo')
-      .then(loadModule(cb))
-      .catch(errorLoading);
+        import('containers/SignIn')
+        .then(loadModule(cb))
+        .catch(errorLoading);
       },
     },
-{
+    {
+      path: '/SignUp',
+      name: 'SignUp',
+      getComponent(nextState, cb) {
+        import('containers/SignUp')
+        .then(loadModule(cb))
+        .catch(errorLoading);
+      },
+    },
+    {
+      path: '/AboutUpdate',
+      name: 'AboutUpdate',
+      getComponent(nextState, cb) {
+        import('containers/AboutUpdate')
+        .then(loadModule(cb))
+        .catch(errorLoading);
+      },
+    },
+    {
       path: '/Browse',
       name: 'Browse',
       getComponent(nextState, cb) {
-      import('containers/Browse')
-      .then(loadModule(cb))
-      .catch(errorLoading);
+        import('containers/Browse')
+        .then(loadModule(cb))
+        .catch(errorLoading);
       },
     },
     {
       path: '/About',
       name: 'About',
       getComponent(nextState, cb) {
-      import('containers/About')
-      .then(loadModule(cb))
-      .catch(errorLoading);
+        import('containers/About')
+        .then(loadModule(cb))
+        .catch(errorLoading);
       },
     },
     {
-      path: '/ArticleThree',
-      name: 'ArticleThree',
+      path: '/Dashboard',
+      name: 'Dashboard',
       getComponent(nextState, cb) {
-      import('containers/ArticleThree')
-      .then(loadModule(cb))
-      .catch(errorLoading);
-      },
-    },
-
-
-    {
-      path: '/ArticleFour',
-      name: 'ArticleFour',
-      getComponent(nextState, cb) {
-      import('containers/ArticleFour')
-      .then(loadModule(cb))
-      .catch(errorLoading);
-      },
-    },
-
-
-
-    {
-      path: '/Test',
-      name: 'Test',
-      getComponent(nextState, cb) {
-      import('containers/Test')
-      .then(loadModule(cb))
-      .catch(errorLoading);
-      },
-    },
-
-    {
-        path: '/Dashboard',
-        name: 'Dashboard',
-        getComponent(nextState, cb) {
         import('containers/Dashboard')
-          .then(loadModule(cb))
-          .catch(errorLoading);
-      },
-    },
-    {
-        path: '/Blue',
-        name: 'Blue',
-        getComponent(nextState, cb) {
-        import('containers/Blue')
-          .then(loadModule(cb))
-          .catch(errorLoading);
+        .then(loadModule(cb))
+        .catch(errorLoading);
       },
     },
     {

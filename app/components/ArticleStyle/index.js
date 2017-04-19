@@ -119,6 +119,8 @@ class ArticleStyle extends React.PureComponent {
     }
 
     const navStyle = {
+      display: 'flex',
+      flexDirection: 'row',
       textTransform: "uppercase",
       textAlign: "center",
       verticalAlign: "middle",
@@ -130,7 +132,13 @@ class ArticleStyle extends React.PureComponent {
       color: "#eeeeee"
     }
 
+    const socialStyle = {
+      marginLeft: "24.5%",
+    }
 
+    const linkStyle = {
+      marginLeft: "35%",
+    }
 
     // content Parent
   /*  const backgroundStyle = {
@@ -252,6 +260,7 @@ class ArticleStyle extends React.PureComponent {
             </div>
 
             <nav style = {navStyle}>
+              <div style={linkStyle}>
               <Link to="/" style ={{
                   textDecoration: "none",
                   color: "#eeeeee"
@@ -274,6 +283,20 @@ class ArticleStyle extends React.PureComponent {
                 color: "#eeeeee"
               }}>  &nbsp; contribute &nbsp;</Link>
               /&nbsp; our friends &nbsp; /
+              </div>
+
+                <div style={socialStyle}>
+                  <Link to="/SignIn" style ={{
+                      textDecoration: "none",
+                      color: "#eeeeee"}}>
+                    |&nbsp; Login &nbsp;
+                </Link>
+
+                <Link to="SignUp" style ={{
+                    textDecoration: "none",
+                    color: "#eeeeee"}}>
+                  |&nbsp; Sign Up &nbsp;|</Link>
+              </div>
             </nav>
           </div>
         </Responsive>

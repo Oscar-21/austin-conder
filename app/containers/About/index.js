@@ -11,18 +11,16 @@ import {Link} from "react-router";
 import Responsive from 'react-responsive';
 export default class About extends React.PureComponent {
 
-constructor(props){
+constructor(props) {
     super(props);
     this.state = {
-      about:""
+      about: []
     }
   }
-
-  componentWillMount() {
-    fetch("http://localhost:8000/api/showArticle/"+this.props.params.id)
+  componentWillMount(){
+    fetch("http://localhost:8000/api/getAbout")
     .then(function(response){
       return response.json();
-
     })
     .then(function(json){
       this.setState({
@@ -50,7 +48,7 @@ constructor(props){
     }
 
     const titleBox = {
-      marginTop: "10%",
+      marginTop: "4%",
       marginRight: "20%",
       marginLeft: "20%",
       paddingTop: "1.5%",
@@ -98,7 +96,7 @@ constructor(props){
       justifyContent: "space-around"
     }
     const imageStyle = {
-      marginTop: "5%",
+      marginTop: "12%",
       width: "20%",
       height: "20%"
     }
@@ -176,35 +174,37 @@ constructor(props){
                   </div>
                 </div>
                 <div style={firstStyle}>
-                  <img style={imageStyle} src="https://68.media.tumblr.com/21eed63e017188a2b5546c68063c370c/tumblr_ook5rge8VR1ubdqpuo1_250.jpg" alt=""/>
+                  <img style={imageStyle} src={this.state.about.image} alt=""/>
                   <div style={subheaderStyle}>
-                    <div style={subheaderOne}> We love cinema</div>
+                    <div style={subheaderOne}> {this.state.about.header}</div>
 
                     <div style={contentOne}>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                      {this.state.about.body}
                     </div>
                   </div>
                 </div>
 
                   <div style={firstStyle}>
-                  <img style={imageStyle} src="https://68.media.tumblr.com/26511dfa3b6cb8273b945f9cab951ee9/tumblr_ook9ejNdlv1ubdqpuo1_540.jpg" alt=""/>
+                  <img style={imageStyle} src={this.state.about.image2} alt=""/>
                   <div style={subheaderStyle}>
-                    <div style={subheaderTwo}> You love cinema too?</div>
+                    <div style={subheaderTwo}> {this.state.about.header2}</div>
 
                     <div style={contentOne}>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+                      {this.state.about.body2}
                     </div>
                   </div>
                 </div>
 
 
                   <div style={firstStyle}>
-                  <img style={imageStyle} src="https://68.media.tumblr.com/2812b695c746380469792f0854c56a70/tumblr_ookd8yAJJI1ubdqpuo1_500.jpg" alt=""/>
+                  <img style={imageStyle} src={this.state.about.image3} alt=""/>
                   <div style={subheaderStyle}>
-                    <div style={subheaderTwo}> We want community Article submissions</div>
+                    <div style={subheaderTwo}> {this.state.about.header3}</div>
 
                     <div style={contentOne}>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+                      {this.state.about.body3}
                     </div>
                   </div>
                 </div>

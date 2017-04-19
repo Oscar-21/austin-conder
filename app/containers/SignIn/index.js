@@ -1,17 +1,17 @@
 /*
  *
- * Browse
+ * SignIn
  *
  */
 
 import React from 'react';
 import Helmet from 'react-helmet';
+import {Link} from "react-router";
 import Responsive from 'react-responsive';
 import ArticleStyle from 'components/ArticleStyle';
-import {Link} from 'react-router';
-export default class Browse extends React.PureComponent {
+export default class SignIn extends React.PureComponent {
   render() {
-        const backgroundStyle = {
+                const backgroundStyle = {
      /*background: "  #F5F5F5",*/
       display: "flex",
       flexDirection: "column",
@@ -58,11 +58,15 @@ export default class Browse extends React.PureComponent {
       letterSpacing: "4px",
 
     }
-    return (
-      <div style={backgroundStyle}>
-        <Helmet title="Browse" meta={[ { name: 'description', content: 'Description of Browse' }]}/>
 
-        <header>
+    const inputStyle = {
+      border: "1px solid black"
+    }
+    return (
+      <div>
+        <Helmet title="SignIn" meta={[ { name: 'description', content: 'Description of SignIn' }]}/>
+
+  <header>
           <ArticleStyle/>
         </header>
 
@@ -71,9 +75,11 @@ export default class Browse extends React.PureComponent {
             <div style={backgroundContentBox}>
               <div style={titleBox}>
                 <div style = {titleStyle}>
-                  Browse
+                  Login
                 </div>
               </div>
+              <input style={inputStyle} type='text' placeholder='email'/>
+              <input type='text' style={inputStyle} placeholder='password'/>
             </div>
           </main>
         </Responsive>
@@ -82,7 +88,7 @@ export default class Browse extends React.PureComponent {
             <div style={backgroundContentBox}>
               <div style={titleBox}>
                 <div style = {titleStyleMobile}>
-                  Browse
+                  Login
                 </div>
               </div>
             </div>

@@ -177,7 +177,7 @@ export default class Home extends React.PureComponent {
       textAlign: "center",
       color: " #black",
       marginTop: "5px",
-      textShadow: "1px 0px 1px rgba(0,0,0,0.6)",
+      textShadow: "0px 0px 1px rgba(0,0,0,0.6)",
       paddingTop: "4%",
       paddingBottom:"3%",
       marginBottom: "5%",
@@ -247,12 +247,12 @@ export default class Home extends React.PureComponent {
 
         <header>
           {/*mobile navbar*/}
-          <Responsive maxDeviceWidth={1023}>
+          <Responsive maxDeviceWidth={1024}>
             <NavBar/>
           </Responsive>
 
           {/* laptop navbar and title*/}
-          <Responsive minDeviceWidth={1024}>
+          <Responsive minDeviceWidth={1025}>
 
             <div style={mainStyle}>
 
@@ -275,7 +275,7 @@ export default class Home extends React.PureComponent {
 
         <main>
 
-          <Responsive minDeviceWidth={1024}>
+          <Responsive minDeviceWidth={1025}>
 
             <div style={scrollStyle}>
               <div style={scrollStyle2}>
@@ -332,7 +332,7 @@ export default class Home extends React.PureComponent {
                 </main>
 
         <footer>
-          <Responsive minDeviceWidth={1024}>
+          <Responsive minDeviceWidth={1025}>
   <Tabs>
     <Tab
       icon={<FontIcon className="material-icons"></FontIcon>}

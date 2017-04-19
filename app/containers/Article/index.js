@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Helmet from 'react-helmet';
 import {Link} from "react-router";
@@ -8,23 +7,19 @@ import Comments from 'components/Comments';
 import Share from 'material-ui/svg-icons/social/share';
 import Email from 'material-ui/svg-icons/communication/email';
 import Whatshot from 'material-ui/svg-icons/social/whatshot';
-/*import Share from 'material-ui/svg-icons/social/share'
-import Whatshot from 'material-ui/svg-icons/social/whatshot'*/
+
 /* allow us to link to different pages in project folder*/
 export default class Article extends React.PureComponent {
-
   constructor(props){
     super(props);
     this.state = {
       article:""
     }
   }
-
   componentWillMount() {
     fetch("http://localhost:8000/api/showArticle/"+this.props.params.id)
     .then(function(response){
       return response.json();
-
     })
     .then(function(json){
       this.setState({
@@ -34,11 +29,8 @@ export default class Article extends React.PureComponent {
   }
 
   render() {
-
-
         // content Parent
     const backgroundStyle = {
-     /*background: "  #F5F5F5",*/
       display: "flex",
       flexDirection: "column",
       width: "100%",
@@ -52,7 +44,6 @@ export default class Article extends React.PureComponent {
       flexDirection: "row",
       background: "#F5F5F5",
       width: "90%"
-
     }
 
     //share icon
@@ -61,6 +52,7 @@ export default class Article extends React.PureComponent {
       paddingTop: "20%",
       position: "fixed"
     }
+
 // hot icon
     const hotStyle = {
       marginLeft: "4%",
@@ -68,7 +60,6 @@ export default class Article extends React.PureComponent {
       position: "fixed"    }
 
       //git icon
-
   const gitStyle = {
       marginLeft: "4%",
       paddingTop: "26%",
@@ -80,7 +71,6 @@ export default class Article extends React.PureComponent {
       width: "33.33%"
     }
 
-
     // article title
     const contentTitle = {
       fontFamily: "Franklin Gothic",
@@ -90,7 +80,6 @@ export default class Article extends React.PureComponent {
       fontWeight: "bold",
       textTransform: "uppercase"
     }
-
     //article body
     const contentStyle = {
       fontFamily: "Cormorant",
@@ -98,7 +87,6 @@ export default class Article extends React.PureComponent {
       marginBottom: "2%",
       fontWeight: "bold"
     }
-
     // table styling
     const tableHolder = {
       marginLeft: "25%",
@@ -113,7 +101,6 @@ export default class Article extends React.PureComponent {
       /*top:"223.76419067382812",*/
       width:"473.053955078125",
     }
-
     const tableStyle = {
       fontFamily: "Work Sans",
       fontWeight: "medium",
@@ -126,8 +113,6 @@ export default class Article extends React.PureComponent {
       borderTop: "2px solid  #A9641E",
       borderBottom: "2px solid #A9641E",
     }
-
-
     // article image styling
     const articleImage = {
       width:"90%",
@@ -135,7 +120,6 @@ export default class Article extends React.PureComponent {
       marginLeft: "33.33%",
       marginBottom: "2%"
     }
-
     const tableImage = {
       width:"65px",
       height: "65px",
@@ -145,7 +129,6 @@ export default class Article extends React.PureComponent {
       marginBottom: "2%"*/
     }
         const titleStyleLapMobile= {
-
       fontFamily: "Trebuchet MS",
       fontStyle: "light",
       fontWeight: "400",
@@ -155,7 +138,6 @@ export default class Article extends React.PureComponent {
       /*paddingLeft: "*/
       marginTop: "1%"
     }
-
     const navStyleMobile = {
       marginTop: "3%",
       textTransform: "uppercase",
@@ -168,7 +150,6 @@ export default class Article extends React.PureComponent {
       textDecoration:"None",
       color: "#eeeeee"
     }
-
     // content Parent
     const backgroundStyleMobile = {
       background: "  #F5F5F5",
@@ -176,20 +157,16 @@ export default class Article extends React.PureComponent {
       flexDirection: "column",
       width: "100%",
     }
-
     const backgroundContentBoxMobile= {
       display: "flex",
       flexDirection: "column",
       borderLeft: "4vw solid  #408193",
       borderRight: "4vw solid #408193"
     }
-
     // article styling
     const contentHolderMobile = {
       width: "100%"
     }
-
-
     // article title
     const contentTitleMobile  = {
       fontFamily: "Franklin Gothic",
@@ -201,7 +178,6 @@ export default class Article extends React.PureComponent {
       padding: "5%",
       paddingLeft: "10%"
     }
-
     //article body
     const contentStyleMobile  = {
       padding:"5%",
@@ -210,7 +186,6 @@ export default class Article extends React.PureComponent {
       marginBottom: "2%",*/
       fontWeight: "bold"
     }
-
     // table styling
     const tableHolderMobile  = {
       /*marginLeft: "5%",
@@ -225,7 +200,6 @@ export default class Article extends React.PureComponent {
       /*top:"223.76419067382812",
       width:"473.053955078125",*/
     }
-
     const tableStyleMobile  = {
       fontFamily: "Work Sans",
       fontWeight: "medium",
@@ -238,8 +212,6 @@ export default class Article extends React.PureComponent {
       borderTop: "2px solid  #A9641E",
       borderBottom: "2px solid #A9641E",
     }
-
-
     // article image styling
     const articleImageMobile  = {
       width:"100%",
@@ -249,7 +221,6 @@ export default class Article extends React.PureComponent {
       paddingRight: "8%",
       /*height: "30vh",*/
     }
-
     const tableImageMobile  = {
       width:"60%",
       paddingLeft: "5%",
@@ -260,24 +231,15 @@ export default class Article extends React.PureComponent {
       /*marginLeft: "33.33%",
       marginBottom: "2%"*/
     }
-
-
 const footerStyle = {
       margin: "0 auto",
       /*paddingTop: "3%",*/
       width: "90%",
       background: "#F5F5F5",
-
-
   }
-
 const borderStyle = {
 
-
 }
-
-
-
     const contentStyleFoot = {
       width: "75%",
       margin: "0 auto",
@@ -288,18 +250,14 @@ const borderStyle = {
       marginBottom: "2%",
       fontWeight: "bold"
     }
-
     return (
       <div style = {backgroundStyle}>
         <Helmet title="Article" meta={[ { name: 'description', content: 'Description of Home' }]}/>
-
         <header>
           <ArticleStyle/>
         </header>
-
         <main>
           <Responsive minDeviceWidth = {1025}>
-
               <div style = {backgroundContentBox}>
                 <div style={shareStyle}><Share/></div>
                 <div  style={hotStyle}><Whatshot/></div>
@@ -307,21 +265,15 @@ const borderStyle = {
                   <Email/>
                 </div>
                 <div style = {contentHolder}>
-
                   <div style = {contentTitle}>
                     {this.state.article.title}
                   </div>
-
                   <img style = {articleImage} src={this.state.article.image} alt=""/>
-
-
                   <div style = {contentStyle}>
                   <span style = {{fontFamily: "Playfair Text", fontSize:"1.5em"}}>{this.state.article.firstCharacter}</span>
                   {this.state.article.body}
                   </div>
-
                 </div>
-
                 <div style = {tableHolder}>
                   <div style = {tableStyle}>
                     <img style = {tableImage} src="https://68.media.tumblr.com/6592dd0c94e522cd649b37d34564354d/tumblr_onmo7oQX4i1ui53xxo1_1280.png" alt=""/>
@@ -340,74 +292,49 @@ const borderStyle = {
                     and stuff
                   </div>
               </div>
-
               </div>
-
-
-
           </Responsive>
-
-
           <Responsive maxDeviceWidth = {1024}>
             <div style = {backgroundStyleMobile }>
-
               <div style = {backgroundContentBoxMobile }>
                 <div style = {contentHolderMobile }>
-
                   <div style = {contentTitleMobile }>
                     {this.state.article.title}
                   </div>
-
                   <img style = {articleImageMobile } src={this.state.article.image} alt=""/>
-
-
                   <div style = {contentStyleMobile }>
                     <span style = {{fontFamily: "Playfair Text", fontSize:"1.5em"}}>{this.state.article.firstCharacter}</span>
                   {this.state.article.body}
                   </div>
                 </div>
-
                 <div style = {tableHolderMobile }>
-
                   <div style = {tableStyleMobile }>
-
                     <img style = {tableImageMobile } src="https://68.media.tumblr.com/6592dd0c94e522cd649b37d34564354d/tumblr_onmo7oQX4i1ui53xxo1_1280.png" alt=""/>
                     and stuff
                   </div>
-
                   <div style = {tableStyleMobile }>
-
                     <img style = {tableImageMobile } src="http://68.media.tumblr.com/297b1524bf497b54287a391dddc041b7/tumblr_on8bvj5R991t15yufo1_1280.jpg" alt=""/>
                     and stuff
                   </div>
-
                   <div style = {tableStyleMobile }>
-
                     <img style = {tableImageMobile } src="https://68.media.tumblr.com/2963863333a53592395331c524e11957/tumblr_omo46c9cjs1utmnjno1_1280.jpg" alt=""/>
                     and stuff
                   </div>
-
                   <div style = {tableStyleMobile }>
-
                     <img style = {tableImageMobile } src="https://s-media-cache-ak0.pinimg.com/564x/82/88/b5/8288b5b4c1ebbc253c01d84cdacc88da.jpg" alt=""/>
                     and stuff
                   </div>
-
                 </div>
-
               </div>
             </div>
           </Responsive>
           </main>
-
           <footer style = {footerStyle}>
             <div style = {borderStyle}></div>
             <div style = {contentStyleFoot}>
               <Comments/>
             </div>
           </footer>
-
-
       </div>
     );
   }

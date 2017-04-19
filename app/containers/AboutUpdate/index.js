@@ -1,12 +1,6 @@
 /*
  *
- * Dashboard
- *
- * -title
- * -constructor
- * -3 handlers
- * -store
- *
+ * ArticleUpdate
  *
  */
 
@@ -15,31 +9,33 @@ import Helmet from 'react-helmet';
 /*import {cyan500} from 'material-ui/styles/colors';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';*/
-import {Link} from "react-router";
 import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
 import Paper from 'material-ui/Paper';
 import MenuItem from 'material-ui/MenuItem';
 import Menu from 'material-ui/Menu';
 import Responsive from 'react-responsive';
-export default class Dashboard extends React.PureComponent {
+import {Link} from 'react-router';
+
+export default class AboutUpdate extends React.PureComponent {
   constructor(props) {
     super(props);
-    // this.state allows us to access all
-    // state variables of an object class
     this.state = {
-      title: '',
-      subheader:'',
+      header: '',
+      header2: '',
+      header3: '',
       body: '',
+      body2: '',
+      body3: '',
       image: '',
       preview: '',
       image2: '',
-      preview2:'',
-      firstCharacter:'',
+      preview2: '',
+      image3: '',
+      preview3: '',
       menuOpen: false
     };
   }
-
   handleMenu = () => {
     if (this.state.menuOpen == false) {
       this.setState({menuOpen: true})
@@ -47,8 +43,7 @@ export default class Dashboard extends React.PureComponent {
       this.setState({menuOpen: false})
     }
   }
-
-  showMenu = () => {
+    showMenu = () => {
     const nav = {
       display: "flex",
       flexDirection: "column",
@@ -117,26 +112,33 @@ if (this.state.menuOpen == true) {
   )
 }
 }
-  // function definition of handleTitle
-  //  to pass it a parameter:
-  //      parameter={this.handleTitle}
-  //  to have it run conintuously:
-  //      {handleTitle()}
-  // the {} are to tell the compiler to read
-  // text as javascript
-  handleTitle = (event) => {
-    this.setState({title: event.target.value});
+
+
+  handleHeader = (event) => {
+    this.setState({header: event.target.value});
   }
 
-  handleSubheader = (event) => {
-    this.setState({subheader: event.target.value});
+  handleHeader2 = (event) => {
+    this.setState({header2: event.target.value});
   }
+
+  handleHeader3 = (event) => {
+    this.setState({header3: event.target.value});
+  }
+
 
   handleBody = (event) => {
     this.setState({body: event.target.value});
   }
 
 
+  handleBody2 = (event) => {
+    this.setState({body2: event.target.value});
+  }
+
+  handleBody3 = (event) => {
+    this.setState({body3: event.target.value});
+  }
 
   handleImage = (event) => {
     event.preventDefault();
@@ -151,7 +153,7 @@ if (this.state.menuOpen == true) {
     reader.readAsDataURL(file);
   }
 
-    handleImage2 = (event) => {
+  handleImage2 = (event) => {
     event.preventDefault();
 
     let reader = new FileReader();
@@ -164,19 +166,34 @@ if (this.state.menuOpen == true) {
     reader.readAsDataURL(file);
   }
 
+  handleImage3 = (event) => {
+    event.preventDefault();
 
+    let reader = new FileReader();
+    let file = event.target.files[0];
 
-  storeArticle = () => {
+    reader.onloadend = () => {
+      this.setState({image3: file, preview3: reader.result})
+    }
+
+    reader.readAsDataURL(file);
+  }
+
+  storeAbout = () => {
     var data = new FormData();
 
-    data.append('title', this.state.title);
-    data.append('subheader', this.state.subheader);
+    data.append('header', this.state.header);
+    data.append('header2', this.state.header2);
+    data.append('header3', this.state.header3);
     data.append('body', this.state.body);
+    data.append('body2', this.state.body2);
+    data.append('body3', this.state.body3);
     data.append('image', this.state.image);
     data.append('image2', this.state.image2);
+    data.append('image3', this.state.image3);
 
 
-    fetch('http://localhost:8000/api/storeArticle', {
+    fetch('http://localhost:8000/api/storeAbout', {
       method: 'post',
       body: data
     }).then(function(response) {
@@ -189,19 +206,8 @@ if (this.state.menuOpen == true) {
       }
     })
   }
-
   render() {
-    /*const muiTheme = getMuiTheme({
-      palette: {
-        textColor: cyan500
-      },
-      appBar: {
-        height: 50
-      }
-
-    });*/
-//imports
-const navStyleMobile = {
+    const navStyleMobile = {
   fontFamily: "Trebuchet MS",
   fontStyle: "light",
   fontWeight: "400",
@@ -256,13 +262,11 @@ const colorStyle = {
       border: '1px solid blue'
 
     }
+
     return (
       <div>
-        <Helmet title='Dashboard' meta={[{
-            name: 'description',
-            content: 'Description of Dashboard'
-          }
-        ]}/>
+        <Helmet title="AboutUpdate" meta={[ { name: 'description', content: 'Description of AboutUpdate' }]}/>
+
         <div style={mainStyle}>
           <div>
             <div>
@@ -275,39 +279,61 @@ const colorStyle = {
           </div>
           <Responsive minDeviceWidth={1024}>
             <div style={middleStyle}>
-              Article Title
+              First Header
             </div>
 
             <div style={middleStyle3}>
               <input style={{
                 marginBottom: '5%',
                 border: '1px solid blue'
-              }} onChange={this.handleTitle} type='text' placeholder='Title'/>
+              }} onChange={this.handleHeader} type='text' placeholder='header'/>
             </div>
 
             <div style={middleStyle}>
-              Article Subheader
+              Second Header
             </div>
 
             <div style={middleStyle3}>
               <input style={{
                 marginBottom: '5%',
                 border: '1px solid blue'
-              }} onChange={this.handleSubheader} type='text' placeholder='Title'/>
+              }} onChange={this.handleHeader2} type='text' placeholder='header2'/>
             </div>
 
+            <div style={middleStyle}>
+              Third Header
+            </div>
+
+            <div style={middleStyle3}>
+              <input style={{
+                marginBottom: '5%',
+                border: '1px solid blue'
+              }} onChange={this.handleHeader3} type='text' placeholder='header3'/>
+            </div>
 
             <div style={middleStyle}>
-              Article Body
+              Section Body
             </div>
 
             <textarea style={middleStyle2} onChange={this.handleBody} placeholder='Body'></textarea>
 
             <div style={middleStyle}>
+              2nd Section Body
+            </div>
+
+            <textarea style={middleStyle2} onChange={this.handleBody2} ></textarea>
+
+            <div style={middleStyle}>
+              3rd Section Body
+            </div>
+
+            <textarea style={middleStyle2} onChange={this.handleBody3} ></textarea>
+
+          <div style={middleStyle}>
               <div style={{
                 marginBottom: '1%'
               }}>
-                Article image
+                image 1
               </div>
 
               <input style={{
@@ -321,51 +347,88 @@ const colorStyle = {
               <div style={{
                 marginBottom: '1%'
               }}>
-                Homepage image
+              image 2
               </div>
 
               <input style={{
                 marginBottom: '10%'
-                }} onChange={this.handleImage2}     type='file'/>
-                <img src={this.state.preview2}/>
+              }} onChange={this.handleImage2} type='file'/>
+            <img src={this.state.preview2}/>
+
+            </div>
+
+            <div style={middleStyle}>
+              <div style={{
+                marginBottom: '1%'
+              }}>
+                image 3
+              </div>
+
+              <input style={{
+                marginBottom: '10%'
+              }} onChange={this.handleImage3} type='file'/>
+            <img src={this.state.preview3}/>
+
             </div>
           </Responsive>
-
           <Responsive maxDeviceWidth={1023}>
             <div style={middleStyleMobile}>
-              Article Title
+            first header
             </div>
 
             <div style={middleStyle3Mobile}>
               <input style={{
                 marginBottom: '5%',
                 border: '1px solid blue'
-              }} onChange={this.handleTitle} type='text' placeholder='Title'/>
+              }} onChange={this.handleHeader} type='text' />
             </div>
 
             <div style={middleStyleMobile}>
-              Article Subheader
+              2nd header
             </div>
 
             <div style={middleStyle3Mobile}>
               <input style={{
                 marginBottom: '5%',
                 border: '1px solid blue'
-              }} onChange={this.handleSubheader} type='text' placeholder='Title'/>
+              }} onChange={this.handleHeader2} type='text' />
             </div>
 
+            <div style={middleStyleMobile}>
+              3rd header
+            </div>
+
+            <div style={middleStyle3Mobile}>
+              <input style={{
+                marginBottom: '5%',
+                border: '1px solid blue'
+              }} onChange={this.handleHeader3} type='text' />
+            </div>
 
             <div style={middleStyleMobile}>
-              Article Body
+              Section Body 1
             </div>
 
             <textarea style={middleStyle2Mobile} onChange={this.handleBody} placeholder='Body'></textarea>
+
+
+            <div style={middleStyleMobile}>
+              Section Body 2
+            </div>
+
+            <textarea style={middleStyle2Mobile} onChange={this.handleBody2} placeholder='Body'></textarea>
+
+            <div style={middleStyleMobile}>
+              Section Body 3
+            </div>
+
+            <textarea style={middleStyle2Mobile} onChange={this.handleBody3} ></textarea>
 
             <div style={middleStyleMobile}>
               <div style={{
                 marginBottom: '1%'
               }}>
-                Article image
+                image 1
               </div>
 
               <input style={{
@@ -379,26 +442,36 @@ const colorStyle = {
               <div style={{
                 marginBottom: '1%'
               }}>
-                Homepage image
+                image 2
               </div>
 
               <input style={{
                 marginBottom: '10%'
-                }} onChange={this.handleImage2} type='file'/>
-                <img src={this.state.preview2}/>
+              }} onChange={this.handleImage2} type='file'/>
+            <img src={this.state.preview2}/>
+
+            </div>
+
+            <div style={middleStyleMobile}>
+              <div style={{
+                marginBottom: '1%'
+              }}>
+                image 3
+              </div>
+
+              <input style={{
+                marginBottom: '10%'
+              }} onChange={this.handleImage3} type='file'/>
+            <img src={this.state.preview3}/>
+
             </div>
           </Responsive>
-
         </div>
-
           <div>
             <RaisedButton label='Submit' primary={true} style={style,
-            middleStyle} onTouchTap={this.storeArticle}/>
+            middleStyle} onTouchTap={this.storeAbout}/>
           </div>
-
       </div>
-    )
+    );
   }
-
-
 }

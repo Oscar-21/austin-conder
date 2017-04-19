@@ -1,17 +1,17 @@
 /*
  *
- * Browse
+ * SignUp
  *
  */
 
 import React from 'react';
 import Helmet from 'react-helmet';
+import {Link} from 'react-router';
 import Responsive from 'react-responsive';
 import ArticleStyle from 'components/ArticleStyle';
-import {Link} from 'react-router';
-export default class Browse extends React.PureComponent {
+export default class SignUp extends React.PureComponent {
   render() {
-        const backgroundStyle = {
+            const backgroundStyle = {
      /*background: "  #F5F5F5",*/
       display: "flex",
       flexDirection: "column",
@@ -58,11 +58,14 @@ export default class Browse extends React.PureComponent {
       letterSpacing: "4px",
 
     }
+    const inputStyle = {
+      border: "1px solid black"
+    }
     return (
-      <div style={backgroundStyle}>
-        <Helmet title="Browse" meta={[ { name: 'description', content: 'Description of Browse' }]}/>
+      <div>
+        <Helmet title="SignUp" meta={[ { name: 'description', content: 'Description of SignUp' }]}/>
 
-        <header>
+  <header>
           <ArticleStyle/>
         </header>
 
@@ -71,9 +74,13 @@ export default class Browse extends React.PureComponent {
             <div style={backgroundContentBox}>
               <div style={titleBox}>
                 <div style = {titleStyle}>
-                  Browse
+                  Join us
                 </div>
               </div>
+
+              <input style={inputStyle} type='text' placeholder='email'/>
+              <input style={inputStyle} type='text' placeholder='username'/>
+              <input style={inputStyle} type='text' placeholder='password'/>
             </div>
           </main>
         </Responsive>
@@ -82,7 +89,7 @@ export default class Browse extends React.PureComponent {
             <div style={backgroundContentBox}>
               <div style={titleBox}>
                 <div style = {titleStyleMobile}>
-                  Browse
+                  Join us
                 </div>
               </div>
             </div>
