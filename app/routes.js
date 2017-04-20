@@ -12,7 +12,6 @@ const loadModule = (cb) => (componentModule) => {
 };
 
 export default function createRoutes() {
-
   return [
     {
       path: '/SignIn',
@@ -69,22 +68,22 @@ export default function createRoutes() {
       },
     },
     {
-        path: '/Article/:id',
-        name: 'Article',
-        getComponent(nextState, cb) {
+      path: '/Article/:id',
+      name: 'Article',
+      getComponent(nextState, cb) {
         import('containers/Article')
           .then(loadModule(cb))
           .catch(errorLoading);
       },
     },
     {
-        path: '/', /* root directory */
-        name: 'Home',
-        getComponent(nextState, cb) {
-            import('containers/Home')
-            .then(loadModule(cb))
-            .catch(errorLoading);
-        },
+      path: '/', /* root directory */
+      name: 'Home',
+      getComponent(nextState, cb) {
+        import('containers/Home')
+          .then(loadModule(cb))
+          .catch(errorLoading);
+      },
     },
     {
       path: '*',

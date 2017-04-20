@@ -4,10 +4,8 @@
  * This is the entry file for the application, only setup and boilerplate
  * code.
  */
-
 // Needed for redux-saga es6 generator support
 import 'babel-polyfill';
-
 // Import all the third party stuff
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -43,7 +41,7 @@ const rootRoute = {
 const render = () => {
   ReactDOM.render(
     <div>
-        <Router history={browserHistory} routes={rootRoute} render={applyRouterMiddleware(useScroll())}/>
+      <Router history={browserHistory} routes={rootRoute} render={applyRouterMiddleware(useScroll())} />
     </div>,
     document.getElementById('app')
   );
