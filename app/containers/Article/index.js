@@ -2,7 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import Responsive from 'react-responsive';
 import ArticleStyle from 'components/ArticleStyle';
-import Comments from 'components/Comments'; 
+import Comments from 'components/Comments';
 import Share from 'material-ui/svg-icons/social/share';
 import Email from 'material-ui/svg-icons/communication/email';
 import Whatshot from 'material-ui/svg-icons/social/whatshot';
@@ -78,10 +78,10 @@ export default class Article extends React.PureComponent {
     };
     // article body
     const contentStyle = {
-      fontFamily: 'Cormorant',
+      fontFamily: 'Monteserrat',
+      fontSize: '1em',
       marginLeft: '33.33%',
       marginBottom: '2%',
-      fontWeight: 'bold',
     };
     // table styling
     const tableHolder = {

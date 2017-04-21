@@ -33,6 +33,7 @@ export default class Dashboard extends React.PureComponent {
       image2: '',
       preview2: '',
       firstCharacter: '',
+      token: sessionStorage.getItem("token"),
       menuOpen: false,
     };
   }
@@ -123,7 +124,7 @@ export default class Dashboard extends React.PureComponent {
     data.append('body', this.state.body);
     data.append('image', this.state.image);
     data.append('image2', this.state.image2);
-    fetch('http://jasparlamar.crab:8000/api/storeArticle', {
+    fetch('http://jasparlamar.crab:8000/api/storeArticle?token='+this.state.token, {
       method: 'post',
       body: data,
     }).then(function (response) {

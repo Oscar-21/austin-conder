@@ -3,16 +3,54 @@
  * SignIn
  *
  */
-
 import React from 'react';
 import Helmet from 'react-helmet';
 import Responsive from 'react-responsive';
 import ArticleStyle from 'components/ArticleStyle';
 import RaisedButton from 'material-ui/RaisedButton';
 export default class SignIn extends React.PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: '',
+      password: '',
+    };
+  }
 
-  handleLogin = () => {
-    console.log('foo');
+
+  handleEmail = (event) => {
+    this.setState({ email: event.target.value });
+  }
+  handlePassword = (event) => {
+    this.setState({ password: event.target.value });
+  }
+
+  signIn = () => {
+    var date = new FormData();
+    data.append('email', this.state.email);
+    data.append('password', this.state.password);
+    fetch('http://jasparlamar.crab:8000/api/signIn', {
+      method: 'post',
+      body: data,
+    }).then(function (response) {
+      return response.json();
+    }).then(function (json) {
+      if (json.token === false)
+      {
+        alert('invalid credentials');
+      }
+      else if (json.token !== false)
+      {
+        alert("Welcome back!");
+        sessionStorage.setItem("token", json.token);
+      }
+
+      else if (json.error)
+      {
+        alert(json.error);
+      }
+
+    });
   }
   render() {
     const backgroundStyle = {
@@ -81,13 +119,13 @@ export default class SignIn extends React.PureComponent {
           <main style={backgroundStyle}>
             <div style={backgroundContentBox}>
               <div style={titleBox}>
-                <div style = {titleStyle}>
+                <div style={titleStyle}>
                   Login
                 </div>
               </div>
-              <input style={inputStyle} type="text" placeholder="email" />
+              <input style={inputStyle} onChange={this.handleEmail} type="text" placeholder="email" />
               <input type="text" style={inputStyle} placeholder="password" />
-              <RaisedButton style={buttonStyle} label="Submit" primary={true} onTouchTap={this.handleLogin} />
+              <RaisedButton style={buttonStyle} onChange={this.handlePassword} label="Submit" primary={true} onTouchTap={this.signIn} />
             </div>
           </main>
         </Responsive>
@@ -100,10 +138,10 @@ export default class SignIn extends React.PureComponent {
                   Login
                 </div>
               </div>
-                <input style={inputStyleMobile} type="text" placeholder="email" />
-                <input type="text" style={inputStyleMobile} placeholder="password" />
+              <input style={inputStyleMobile} type="text" placeholder="email" />
+              <input type="text" style={inputStyleMobile} placeholder="password" />
               <div>
-                <RaisedButton style={buttonStyleMobile} label="Submit" primary={true} onTouchTap={this.handleLogin} />
+                <RaisedButton style={buttonStyleMobile} label="Submit" primary={true} onTouchTap={this.signIn} />
               </div>
             </div>
           </main>
