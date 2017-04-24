@@ -61,7 +61,11 @@ export default class SignIn extends React.PureComponent {
       background: '#408193',
     };
     const backgroundContentBox = {
+      display: 'flex',
+      justifyContent: 'center',
+      flexDirection: 'column',
       margin: '0 auto',
+      /* marginLeft: '10%', */
       marginTop: '3%',
       background: '#F5F5F5',
       width: '90%',
@@ -70,7 +74,7 @@ export default class SignIn extends React.PureComponent {
       marginTop: '4%',
       marginRight: '20%',
       marginLeft: '20%',
-      marginBottom: '7%',
+      marginBottom: '3%',
       paddingTop: '1.5%',
       paddingBottom: '1.5%',
       borderTop: '2px solid gray',
@@ -96,11 +100,21 @@ export default class SignIn extends React.PureComponent {
       textTransform: 'uppercase',
       letterSpacing: '4px',
     };
-    const inputStyle = {
+    const inputStyleEmail = {
+      margin: '0 auto',
+      marginBottom: '.4%',
+      width: '20%',
+      border: '1px solid black',
+    };
+    const inputStylePassword = {
+      margin: '0 auto',
+      width: '20%',
       border: '1px solid black',
     };
     const buttonStyle = {
-
+      margin: '0 auto',
+      marginTop: '2%',
+      width: '13%',
     };
     const inputStyleMobile = {
       marginLeft: '25%',
@@ -124,8 +138,8 @@ export default class SignIn extends React.PureComponent {
                   Login
                 </div>
               </div>
-              <input style={inputStyle} onChange={this.handleEmail} type="text" placeholder="email" />
-              <input type="text" style={inputStyle} placeholder="password" />
+              <input style={inputStyleEmail} onChange={this.handleEmail} type="text" placeholder="email" />
+              <input type="text" style={inputStylePassword} placeholder="password" />
               <RaisedButton style={buttonStyle} onChange={this.handlePassword} label="Submit" primary={true} onTouchTap={this.signIn} />
             </div>
           </main>

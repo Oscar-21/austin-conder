@@ -3,7 +3,6 @@
  * About
  *
  */
-
 import React from 'react';
 import Helmet from 'react-helmet';
 import ArticleStyle from 'components/ArticleStyle';
@@ -196,43 +195,43 @@ export default class About extends React.PureComponent {
               </div>
 
               <div style={firstStyleMobile}>
-                <img style={imageStyleMobile} src="https://68.media.tumblr.com/21eed63e017188a2b5546c68063c370c/tumblr_ook5rge8VR1ubdqpuo1_250.jpg" alt="" />
+                <img style={imageStyleMobile} src={this.state.about.image}  alt="" />
 
                 <div style={subheaderStyleMobile}>
                   <div style={subheaderOne}>
-                    We love cinema
+                    {this.state.about.header}
                   </div>
 
                   <div style={contentOne}>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    {this.state.about.body}
                   </div>
                 </div>
               </div>
 
               <div style={firstStyleMobile}>
-                <img style={imageStyleMobile} src="https://68.media.tumblr.com/26511dfa3b6cb8273b945f9cab951ee9/tumblr_ook9ejNdlv1ubdqpuo1_540.jpg" alt="" />
+                <img style={imageStyleMobile} src={this.state.about.image2} alt="" />
 
                 <div style={subheaderStyleMobile}>
                   <div style={subheaderTwo}>
-                    You love cinema too?
+                    {this.state.about.header2}
                   </div>
 
                   <div style={contentOne}>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    {this.state.about.body2}
                   </div>
                 </div>
               </div>
 
               <div style={firstStyleMobile}>
-                <img style={imageStyleMobile} src="https://68.media.tumblr.com/2812b695c746380469792f0854c56a70/tumblr_ookd8yAJJI1ubdqpuo1_500.jpg" alt="" />
+                <img style={imageStyleMobile} src={this.state.about.image3} alt="" />
 
                 <div style={subheaderStyleMobile}>
                   <div style={subheaderTwo}>
-                    We want community Article submissions
+                    {this.state.about.header3}
                   </div>
 
                   <div style={contentOne}>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    {this.state.about.body3}
                   </div>
                 </div>
               </div>
