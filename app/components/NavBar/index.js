@@ -10,6 +10,7 @@ import { Link } from 'react-router';
 import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
 import { Tabs, Tab } from 'material-ui/Tabs';
+import FlatButton from 'material-ui/FlatButton';
 class NavBar extends React.PureComponent {
   // Create boolean variable that we can use
   // to
@@ -18,6 +19,7 @@ class NavBar extends React.PureComponent {
     this.state = {
       menuOpen: false,
       siteName: 'Bootcamp',
+      logged: true,
     };
   }
   // function whose purpose is to, when called,
@@ -110,6 +112,9 @@ class NavBar extends React.PureComponent {
     const colorStyle = {
       background: 'url(https://68.media.tumblr.com/8ba6be52a6cb41fe964cd7fbb94a3e02/tumblr_on2pafGDUw1vieawno1_1280.jpg)',
     };
+    const loginButton = {
+      fontSize: '.88em',
+    };
     return (
       <div>
         <div>
@@ -135,7 +140,7 @@ class NavBar extends React.PureComponent {
 
           <Responsive maxDeviceWidth={1023}>
             <div>
-              <AppBar onLeftIconButtonTouchTap={this.handleMenu} title="Word on Reel Weekly" titleStyle={navStyleMobile} style={colorStyle} />
+              <AppBar iconElementRight={<FlatButton labelStyle={loginButton} containerElement={<Link to="/SignIn"></Link>} label="Login" />} onLeftIconButtonTouchTap={this.handleMenu} title="Word on Reel Weekly" titleStyle={navStyleMobile} style={colorStyle} />
             </div>
             {this.showMenu()}
           </Responsive>

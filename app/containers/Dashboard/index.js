@@ -76,6 +76,7 @@ export default class Dashboard extends React.PureComponent {
                 <MenuItem primaryText="Browse" containerElement={<Link to="/Browse"></Link>} />
                 <MenuItem primaryText="Contribute" containerElement={<Link to="/"></Link>} />
                 <MenuItem primaryText="Our Friends" containerElement={<Link to="/"></Link>} />
+                <MenuItem primaryText="Log in" containerElement={<Link to="/SignIn"></Link>} />
               </Menu>
             </Paper>
           </Responsive>
@@ -124,7 +125,7 @@ export default class Dashboard extends React.PureComponent {
     data.append('body', this.state.body);
     data.append('image', this.state.image);
     data.append('image2', this.state.image2);
-    fetch('http://jasparlamar.crab:8000/api/storeArticle?token='+this.state.token, {
+    fetch('http://jasparlamar.crab:8000/api/storeArticle?token=' + this.state.token, {
       method: 'post',
       body: data,
     }).then(function (response) {

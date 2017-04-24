@@ -17,13 +17,13 @@ export default class SignUp extends React.PureComponent {
       password: '',
     };
   }
-  handleEmail = () => {
+  handleEmail = (event) => {
     this.setState({ email: event.target.value });
   }
-  handleUsername = () => {
+  handleUsername = (event) => {
     this.setState({ username: event.target.value });
   }
-  handlePassword = () => {
+  handlePassword = (event) => {
     this.setState({ password: event.target.value });
   }
   storeUser = () => {

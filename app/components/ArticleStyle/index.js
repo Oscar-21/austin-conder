@@ -4,6 +4,7 @@
 *
 */
 import React from 'react';
+import FlatButton from 'material-ui/FlatButton';
 import Responsive from 'react-responsive';
 import { Link } from 'react-router';
 import AppBar from 'material-ui/AppBar';
@@ -112,10 +113,13 @@ class ArticleStyle extends React.PureComponent {
       color: '#eeeeee',
     };
     const socialStyle = {
-      marginLeft: '24.5%',
+      marginLeft: '20%',
     };
     const linkStyle = {
-      marginLeft: '35%',
+      marginLeft: '30%',
+    };
+    const loginButton = {
+      fontSize: '.88em',
     };
     return (
       <div>
@@ -162,7 +166,7 @@ class ArticleStyle extends React.PureComponent {
         </Responsive>
         <Responsive maxDeviceWidth={1023}>
           <div>
-            <AppBar onLeftIconButtonTouchTap={this.handleMenu} title="Word on Reel Weekly" disabledLabelColor="black" disabledBackgroundColor="black" titleStyle={navStyleMobile} style={colorStyle} />
+            <AppBar iconElementRight={<FlatButton labelStyle={loginButton} containerElement={<Link to="/SignIn"></Link>} label="Login" />} onLeftIconButtonTouchTap={this.handleMenu} title="Word on Reel Weekly" titleStyle={navStyleMobile} style={colorStyle} />
           </div>
           {this.showMenu()}
         </Responsive>

@@ -14,6 +14,7 @@ export default class SignIn extends React.PureComponent {
     this.state = {
       email: '',
       password: '',
+      token: '',
     };
   }
 
@@ -26,7 +27,7 @@ export default class SignIn extends React.PureComponent {
   }
 
   signIn = () => {
-    var date = new FormData();
+    var data = new FormData();
     data.append('email', this.state.email);
     data.append('password', this.state.password);
     fetch('http://jasparlamar.crab:8000/api/signIn', {
@@ -43,13 +44,13 @@ export default class SignIn extends React.PureComponent {
       {
         alert("Welcome back!");
         sessionStorage.setItem("token", json.token);
+        this.setState({token:sessionStorage.getItem("token"),});
       }
 
       else if (json.error)
       {
         alert(json.error);
       }
-
     });
   }
   render() {
