@@ -31,12 +31,12 @@ export default class SignUp extends React.PureComponent {
     data.append('username', this.state.username);
     data.append('password', this.state.password);
     data.append('email', this.state.email);
-    fetch('http://jasparlamar.crab:8000/api/signUp', {
+    fetch('http://wordonreel.com/api/signUp', {
       method: 'post',
       body: data,
     }).then(function (response) {
       return response.json();
-    }).then(function (json) {
+    }).then( function (json) {
       if (json.success) {
         alert(json.success);
       } else if (json.error) {

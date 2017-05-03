@@ -33,15 +33,17 @@ export default class Dashboard extends React.PureComponent {
       image2: '',
       preview2: '',
       firstCharacter: '',
-      token: sessionStorage.getItem("token"),
+      token: sessionStorage.getItem('token'),
       menuOpen: false,
     };
   }
   handleMenu = () => {
     if (this.state.menuOpen == false) {
+      console.log('token dash: ' + this.state.token);
       this.setState({ menuOpen: true });
     } else if (this.state.menuOpen == true) {
       this.setState({ menuOpen: false });
+      console.log('token dash: ' + this.state.token);
     }
   }
   showMenu = () => {
@@ -49,12 +51,12 @@ export default class Dashboard extends React.PureComponent {
       display: 'inline-block',
       margin: '16px 32px 16px 0',
     };
-     const paperStyle = {
+    const paperStyle = {
       display: 'inline-block',
       position: 'absolute',
       margin: '16px 32px 16px 0',
     };
-    if (this.state.menuOpen == true) {
+    if (this.state.menuOpen === true) {
       return (
         <div>
           <Responsive minDeviceWidth={1024}>
@@ -125,12 +127,12 @@ export default class Dashboard extends React.PureComponent {
     data.append('body', this.state.body);
     data.append('image', this.state.image);
     data.append('image2', this.state.image2);
-    fetch('http://jasparlamar.crab:8000/api/storeArticle?token=' + this.state.token, {
+    fetch('http://wordonreel.com/api/storeArticle?token=' + this.state.token, {
       method: 'post',
       body: data,
-    }).then(function (response) {
+    }).then((response) => {
       return response.json();
-    }).then(function (json) {
+    }).then((json) => {
       if (json.success) {
         alert(json.success);
       } else if (json.error) {

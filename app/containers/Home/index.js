@@ -23,7 +23,7 @@ export default class Home extends React.PureComponent {
     };
   }
   componentWillMount() {
-    fetch('http://jasparlamar.crab:8000/api/getArticles')
+    fetch('http://wordonreel.com/api/getArticles')
     .then(function (response) {
       return response.json();
     })
@@ -67,7 +67,7 @@ export default class Home extends React.PureComponent {
     const headerContainer = {
       display: 'flex',
       flexDirection: 'row',
-      marginTop : '8%',
+      marginTop: '8%',
     };
     const headerStyle = {
       color: '#FFFFFF',
@@ -84,7 +84,7 @@ export default class Home extends React.PureComponent {
     };
     const headerBox = {
       width: '42%',
-    }
+    };
     const scrollStyle = {
       background: '#E9FFFF',
     };

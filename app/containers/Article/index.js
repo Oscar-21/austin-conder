@@ -16,7 +16,7 @@ export default class Article extends React.PureComponent {
     };
   }
   componentWillMount() {
-    fetch('http://jasparlamar.crab:8000/api/showArticle/' + this.props.params.id)
+    fetch('http://wordonreel.com/api/showArticle/' + this.props.params.id)
     .then(function (response) {
       return response.json();
     })
@@ -26,7 +26,6 @@ export default class Article extends React.PureComponent {
       });
     }.bind(this));
   }
-
   render() {
         // content Parent
     const backgroundStyle = {

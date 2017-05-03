@@ -30,26 +30,23 @@ export default class SignIn extends React.PureComponent {
     var data = new FormData();
     data.append('email', this.state.email);
     data.append('password', this.state.password);
-    fetch('http://jasparlamar.crab:8000/api/signIn', {
+    fetch('http://wordonreel.com/api/signIn', {
       method: 'post',
       body: data,
-    }).then(function (response) {
+    }).then((response) => {
       return response.json();
-    }).then(function (json) {
-      if (json.token === false)
-      {
-        alert('invalid credentials');
-      }
-      else if (json.token !== false)
-      {
-        alert("Welcome back!");
-        sessionStorage.setItem("token", json.token);
-        this.setState({token:sessionStorage.getItem("token"),});
-      }
-
-      else if (json.error)
-      {
+    }).then((json) => {
+      if (json.error) {
         alert(json.error);
+      } else if (json.token === false) {
+        alert('invalid credentials');
+      } else if (json.token !== false) {
+        alert('Welcome back!');
+        sessionStorage.setItem('token', JSON.stringify(json.token));
+        /* this.setState({token:JSON.stringify(json.token)}); */
+        /* this.setState({token:json.token}); */
+        this.setState({ token: sessionStorage.getItem('token') });
+        console.log('token: ' + this.state.token);
       }
     });
   }
@@ -118,6 +115,7 @@ export default class SignIn extends React.PureComponent {
     };
     const inputStyleMobile = {
       marginLeft: '25%',
+      width: '45%',
       border: '1px solid black',
     };
     const buttonStyleMobile = {
@@ -139,8 +137,8 @@ export default class SignIn extends React.PureComponent {
                 </div>
               </div>
               <input style={inputStyleEmail} onChange={this.handleEmail} type="text" placeholder="email" />
-              <input type="text" style={inputStylePassword} placeholder="password" />
-              <RaisedButton style={buttonStyle} onChange={this.handlePassword} label="Submit" primary={true} onTouchTap={this.signIn} />
+              <input type="text" style={inputStylePassword} placeholder="password" onChange={this.handlePassword}/>
+              <RaisedButton style={buttonStyle}  label="Submit" primary={true} onTouchTap={this.signIn} />
             </div>
           </main>
         </Responsive>
@@ -153,8 +151,8 @@ export default class SignIn extends React.PureComponent {
                   Login
                 </div>
               </div>
-              <input style={inputStyleMobile} type="text" placeholder="email" />
-              <input type="text" style={inputStyleMobile} placeholder="password" />
+              <input style={inputStyleMobile} type="text" placeholder="email" onChange={this.handleEmail}/>
+              <input type="text" style={inputStyleMobile} placeholder="password" onChange={this.handlePassword}/>
               <div>
                 <RaisedButton style={buttonStyleMobile} label="Submit" primary={true} onTouchTap={this.signIn} />
               </div>

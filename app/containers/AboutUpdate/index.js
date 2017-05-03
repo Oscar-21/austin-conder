@@ -30,6 +30,8 @@ export default class AboutUpdate extends React.PureComponent {
       image3: '',
       preview3: '',
       menuOpen: false,
+      token: sessionStorage.getItem('token'),
+
     };
   }
   handleMenu = () => {
@@ -156,7 +158,7 @@ export default class AboutUpdate extends React.PureComponent {
     data.append('image3', this.state.image3);
 
 
-    fetch('http://jasparlamar.crab:8000/api/storeAbout', {
+    fetch('http://wordonreel.com/api/storeAbout', {
       method: 'post',
       body: data,
     }).then(function (response) {
