@@ -130,9 +130,9 @@ export default class Dashboard extends React.PureComponent {
     fetch('http://wordonreel.com/api/storeArticle?token=' + this.state.token, {
       method: 'post',
       body: data,
-    }).then((response) => {
+    }).then(function(response) {
       return response.json();
-    }).then((json) => {
+    }).then(function(json) {
       if (json.success) {
         alert(json.success);
       } else if (json.error) {
