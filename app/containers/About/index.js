@@ -15,7 +15,7 @@ export default class About extends React.PureComponent {
     };
   }
   componentWillMount() {
-    fetch('http://wordonreel.com/api/getAbout')
+    fetch('http://jasparlamar.crab:8000/api/getAbout')
     .then(function (response) {
       return response.json();
     })

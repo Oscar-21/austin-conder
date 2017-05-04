@@ -30,7 +30,7 @@ export default class SignIn extends React.PureComponent {
     var data = new FormData();
     data.append('email', this.state.email);
     data.append('password', this.state.password);
-    fetch('http://wordonreel.com/api/signIn', {
+    fetch('http://jasparlamar.crab:8000/api/signIn', {
       method: 'post',
       body: data,
     }).then((response) => {
@@ -46,7 +46,6 @@ export default class SignIn extends React.PureComponent {
         /* this.setState({token:JSON.stringify(json.token)}); */
         /* this.setState({token:json.token}); */
         this.setState({ token: sessionStorage.getItem('token') });
-        console.log('token: ' + this.state.token);
       }
     });
   }

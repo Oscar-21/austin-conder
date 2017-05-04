@@ -23,7 +23,7 @@ export default class Home extends React.PureComponent {
     };
   }
   componentWillMount() {
-    fetch('http://wordonreel.com/api/getArticles')
+    fetch('http://jasparlamar.crab:8000/api/getArticles')
     .then(function (response) {
       return response.json();
     })

@@ -158,7 +158,7 @@ export default class AboutUpdate extends React.PureComponent {
     data.append('image3', this.state.image3);
 
 
-    fetch('http://wordonreel.com/api/storeAbout', {
+    fetch('http://jasparlamar.crab:8000/api/storeAbout', {
       method: 'post',
       body: data,
     }).then(function (response) {

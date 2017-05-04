@@ -31,7 +31,7 @@ export default class SignUp extends React.PureComponent {
     data.append('username', this.state.username);
     data.append('password', this.state.password);
     data.append('email', this.state.email);
-    fetch('http://wordonreel.com/api/signUp', {
+    fetch('http://jasparlamar.crab:8000/api/signUp', {
       method: 'post',
       body: data,
     }).then(function (response) {
