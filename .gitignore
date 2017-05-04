@@ -3,15 +3,7 @@ coverage
 node_modules
 stats.json
 # new
-app
-internals
-server
-store
-appveyor.yml
-LICENSE.md
 log.txt
-package.json
-README.md
 # Cruft
 .DS_Store
 npm-debug.log

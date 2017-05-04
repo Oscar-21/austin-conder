@@ -19,7 +19,6 @@ import Paper from 'material-ui/Paper';
 import MenuItem from 'material-ui/MenuItem';
 import Menu from 'material-ui/Menu';
 import Responsive from 'react-responsive';
-import axios from 'axios';
 export default class Dashboard extends React.PureComponent {
   constructor(props) {
     super(props);
@@ -124,7 +123,7 @@ export default class Dashboard extends React.PureComponent {
   }
 
   tokenValidator = () => {
-    axios.post('http://jasparlamar.crab:8000/api/getAuthenticatedUser', { headers: { Authorization: 'Bearer'.concat(this.state.token) },
+    fetch('http://jasparlamar.crab:8000/api/storeArticle', { headers: { Authorization: 'Bearer'.concat(this.state.token) },
     }).then((response) => {
      // If request is good...
       console.log(response.data);
