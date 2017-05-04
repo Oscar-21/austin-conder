@@ -35,16 +35,15 @@ export default class Dashboard extends React.PureComponent {
       firstCharacter: '',
       token: sessionStorage.getItem('token'),
       menuOpen: false,
-      auth: false,
     };
   }
   handleMenu = () => {
-    if (this.state.menuOpen == false) {
-      console.log('token dash: ' + this.state.token);
+    if (this.state.menuOpen === false) {
+      console.log('token dash:'.concat(this.state.token));
       this.setState({ menuOpen: true });
-    } else if (this.state.menuOpen == true) {
+    } else if (this.state.menuOpen === true) {
       this.setState({ menuOpen: false });
-      console.log('token dash: ' + this.state.token);
+      console.log('token dash:'.concat(this.state.token));
     }
   }
   showMenu = () => {
@@ -122,31 +121,20 @@ export default class Dashboard extends React.PureComponent {
     reader.readAsDataURL(file);
   }
 
-  tokenValidator = () => {
-    fetch('http://jasparlamar.crab:8000/api/storeArticle', { headers: { Authorization: 'Bearer'.concat(this.state.token) },
-    }).then((response) => {
-     // If request is good...
-      console.log(response.data);
-      this.setState({ auth: true });
-    }).catch((error) => {
-      console.log('error' + error);
-    });
-  }
-
   storeArticle = () => {
-    if (this.state.auth === true) {
       var data = new FormData();
       data.append('title', this.state.title);
       data.append('subheader', this.state.subheader);
       data.append('body', this.state.body);
       data.append('image', this.state.image);
       data.append('image2', this.state.image2);
-      fetch('http://jasparlamar.crab:8000/api/storeArticle', {
+      fetch('http://jasparlamar.crab:8000/api/storeArticle?token='+this.state.token, {
         method: 'post',
         body: data,
-      }).then(function(response) {
+        headers: { 'Authorization':'Bearer '+this.state.token }
+      }).then(function (response) {
         return response.json();
-      }).then(function(json) {
+      }).then(function (json) {
         if (json.success) {
           alert(json.success);
         } else if (json.error) {
@@ -154,10 +142,7 @@ export default class Dashboard extends React.PureComponent {
         }
       });
     }
-    else {
-      console.log('naaa');
-    }
-  }
+
   render() {
     const navStyleMobile = {
       fontFamily: 'Trebuchet MS',
@@ -207,7 +192,6 @@ export default class Dashboard extends React.PureComponent {
         <Helmet title="Dashboard" meta={[{ name: 'description', content: 'Description of Dashboard' }]} />
 
         <div style={mainStyle}>
-          {this.tokenValidator()}
           <div>
             <div>
               <AppBar onLeftIconButtonTouchTap={this.handleMenu} title="Word on Reel Weekly" titleStyle={navStyleMobile} style={colorStyle}  />
