@@ -15,7 +15,7 @@ export default class About extends React.PureComponent {
     };
   }
   componentWillMount() {
-    fetch('http://jasparlamar.crab:8000/api/getAbout')
+    fetch('http://jaspar.lamar.crab:8000/api/getAbout')
     .then(function (response) {
       return response.json();
     })
@@ -29,7 +29,7 @@ export default class About extends React.PureComponent {
     const backgroundStyle = {
       display: 'flex',
       flexDirection: 'column',
-      width: '100%',
+      width: '99%',
       background: '#408193',
     };
     const backgroundContentBox = {
